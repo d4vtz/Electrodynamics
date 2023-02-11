@@ -1,0 +1,390 @@
+% 1) pdflatex main
+% 2) makeindex main.idx -s StyleInd.ist
+% 3) biber main
+% 4) pdflatex main x 2
+\documentclass[11pt,fleqn]{book} % Default font size and left-justified equations
+\usepackage[top=3cm,bottom=3cm,left=3.2cm,right=3.2cm,headsep=10pt,a4paper]{geometry} % Page margins
+\usepackage{xcolor} % Required for specifying colors by name
+\definecolor{ocre}{RGB}{243,102,25} % Define the orange color used for highlighting throughout the book
+% Font Settings
+\usepackage{avant} % Use the Avantgarde font for headings
+\usepackage{times} % Use the Times font for headings
+\usepackage{mathptmx} % Use the Adobe Times Roman as the default text font together with math symbols from the Sym­bol, Chancery and Com­puter Modern fonts
+
+\usepackage{microtype} % Slightly tweak font spacing for aesthetics
+                                                                                                                                                                                                                                                                                                                                                                                                     \usepackage[utf8]{inputenc} % Required for including letters with accents
+\usepackage[T1]{fontenc} % Use 8-bit encoding that has 256 glyphs
+
+\usepackage{amsmath,amssymb,amsfonts,latexsym}
+\usepackage{latexsym}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage[spanish]{babel}
+\usepackage{mathrsfs}
+\usepackage{psfrag}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{multirow}
+\usepackage{rotating}
+\usepackage{enumerate}
+
+\usepackage{cancel}
+
+\usepackage{subfig}%PARA LAS FIGURAS MULTIPLES
+\usepackage{multicol}
+
+
+%\usepackage{enumitem}
+%\usepackage[version=3]{mhchem}
+
+
+\usepackage[spanish]{babel}
+
+\spanishdecimal{.} %PARA EL PUNTO DECIMAL
+
+% Bibliography
+\usepackage[style=alphabetic,sorting=nyt,sortcites=true,autopunct=true,babel=hyphen,hyperref=true,abbreviate=false,backref=true,backend=biber]{biblatex}
+\addbibresource{bibliography.bib} % BibTeX bibliography file
+\defbibheading{bibempty}{}
+
+% Index
+\usepackage{calc} % For simpler calculation - used for spacing the index letter headings correctly
+\usepackage{makeidx} % Required to make an index
+\makeindex % Tells LaTeX to create the files required for indexing
+%----------------------------------------------------------------------------------------
+
+\input{structure} % Insert the commands.tex file which contains the majority of the structure behind the template
+
+
+%DEFINICION DE LA CONSTANTE ELECTRICA
+\newcommand{\ke}{ \frac{1}{4\pi \varepsilon_0 }}
+
+
+%DEFINICION DEL VECTOR RADIAL UNITARIO PRIMADO
+\newcommand{\rup}{ \mathbf{\hat{r}}\textsc{\textbf{'}} }
+
+
+
+
+
+
+\begin{document}
+
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+%\begingroup
+%\thispagestyle{empty}
+%\AddToShipoutPicture*{\put(6,5){\includegraphics[scale=1]{background}}} % Image background
+%\centering
+%\vspace*{9cm}
+%\par\normalfont\fontsize{35}{35}\sffamily\selectfont
+%Mec\'anica Cl\'asica\par % Book title
+%\vspace*{1cm}
+%{\Huge Autores}\par % Author name
+%\endgroup
+
+%----------------------------------------------------------------------------------------
+%	TABLE OF CONTENTS
+%----------------------------------------------------------------------------------------
+\chapterimage{Electro1} % Table of contents heading image
+\pagestyle{empty} % No headers
+\tableofcontents % Print the table of contents itself
+\cleardoublepage % Forces the first chapter to start on an odd page so it's on the right
+
+\pagestyle{fancy} % Print headers again
+
+
+\chapter{Ondas electromagn\'eticas confinadas}
+En el capítulo anterior se estudiaron las soluciones de las ecuaciones de Maxwell, con el tipo de solución de ondas planas con extensión infinita, es decir, que las ondas no estaban confinadas por barreras que limiten su propagación. lo cual no es necesariamente cierto en situaciones reales, en donde casi siempre se tienen que tomar en cuanta los limites de las regiones a estudiar.
+
+De domo que es necesario estudiar ondas confinadas que satisfagan las ecuaciones de Maxwell y las condiciones de frontera que imponga la superficie limitante. Se supone por simplicidad que las superficies que limitan la región sean conductores perfectos, es decir, cuando el materia posee $\sigma \longrightarrow \infty$.
+
+\section{Propagaci\'on de las guiás de onda}
+
+En la figura () se muestra una guiá de onda que se extiende indefinidamente en dirección del eje $z$ y limitada por una superficie constante arbitraria en el plano $xy$ de tal manera que las paredes son conductores perfectos  que en e interior se encuentra lleno de un medio no conductor con característica del medio $\mu$ y $\epsilon$.
+
+De modo que si tomamos la ecuaci\'on de onda para cualquiera de las componentes de los campos $\textbf{E}$ y $\textbf{H}$,
+
+\begin{equation} \label{EcOnda1}
+\nabla^2 \psi-\frac{1}{v^2}\frac{\partial^2 \psi}{\partial t^2}=0,
+\end{equation}
+con $v^2=\frac{1}{\epsilon\mu}$, de modo que la soluci\'on de esta ecuaci\'on de onda es del tipo,
+\begin{equation} \label{guiaonda}
+\psi(\textbf{r},t)=\psi_{0}(x,y)\text{e}^{i(k_{g}z- \omega t)},
+\end{equation}
+esta soluci\'on ya no e una onda plana, pues su amplitud ya no es constante, si no que depende del punto en el que se encuentre sobre la superficie que describe la gu\'ia de onda. Adem\'as la cantidad $k_{g}$ es la constante de propagaci\'on de la gu\'ia y se describe como,
+\begin{equation}
+ k_{g}=\frac{2 \pi}{\lambda_{g}},
+ \end{equation}
+ donde $\lambda_{g}$ es la longitud de onda de la gu\'ia.\\
+
+ Si sustituimos (\ref{guiaonda}) en (\ref{EcOnda1})
+
+\begin{eqnarray*}
+ \begin{split}
+ & \nabla^2\left( \psi_{0}(x,y)\text{e}^{i(k_{g}z- \omega t)} \right)-\frac{1}{v^2}\frac{\partial^2}{\partial t^2} \left( \psi_{0}(x,y)\text{e}^{i(k_{g}z- \omega t)} \right)=0,\\
+ & \nabla^2 \psi_{0}\text{e}^{i(k_{g}z- \omega t)}+(ik_{g})^2 \psi_{0} \text{e}^{i(k_{g}z- \omega t)}-\frac{(i \omega)2}{v^2} \psi_{0} \text{e}^{i(k_{g}z- \omega t)}=0,\\
+ & \nabla^2 \psi_{0}-k_{g}^2 \psi_{0} +\left(\frac{\omega}{v}\right)^2 \psi_{0} =0,\\
+ & \nabla^2 \psi_{0}+k_{c}^2 \psi_{0}=0,
+ \end{split}
+ \end{eqnarray*}
+ donde $k_c^2=k_0^2-k_g^2$ y $k_0=\frac{\omega}{v}=\frac{2 \pi}{\lambda_0}$ y $\lambda_0$ se le conoce como longuitud de onda del espacio libre cuando hay vac\'io dentro de la gu\'ia. \\\\
+ Los campos no solo tienen que cumplir con la ecuaci\'on (\ref{EcOnda1}), si no tambi\'en debe satisfacer las ecuaciones de Maxwell dentro de la gu\'ia, es decir, en ausencia de cargas y corrientes libres,
+
+ \begin{equation*}
+  \begin{split}
+  & \nabla \cdot \textbf{E}=0,\\
+  & \nabla \cdot \textbf{H}=0,\\
+  & \nabla \times \textbf{E}=-\mu\frac{\partial \textbf{H}}{\partial t},\\
+  & \nabla \times \textbf{H}=\epsilon\frac{\partial \textbf{E}}{\partial t},
+  \end{split}
+  \end{equation*}
+
+  de modo que si suponemos que los campos el\'ectrico y magn\'etico tienen la forma,
+  \begin{equation} \label{CampoE}
+  \textbf{E}=	\boldsymbol{\mathcal{E}}(x,y) \text{e}^{i(k_{g}z-\omega t)}
+  \end{equation}
+\begin{equation} \label{CampoH}
+  \textbf{H}=	\boldsymbol{\mathcal{H}}(x,y) \text{e}^{i(k_{g}z-\omega t)}
+  \end{equation}
+  donde,
+\begin{equation}
+  \boldsymbol{\mathcal{E}}=\mathcal{E}_{x} (x,y) \hat{\textbf{i}}+\mathcal{E}_{y} (x,y) \hat{\textbf{j}}+\mathcal{E}_{z} (x,y) \hat{\textbf{k}}
+  \end{equation}
+  \begin{equation}
+  \boldsymbol{\mathcal{H}}=\mathcal{H}_{x} (x,y) \hat{\textbf{i}}+\mathcal{H}_{y} (x,y) \hat{\textbf{j}}+\mathcal{H}_{z} (x,y) \hat{\textbf{k}}
+  \end{equation}
+
+  por lo tanto si sustituimos (\ref{CampoE}) y (\ref{CampoH}) en las ecuaciones de Maxwell obtenemos,
+   \begin{equation*}
+  \begin{split}
+  & \nabla \cdot \textbf{E}=0,\\
+  & \nabla \cdot \left( \boldsymbol{\mathcal{E}}(x,y) \text{e}^{i(k_{g}z-\omega t)} \right)=0,\\
+  \end{split}
+  \end{equation*}
+  \begin{equation} \label{1}
+  \frac{\partial \mathcal{E}_x}{\partial x}+\frac{\partial \mathcal{E}_y}{\partial y}+ik_g\mathcal{E}_z=0,
+  \end{equation}
+
+   \begin{equation*}
+  \begin{split}
+  & \nabla \cdot \textbf{H}=0,\\
+  & \nabla \cdot \left( \boldsymbol{\mathcal{H}}(x,y) \text{e}^{i(k_{g}z-\omega t)} \right)=0,\\
+  \end{split}
+  \end{equation*}
+  \begin{equation} \label{2}
+  \frac{\partial \mathcal{H}_x}{\partial x}+\frac{\partial \mathcal{H}_y}{\partial y}+ik_g\mathcal{H}_z=0,
+  \end{equation}
+  para la ecuaci\'on de Faraday,
+   \begin{equation*}
+  \begin{split}
+  & \nabla \times \textbf{E}=-\mu\frac{\partial \mathcal{H}}{\partial t},\\
+  & \nabla \times \left( \mathcal{E} (x,y) \text{e}^{i(k_{g}z-\omega t)} \right)= -\mu\frac{\partial}{\partial t} \left( \boldsymbol{\mathcal{E}}(x,y) \text{e}^{i(k_{g}z-\omega t)} \right),\\
+  \end{split}
+  \end{equation*}
+  para la componente en $x$
+   \begin{equation} \label{3}
+  \frac{\partial \mathcal{E}_z }{\partial y}-ik_g\mathcal{E}_z=i\omega\mu \mathcal{H}_{x},
+  \end{equation}
+
+  para la componente en $y$
+   \begin{equation} \label{4}
+  ik_g\mathcal{E}_x-\frac{\partial \mathcal{E}_z }{\partial x}=i\omega\mu \mathcal{H}_{y},
+  \end{equation}
+
+para la componente en $z$
+   \begin{equation} \label{5}
+  \frac{\partial \mathcal{E}_y }{\partial x}-\frac{\partial \mathcal{E}_x }{\partial y}=i\omega\mu \mathcal{H}_{z},
+   \end{equation}
+
+   para la ecuaci\'on de Ampere,
+
+    \begin{equation*}
+  \begin{split}
+  & \nabla \times \textbf{H}=\epsilon\frac{\partial \mathcal{E}}{\partial t},\\
+  & \nabla \times \left( \mathcal{H} (x,y) \text{e}^{i(k_{g}z-\omega t)} \right)= \epsilon\frac{\partial}{\partial t} \left( \boldsymbol{\mathcal{E}}(x,y) \text{e}^{i(k_{g}z-\omega t)} \right),\\
+  \end{split}
+  \end{equation*}
+
+  para la componente en $x$
+   \begin{equation} \label{6}
+  \frac{\partial \mathcal{H}_z }{\partial y}-ik_g\mathcal{H}_y=-i\omega\epsilon \mathcal{E}_{x},
+  \end{equation}
+
+  para la componente en $y$
+   \begin{equation} \label{7}
+  ik_g\mathcal{H}_x-\frac{\partial \mathcal{H}_z }{\partial x}=-i\omega\epsilon \mathcal{E}_{y},
+  \end{equation}
+
+para la componente en $z$
+   \begin{equation} \label{8}
+  \frac{\partial \mathcal{H}_y }{\partial x}-\frac{\partial \mathcal{H}_x }{\partial y}=-i\omega\mu \mathcal{E}_{z},
+   \end{equation}
+  de modo que si de (\ref{4}) despejamos $\mathcal{H}_y$ y sustituimos en (\ref{6}) tenemos,
+
+   \begin{equation*}
+  \begin{split}
+  & \mathcal{H}_y=\frac{1}{i\omega \mu}\left( ik_g\mathcal{E}_x-\frac{\partial \mathcal{E}_z}{\partial x} \right),\\
+  &\frac{\partial \mathcal{H}_z }{\partial y}-\frac{k_g}{\omega \mu}\left( ik_g\mathcal{E}_x-\frac{\partial \mathcal{E}_z}{\partial x} \right)=-i\omega\epsilon \mathcal{E}_{x},\\
+  &\frac{\partial \mathcal{H}_z }{\partial y}- \frac{ik_g^2}{\omega \mu}\mathcal{E}_x+\frac{k_g}{\omega \mu}\frac{\partial \mathcal{E}_z}{\partial x} +i\omega\epsilon \mathcal{E}_{x}=0,\\
+  &\left( i\omega\epsilon 	- \frac{ik_g^2}{\omega \mu}\right)\mathcal{E}_x+\frac{\partial \mathcal{H}_z }{\partial y}+\frac{k_g}{\omega \mu}\frac{\partial \mathcal{E}_z}{\partial x} =0,\\
+  &i\left( \frac{\omega^2\epsilon\mu-k_g^2}{\omega \mu} \right)\mathcal{E}_x+\frac{\partial \mathcal{H}_z }{\partial y}+\frac{k_g}{\omega \mu}\frac{\partial \mathcal{E}_z}{\partial x} =0,\\
+  &\mathcal{E}_x= \frac{i\omega \mu}{\omega^2\epsilon\mu-k_g^2} \left( \frac{\partial \mathcal{H}_z }{\partial y}+\frac{k_g}{\omega \mu}\frac{\partial \mathcal{E}_z}{\partial x} \right),\\
+  &\mathcal{E}_x= \frac{i}{\omega^2\epsilon\mu-k_g^2} \left(\omega \mu \frac{\partial \mathcal{H}_z }{\partial y}+k_g\frac{\partial \mathcal{E}_z}{\partial x} \right),\\
+  &\mathcal{E}_x= \frac{i}{k_0^2-k_g^2} \left(\omega \mu \frac{\partial \mathcal{H}_z }{\partial y}+k_g\frac{\partial \mathcal{E}_z}{\partial x} \right),\\
+  \end{split}
+  \end{equation*}
+  \begin{equation}  \label{A}
+  \mathcal{E}_x= \frac{i}{k_c^2} \left(\omega \mu \frac{\partial \mathcal{H}_z }{\partial y}+k_g\frac{\partial \mathcal{E}_z}{\partial x} \right),
+  \end{equation}
+de manera similar podemos escribir,
+\begin{equation}  \label{B}
+ \mathcal{E}_y= \frac{i}{k_c^2} \left(k_g \frac{\partial \mathcal{E}_z }{\partial y}-\mu\omega\frac{\partial \mathcal{H}_z}{\partial x} \right),
+ \end{equation}
+\begin{equation}  \label{C}
+ \mathcal{H}_x= \frac{i}{k_c^2} \left(k_g \frac{\partial \mathcal{H}_z }{\partial x}-\epsilon\omega\frac{\partial \mathcal{E}_z}{\partial y} \right),
+ \end{equation}
+ \begin{equation}  \label{D}
+ \mathcal{H}_y= \frac{i}{k_c^2} \left(k_g \frac{\partial \mathcal{H}_z }{\partial y}+\epsilon\omega\frac{\partial \mathcal{E}_z}{\partial x} \right),
+ \end{equation}
+ de este modo tenemos que las cuatro componentes transversales de $\mathcal{E}$ y $\mathcal{H}$ independientes entre si y que dependen de las 2 componentes longitudinales. Ahora  si sustituimos (\ref{A}) y (\ref{B}) en (\ref{1}) obteniendo,
+ \begin{equation*}
+ \begin{split}
+ & \frac{i}{k_c^2}\frac{\partial}{\partial x} \left(\omega \mu \frac{\partial \mathcal{H}_z }{\partial y}+k_g\frac{\partial \mathcal{E}_z}{\partial x} \right)+\frac{i}{k_c^2}\frac{\partial }{\partial y} \left(k_g \frac{\partial \mathcal{E}_z }{\partial y}-\mu\omega\frac{\partial \mathcal{H}_z}{\partial x} \right)+ik_g\mathcal{E}_z=0,\\
+  & \frac{i}{k_c^2} \left(  \omega \mu \frac{\partial^2 \mathcal{H}_z }{\partial y\partial x}+k_g\frac{\partial^2 \mathcal{E}_z}{\partial x^2}+ k_g \frac{\partial^2 \mathcal{E}_z }{\partial y^2}-\mu\omega\frac{\partial^2 \mathcal{H}_z}{\partial x\partial y} \right)+ik_g\mathcal{E}_z=0,\\
+ \end{split}
+ \end{equation*}
+ \begin{equation}
+ \frac{\partial^2 \mathcal{E}_z}{\partial x^2}+  \frac{\partial^2 \mathcal{E}_z }{\partial y^2}+ik_c^2\mathcal{E}_z=0,
+ \end{equation}
+ de igual forma se tiene que cumplir,
+ \begin{equation}
+ \frac{\partial^2 \mathcal{H}_z}{\partial x^2}+  \frac{\partial^2 \mathcal{H}_z }{\partial y^2}+ik_c^2\mathcal{H}_z=0.
+ \end{equation}
+ Por lo tanto el problema se resume a encontrar las componentes longitudinales de los campos, se considerar tres caso:\\\\
+ \begin{itemize}
+ \item Cuando $\mathcal{E}_z=0$ y $ \mathcal{H}_z\neq0$ entonces la onda recibe el nombre de modo el\'ectrico transversal o ET.\\
+
+ \item Cuando $\mathcal{E}_z\neq0$ y $ \mathcal{H}_z=0$ entonces la onda recibe el nombre de modo magn\'etico transversal o MT.\\
+
+ \item Cuando $\mathcal{E}_z=0$ y $ \mathcal{H}_z=0$ entonces la onda recibe el nombre de modo electromagn\'etico transversal o EMT.\\
+
+ \end{itemize}
+
+
+ Ahora hay que considerar las condiciones de frontera entre dos medios diferentes,
+ \begin{equation*}
+  \begin{split}
+  &\hat{\textbf{n}}\cdot(\textbf{D}_2-\textbf{D}_1)=\rho,\\
+   &\hat{\textbf{n}}\times(\textbf{E}_2-\textbf{E}_1)=\textbf{0},\\
+ &\hat{\textbf{n}}\cdot(\textbf{B}_2-\textbf{B}_1)=0,\\
+  &\hat{\textbf{n}}\times(\textbf{B}_2-\textbf{B}_1)=\textbf{K},\\
+  \end{split}
+  \end{equation*}
+  pero como el interior de un conductor perfecto los campos se anulan y no hay cargas libres entonces las condiciones de frontera se pueden escribir como,
+ \begin{equation*}
+  \begin{split}
+  &\hat{\textbf{n}}\cdot\textbf{D}=0,\\
+   &\hat{\textbf{n}}\times\textbf{E}=\textbf{0},\\
+ &\hat{\textbf{n}}\cdot\textbf{B}=0,\\
+  &\hat{\textbf{n}}\times\textbf{B}=\textbf{K},\\
+  \end{split}
+  \end{equation*}
+  por lo tanto en la frontera las componentes tangenciales del campo el\'ectrico son cero mientas que las componentes normales del campo magn\'etico tambi\'en se anulan.
+
+\subsection{Gu\'ias rectangulares}
+
+consideremos una secci\'on rectangular de lados $a$ y $b$ como se muestra en la figura. Resolviendo la ecuaci\'on (\ref{EcOnda1}) por el m\'etodo de separaci\'on de variables. Sea $\psi_0(x,y)=X(x)Y(y)$ entonces,
+ \begin{equation*}
+  \begin{split}
+& \frac{\partial^2}{\partial x^2}X(x)Y(y)+\frac{\partial^2}{\partial y^2}X(x)Y(y)+k_c^2X(x)Y(y)=0,\\
+& \frac{1}{X(x)}\frac{d^2X}{dx^2}+\frac{1}{Y(y)}\frac{d^2Y}{dy^2}+k_c^2=0,\\
+& \frac{1}{X(x)}\frac{d^2X}{dx^2}=-\frac{1}{Y(y)}\frac{d^2Y}{dy^2}-k_c^2=-k_1^2,\\
+  \end{split}
+  \end{equation*}
+  de modo que obtenemos dos ecuaci\'ones,
+
+  \begin{equation*}
+  \frac{1}{X(x)}\frac{d^2X}{dx^2}=-k_1^2
+  \end{equation*}
+\begin{equation*}
+\frac{1}{Y(y)}\frac{d^2Y}{dy^2}=-k_2^2
+\end{equation*}
+ con la condici\'on
+
+ \begin{equation}  \label{condicion}
+  k_c^2=k_1^2+k_2^2
+  \end{equation}
+
+ Resolviendo las ecuaci\'ones anteriores obtenemos,
+   \begin{equation}
+   \psi_0(x,y)=(A\sin(k_1x)+B\cos(k_1x))(C\sin(k_2y)+D\cos(k_2y))
+   \end{equation}
+   con $A,B,C,D,k_1, k_2$ constantes a encontrar por medio de las condiciones de frontera.
+
+\section{Modos de onda 	transversales el\'ectricas ET}
+
+
+   Modos ET. En este caso se toma $\mathcal{E}_z=0$ y la componente transversal magn\'etica se escribe como,
+   \begin{equation}
+   \mathcal{H}_z=[A\sin(k_1x)+B\cos(k_1x)][C\sin(k_2y)+D\cos(k_2y)]
+   \end{equation}
+
+   De modo que solo hace falta aplicar las condiciones de frontera, en este caso utilizamos las componentes tangenciales del campo el\'ectrico, ya que est\'as se anulan en la frontera, por lo cual a partir de las ecs. (\ref{A}) y (\ref{B}) podemos calcular $\mathcal{E}_x$ y $\mathcal{E}_y$ adem\'as considerando que $\mathcal{E}_z=0$, entonces las amplitudes se reducen a,
+
+   \begin{equation*}
+     \mathcal{E}_x=\frac{i\omega\mu}{k_c^2}\frac{\partial \mathcal{H}_z}{\partial y}=\frac{i\omega\mu}{k_c^2}X(x)[Ck_2\cos(k_2y)-Dk_2\sin(k_2 y)],
+     \end{equation*}
+
+   \begin{equation*}
+     \mathcal{E}_y=\frac{-i\omega\mu}{k_c^2}\frac{\partial \mathcal{H}_z}{\partial x}=\frac{-i\omega\mu}{k_c^2}Y(y)[Ak_1\cos(k_1x)-Dk_1\sin(k_1 x)],
+     \end{equation*}
+
+pero de acuerdo con la figura () obtenemos,
+\begin{equation*}
+    \mathcal{E}_x(x,0)=\mathcal{E}_x(x,b)=0
+    \end{equation*}
+
+    Por lo tanto,
+\begin{equation*}
+    \begin{split}
+    &C=0,\\
+    &\sin(k_2b)=0 \hspace{0.5cm} \Rightarrow k_2=\frac{n\pi}{b},\hspace{0.5cm} n=0,1,2,3,...
+    \end{split}
+    \end{equation*}
+    por otro lado tambi\'en se tiene que cumplir $\mathcal{E}_y(0,y)=\mathcal{E}_y(a,y)=0$, entonces
+    \begin{equation*}
+    \begin{split}
+    &A=0,\\
+    &\sin(k_1a)=0 \hspace{0.5cm} \Rightarrow k_1=\frac{m\pi}{a},\hspace{0.5cm} m=0,1,2,3,...
+    \end{split}
+    \end{equation*}
+    de modo que la forma de $\mathcal{H}_z$ esta dada por,
+    \begin{equation}
+    \mathcal{H}_z=H_0 \cos\left( \frac{m\pi x}{a} \right) \cos \left( \frac{n\pi y}{b} \right)
+    \end{equation}
+    y podemos encontrar las dem\'as componentes con ayuda de las ecuaciones (\ref{A}) a (\ref{D}),
+    \begin{equation*}
+    \begin{split}
+    & \mathcal{E}_x=-\frac{i\omega \mu n \pi }{k_c^2b}H_0 \cos\left( \frac{m\pi x}{a} \right) \sin \left( \frac{n\pi y}{b} \right),\\
+    & \mathcal{E}_y=\frac{i\omega \mu m \pi}{k_c^2a}H_0 \sin\left( \frac{m\pi x}{a} \right) \cos \left( \frac{n\pi y}{b} \right),\\
+    & \mathcal{H}_x=-\frac{i k_g m \pi}{k_c^2a}H_0 \sin\left( \frac{m\pi x}{a} \right) \cos \left( \frac{n\pi y}{b} \right),\\
+    & \mathcal{H}_y=-\frac{i k_g n \pi}{k_c^2b}H_0 \cos\left( \frac{m\pi x}{a} \right) \sin \left( \frac{n\pi y}{b} \right),\\
+        \end{split}
+    \end{equation*}
+   por lo tanto, la condici\'on de la ecuaci\'on (\ref{condicion}) se puede expresar como,
+
+   \begin{equation}
+   \begin{split}
+   & k_c^2=\left(\frac{m\pi}{a}\right)^2+\left(\frac{m\pi}{b}\right)^2,\\
+   & k_g^2=k_0^2-\pi^2\left[ \left(\frac{m}{a}\right)^2 +\left(\frac{n}{b}\right)^2\right],
+  \end{split}
+   \end{equation}
+   Dado que puede haber distintos nodos como distintos valores de $m,n$, entonces se les considera modos $TE_{mn}$.
+
+   \begin{example}
+   Suponga una gu\'ia de onda rectangular donde $a>b$. Encuentre el modo con el $k_c$ m\'as pequeño posible y su $\lambda_c$ asociada.
+   \end{example}
+\end{document}

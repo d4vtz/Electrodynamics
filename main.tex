@@ -1,0 +1,155 @@
+% 1) pdflatex main
+% 2) makeindex main.idx -s StyleInd.ist
+% 3) biber main
+% 4) pdflatex main x 2
+\documentclass[11pt,fleqn]{book} % Default font size and left-justified equations
+\usepackage[top=3cm,bottom=3cm,left=3.2cm,right=3.2cm,headsep=10pt,a4paper]{geometry} % Page margins
+\usepackage{xcolor} % Required for specifying colors by name
+\definecolor{ocre}{RGB}{243,102,25} % Define the orange color used for highlighting throughout the book
+% Font Settings
+\usepackage{avant} % Use the Avantgarde font for headings
+%\usepackage{times} % Use the Times font for headings
+\usepackage{mathptmx} % Use the Adobe Times Roman as the default text font together with math symbols from the Sym­bol, Chancery and Com­puter Modern fonts
+\usepackage{microtype} % Slightly tweak font spacing for aesthetics
+\usepackage[utf8]{inputenc} % Required for including letters with accents
+\usepackage[T1]{fontenc} % Use 8-bit encoding that has 256 glyphs
+\usepackage{amsmath,amssymb,amsfonts,latexsym}
+\usepackage{latexsym}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage[spanish]{babel}
+\usepackage{mathrsfs}
+\usepackage{psfrag}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{multirow}
+\usepackage{rotating}
+\usepackage{enumerate}
+
+\usepackage{cancel}
+
+\usepackage{subfig}%PARA LAS FIGURAS MULTIPLES
+\usepackage{multicol}
+
+
+%\usepackage{enumitem}
+%\usepackage[version=3]{mhchem}
+
+
+\usepackage[spanish]{babel}
+
+\spanishdecimal{.} %PARA EL PUNTO DECIMAL
+
+
+% Index
+\usepackage{calc} % For simpler calculation - used for spacing the index letter headings correctly
+\usepackage{makeidx} % Required to make an index
+\makeindex % Tells LaTeX to create the files required for indexing
+%----------------------------------------------------------------------------------------
+
+\input{structure} % Insert the commands.tex file which contains the majority of the structure behind the template
+
+
+%DEFINICION DE LA CONSTANTE ELECTRICA
+\newcommand{\ke}{ \frac{1}{4\pi \varepsilon_0 }}
+
+
+%DEFINICION DEL VECTOR RADIAL UNITARIO PRIMADO
+\newcommand{\rup}{ \mathbf{\hat{r}}\textsc{\textbf{'}} }
+
+
+
+
+
+
+\begin{document}
+
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+\begingroup
+\thispagestyle{empty}
+\AddToShipoutPicture*{\put(6,5){\includegraphics[scale=1]{background}}} % Image background
+\centering
+\vspace*{9cm}
+\par\normalfont\fontsize{35}{35}\sffamily\selectfont
+Notas de Electromagnetismo\\% Book title
+\vspace*{1cm}
+{\Huge Jos\'e Manuel D\'avila D\'avila}\par % Author name
+\vspace*{1cm}
+{\Huge David Torres Reyes}\par % Author name
+\vspace*{1cm}
+{\Huge Susana Valdez Alvarado}\par % Author name
+\endgroup
+
+
+
+
+%----------------------------------------------------------------------------------------
+%	TABLE OF CONTENTS
+%----------------------------------------------------------------------------------------
+\chapterimage{Electro1} % Table of contents heading image
+\pagestyle{empty} % No headers
+%\tableofcontents % Print the table of contents itself
+\cleardoublepage % Forces the first chapter to start on an odd page so it's on the right
+
+%\pagestyle{fancy} % Print headers again
+
+
+%\tableofcontents
+
+\chapter{Nombre del cap\'itulo}
+
+\section{Nombre de la secci\'on}
+
+Aqu\'i se escribe el texto
+campo\index{Campo}
+
+\begin{example}
+ Este es el ambiente para escribir un ejemplo
+\end{example}
+
+\begin{definition}[Subespacio vectorial]
+	Un subespacio vectorial ...
+\end{definition}
+
+
+
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[height=0.5\linewidth]{pru}
+		\caption{\emph{Descripci\'on de la imagen}}
+		\label{fig:0Subvect}
+	\end{figure}
+
+
+
+\begin{theorem}[Desigualdad Cauchy Schwarz]
+Si $  \mathbf{A} $ y  $\mathbf{B}$ son vectores de $\mathbb{V}$,
+\end{theorem}
+%
+
+\begin{obs}
+ El contenido de la observaci\'on
+\end{obs}
+
+
+
+%----------------------------------------------------------------------------------------
+%	BIBLIOGRAPHY
+%----------------------------------------------------------------------------------------
+\include{bibliography}
+
+
+%----------------------------------------------------------------------------------------
+%	INDEX
+%----------------------------------------------------------------------------------------
+\cleardoublepage
+\setlength{\columnsep}{0.75cm}
+\addcontentsline{toc}{chapter}{\textcolor{ocre}{\'Indice}}
+\printindex
+
+
+
+\end{document}

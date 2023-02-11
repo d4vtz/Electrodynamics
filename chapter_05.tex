@@ -1,0 +1,1259 @@
+% 1) pdflatex main
+% 2) makeindex main.idx -s StyleInd.ist
+% 3) biber main
+% 4) pdflatex main x 2
+
+\documentclass[11pt,fleqn]{book} % Default font size and left-justified equations
+
+\usepackage[top=3cm,bottom=3cm,left=3.2cm,right=3.2cm,headsep=10pt,a4paper]{geometry} % Page margins
+
+\usepackage{xcolor} % Required for specifying colors by name
+\definecolor{ocre}{RGB}{243,102,25} % Define the orange color used for highlighting throughout the book
+
+% Font Settings
+\usepackage{avant} % Use the Avantgarde font for headings
+%\usepackage{times} % Use the Times font for headings
+\usepackage{mathptmx} % Use the Adobe Times Roman as the default text font together with math symbols from the Sym­bol, Chancery and Com­puter Modern fonts
+
+\usepackage{microtype} % Slightly tweak font spacing for aesthetics
+\usepackage[utf8]{inputenc} % Required for including letters with accents
+\usepackage[T1]{fontenc} % Use 8-bit encoding that has 256 glyphs
+
+\usepackage{amsmath,amssymb,amsfonts,latexsym}
+\usepackage{latexsym}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage[spanish]{babel}
+\usepackage{mathrsfs}
+\usepackage{psfrag}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{multirow}
+\usepackage{rotating}
+\usepackage{enumerate}
+
+\usepackage{cancel}
+
+\usepackage{subfig}%PARA LAS FIGURAS MULTIPLES
+\usepackage{multicol}
+
+
+%\usepackage{enumitem}
+%\usepackage[version=3]{mhchem}
+
+
+\usepackage[spanish]{babel}
+
+\spanishdecimal{.} %PARA EL PUNTO DECIMAL
+
+% Bibliography
+\usepackage[style=alphabetic,sorting=nyt,sortcites=true,autopunct=true,babel=hyphen,hyperref=true,abbreviate=false,backref=true,backend=biber]{biblatex}
+\addbibresource{bibliography.bib} % BibTeX bibliography file
+\defbibheading{bibempty}{}
+
+% Index
+\usepackage{calc} % For simpler calculation - used for spacing the index letter headings correctly
+\usepackage{makeidx} % Required to make an index
+\makeindex % Tells LaTeX to create the files required for indexing
+%----------------------------------------------------------------------------------------
+
+\input{structure} % Insert the commands.tex file which contains the majority of the structure behind the template
+
+
+%DEFINICION DE LA CONSTANTE ELECTRICA
+\newcommand{\ke}{ \frac{1}{4\pi \varepsilon_0 }}
+
+
+%DEFINICION DEL VECTOR RADIAL UNITARIO PRIMADO
+\newcommand{\rup}{ \mathbf{\hat{r}}\textsc{\textbf{'}} }
+
+
+
+
+
+
+\begin{document}
+
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+%\begingroup
+%\thispagestyle{empty}
+%\AddToShipoutPicture*{\put(6,5){\includegraphics[scale=1]{background}}} % Image background
+%\centering
+%\vspace*{9cm}
+%\par\normalfont\fontsize{35}{35}\sffamily\selectfont
+%Mec\'anica Cl\'asica\par % Book title
+%\vspace*{1cm}
+%{\Huge Autores}\par % Author name
+%\endgroup
+
+%----------------------------------------------------------------------------------------
+%	TABLE OF CONTENTS
+%----------------------------------------------------------------------------------------
+\chapterimage{Electro1} % Table of contents heading image
+\pagestyle{empty} % No headers
+\tableofcontents % Print the table of contents itself
+\cleardoublepage % Forces the first chapter to start on an odd page so it's on the right
+
+\pagestyle{fancy} % Print headers again
+
+
+\chapter{Inducci\'on electromagn\'etica}
+Podemos resumir los resultados generales que se han obtenido en cuatro ecuaciones diferenciales para campos vectoriales dados por (\ref{GD}), (\ref{RotE}), (\ref{forma diferencial ley de ampere}) y (\ref{divergencia de B})
+\begin{eqnarray}\label{ecs electrostatica}
+\begin{split}
+\nabla\cdot\textbf{D}&=&\rho,\\
+\nabla\cdot\textbf{B}&=&0,\\
+\nabla\times\textbf{E}&=&\textbf{0},\\
+\nabla\times\textbf{H}&=&\textbf{J},
+\end{split}
+\end{eqnarray}
+con
+\begin{eqnarray}
+\textbf{E}=-\nabla\phi \,\,\mbox{y}\,\,\textbf{B}=\nabla\times\textbf{A}.\label{PotencialfA}
+\end{eqnarray}
+Por otra parte, la ecuaci\'on que contiene el rotacional $\textbf{E}$ requiere una modificaci\'on cuando se trabaja con circuitos electricos.
+
+
+%*********************SECCION********************
+\section{Fuerza electromotriz}
+De la electrost\'atica se sabe
+\begin{eqnarray}
+\nabla\times\textbf{E}&=&\textbf{0},\nonumber
+\end{eqnarray}
+al usar el teorema de Stokes se tiene
+\begin{eqnarray}
+\oint\textbf{E}\cdot d\textbf{l}&=&0,\nonumber
+\end{eqnarray}
+lo cual muestra el car\'acter conservativo del campo el\'ectrico. Estas ecuaciones no son afectadas por la fuerza magn\'etica debida a una corriente constante. Sin embargo, no son validas para campos dependientes del tiempo ($\textbf{E}_{nc}$ no conservativo ), consideremos ahora este caso. Definimos la \emph{fuerza electromotriz (fem)} alrededor de un circuito por
+\begin{eqnarray}
+\xi=\oint\textbf{E}_{nc}\cdot d\textbf{l},\label{fza electrom}
+\end{eqnarray}
+la unidad para la fem es el \emph{Volt}. La fuente mas com\'un de estos campos no conservativos es la bater\'ia.
+
+
+
+%*********************SECCION********************
+
+\section{Inducci\'on electromagn\'etica. Ley de Faraday-Lenz-Henry en sus formas fenomenol\'ogica, integral, diferencial y de condiciones de frontera}
+Supongamos tener un circuito cerrado $C$, formado por un alambre conductor como se muestra en la figura (\ref{Phi-a-traves-C}). Sup\'ongase tambi\'en que existe un campo $\textbf{B}$, de manera que existe un flujo $\Phi$ dado por la ec. (\ref{flujo madnetico}) a trav\'es de la superficie $S$ encerrada por $C$.\\
+\begin{figure}[h]
+  \centering
+    \includegraphics[width=0.25\textwidth]{Phi-a-traves-C}
+        \caption{\emph{Flujo del campo $\textbf{B}$ a trav\'es de un circuito cerrado $C$.}}\label{Phi-a-traves-C}
+\end{figure}\\
+Si el flujo a trav\'es de $C$ es constante, es decir
+\begin{eqnarray}
+\frac{d\Phi}{dt}&=&0,
+\end{eqnarray}
+entonces no existe corriente en el circuito. Sin embargo Faraday encontr\'o que si el flujo no es constante a trav\'es de $C$, de modo que
+\begin{eqnarray}
+\frac{d\Phi}{dt}&\neq &0,
+\end{eqnarray}
+entonces existe una corriente \emph{inducida} en $C$ debido al cambio de flujo. Es conveniente expresar este resultado en funci\'on de la \emph{fem inducida} como
+\begin{eqnarray}
+\xi_{ind}&=&-\frac{d\Phi}{dt},\label{ley de faraday}
+\end{eqnarray}
+resultado que es conocido como \emph{ley de Faraday}. El signo negativo representa la direcci\'on de la fem inducida en comparaci\'on con el sentido elegido para el recorrido de $C$. Este sentido queda descrito por \emph{la ley de Lenz} la cual dice que: la direcci\'on de la fem inducida (y, por lo tanto la corriente inducida) tiende a \emph{oponerse al cambio que la provoca}.\\
+\\
+De la ec. (\ref{fza electrom}) se puede observar que la fem inducida puede interpretarse como la presencia de un campo el\'ectrico inducido $\textbf{E}_{ind}$ no conservativo a lo largo del alambre, de modo que podemos expresar (\ref{ley de faraday}) como
+\begin{eqnarray}
+\oint\textbf{E}_{ind}\cdot d\textbf{l}&=&-\frac{d\Phi}{dt}.\label{E ind}
+\end{eqnarray}
+Para cualquier punto del espacio, el campo el\'ectrico total se puede expresar como la suma de una parte conservativa $\textbf{E}_c$, y una parte no conservativa $\textbf{E}_{ind}$, es decir $\textbf{E}=\textbf{E}_c+\textbf{E}_{ind}$, de esta forma
+\begin{eqnarray}
+\oint\textbf{E}\cdot d\textbf{l}&=&\oint\textbf{E}_{c}\cdot d\textbf{l}+\oint\textbf{E}_{ind}\cdot d\textbf{l}.\label{E tot iq Ec + Eind}
+\end{eqnarray}
+De acuerdo con la ec. (\ref{campo E conserv}) la primera integral es cero debido a que es un campo conservativo. Usando las ecs. (\ref{flujo madnetico}) y (\ref{E tot iq Ec + Eind}) se tiene que (\ref{E ind}) se reduce a
+\begin{eqnarray}
+\oint\textbf{E}\cdot d\textbf{l}&=&-\frac{d}{dt}\int_S\textbf{B}\cdot d\textbf{a},\nonumber\\
+&=&-\int_S\frac{\partial\textbf{B}}{\partial t}\cdot d\textbf{a}.\label{e to iq m part B}
+\end{eqnarray}
+Usando el teorema de Stokes en el lado izquierdo de la igualdad
+\begin{eqnarray}
+\int_S(\nabla\times\textbf{E})\cdot d\textbf{a}&=&-\int_S\frac{\partial\textbf{B}}{\partial t}\cdot d\textbf{a}.
+\end{eqnarray}
+Dado que esta expresi\'on es valida para cualquier superficie $S$, entonces
+\begin{eqnarray}
+\nabla\times\textbf{E}&=&-\frac{\partial\textbf{B}}{\partial t},\label{ley de faraday diferencia}
+\end{eqnarray}
+esta expresi\'on es conocida como la \emph{forma diferencial de la ley de Faraday}, y es la generalizaci\'on de $\nabla\times \textbf{E}=\textbf{0}$, que era valida para campos est\'aticos.
+\begin{obs}
+Al considerar las ecuaciones  (\ref{PotencialfA}) y  (\ref{ley de faraday diferencia}), se observa
+\begin{eqnarray}
+\nabla\times\textbf{E}&=&-\frac{\partial\textbf{B}}{\partial t}=-\frac{\partial}{\partial t}(\nabla\times\textbf{A})=\nabla\times\left(-\dfrac{\partial \textbf{A}}{\partial t}\right).
+\end{eqnarray}
+Si adem\'as se considera que para una funci\'on escalar $\varphi$ siempre se satisface $\nabla\times (\nabla\varphi)=\mathbf{0}$, entonces
+es posible escribir
+\begin{eqnarray}
+\nabla\times\textbf{E}&=&\nabla\times\left(-\dfrac{\partial \textbf{A}}{\partial t}\pm\nabla\varphi\right),
+\end{eqnarray}
+es decir
+\begin{eqnarray*}
+\textbf{E}=-\dfrac{\partial \textbf{A}}{\partial t}\pm\nabla\varphi.
+\end{eqnarray*}
+Para que este \'ultimo resultado sea compatible con el caso electrost\'atico, es necesario que la funci\'on escalar $\varphi$ sea proporcional al potencial electrost\'atico $\phi$. Por lo tanto
+\begin{eqnarray}
+\textbf{E}=-\nabla\phi-\dfrac{\partial \textbf{A}}{\partial t}.\label{EPhiA}
+\end{eqnarray}
+\end{obs}
+
+
+
+
+Dado que ahora $\nabla\times\textbf{E}\neq \textbf{0}$, es necesario estudiar las componentes tangenciales de $\textbf{E}$ en una superficie de discontinuidad, para ello consideramos un peque\~no elemento de superficie en la capa de transici\'on que sea perpendicular al flujo, tal como se ilustra en la figura (\ref{}), donde $\hat{\textbf{n}}\textbf{'}$ es el vector unitario normal a la superficie encerrada por la trayectoria $C$ y paralelo a la superficie entre $1$ y $2$, $\hat{\textbf{n}}$ es el vector unitario perpendicular a la  superficie, y el vector unitario $\hat{\textbf{t}}$ es paralelo al plano de $C$, de esta forma la integral de $\textbf{E}$ alrededor de $C$ es
+\begin{eqnarray}
+\oint_C\textbf{E}\cdot d\textbf{l}&=&\textbf{E}_2\cdot\hat{\textbf{t}}\,\,\Delta L-\textbf{E}_1\cdot\hat{\textbf{t}}\,\,\Delta L+ \kappa\nonumber\\
+&=&\hat{\textbf{t}}\cdot\big(\textbf{E}_2-\textbf{E}_1\big)\,\Delta L+\kappa,\label{E en tra c}
+\end{eqnarray}
+donde $\textbf{E}_2$ y $\textbf{E}_1$ son los valores de $\textbf{E}$ en sus respectivas regiones, y $\kappa$ es la contribuci\'on a la integral de l\'inea que resulta de los extremos de la trayectoria.
+Por otro lado, de la ec. (\ref{e to iq m part B}) se tiene que
+\begin{eqnarray}
+\oint_C\textbf{E}\cdot d\textbf{l}&=&-\int_S\frac{\partial\textbf{B}}{\partial t}\cdot d\textbf{a}.
+\end{eqnarray}
+De modo que
+\begin{eqnarray}
+\oint_C\textbf{E}\cdot d\textbf{l}&=&-\frac{\partial\textbf{B}}{\partial t}\cdot\hat{\textbf{n}}\textbf{'}\,h\,\Delta L.\label{E constok i j}
+\end{eqnarray}
+Igualando (\ref{E en tra c}) y (\ref{E constok i j}) obtenemos
+\begin{eqnarray}
+\hat{\textbf{t}}\cdot\big(\textbf{E}_2-\textbf{E}_1\big)\,\Delta L+\kappa+\frac{\partial\textbf{B}}{\partial t}\cdot\hat{\textbf{n}}'\,h\,\Delta L&=&0.
+\end{eqnarray}
+Podemos observar de la figura que $\hat{\textbf{t}}=\hat{\textbf{n}}\times\hat{\textbf{n}}\textbf{'}$, entonces de la \'ultima expresi\'on se tiene
+\begin{eqnarray}
+(\hat{\textbf{n}}\times\hat{\textbf{n}}\textbf{'})\cdot\big(\textbf{E}_2-\textbf{E}_1\big)\,\Delta L+\frac{\partial\textbf{B}}{\partial t}\cdot\hat{\textbf{n}}\textbf{'}\,h\,\Delta L&=&-\kappa.
+\end{eqnarray}
+Para el primer t\'ermino usamos la identidad
+\begin{eqnarray}
+(\textbf{A}\times\textbf{B})\cdot\textbf{C}&=&(\textbf{C}\times\textbf{A})\cdot\textbf{B},
+\end{eqnarray}
+as\'i
+\begin{eqnarray}
+-\kappa&=&\big[\big(\textbf{E}_2-\textbf{E}_1\big)\times\hat{\textbf{n}}\big]\cdot\hat{\textbf{n}}\textbf{'}\,\Delta L+\frac{\partial\textbf{B}}{\partial t}\cdot\hat{\textbf{n}}\textbf{'}\,h\,\Delta L\nonumber\\
+&=&\left[ \big(\textbf{E}_2-\textbf{E}_1\big)\times\hat{\textbf{n}}+\frac{\partial\textbf{B}}{\partial t}\,h\right] \cdot\hat{\textbf{n}}\textbf{'}\Delta L.
+\end{eqnarray}
+Si ahora hacemos que $h\rightarrow 0$ entonces $\kappa\rightarrow 0$, de esta forma
+\begin{eqnarray}
+\left[ \left( \textbf{E}_2-\textbf{E}_1\right) \times\hat{\textbf{n}}+\lim_{h\rightarrow 0}\left( \frac{\partial\textbf{B}}{\partial t}\,h\right) \right] \cdot\hat{\textbf{n}}\textbf{'}\Delta L&=&0,
+\end{eqnarray}
+Entonces
+\begin{eqnarray}
+\big(\textbf{E}_2-\textbf{E}_1\big)\times\hat{\textbf{n}}&=&-\lim_{h\rightarrow 0}\left( \frac{\partial\textbf{B}}{\partial t}\,h\right).\label{co f E tim}
+\end{eqnarray}
+Podemos expresar $\textbf{E}$ como la suma de sus componentes normales y transversales a la superficie de separaci\'on, es decir
+\begin{eqnarray}
+\textbf{E}&=&\textbf{E}_n+\textbf{E}_t\,\,\,=\,\,\,E_n\,\hat{\textbf{n}}+\textbf{E}_t.\label{part trans y nor de e}
+\end{eqnarray}
+Si realizamos el producto cruz con $\hat{\textbf{n}}$ en ambos miembros de (\ref{co f E tim})
+\begin{eqnarray}
+\left[ \big(\textbf{E}_{2}-\textbf{E}_{1}\big)\times\hat{\textbf{n}}\right] \times\hat{\textbf{n}}&=&-\lim_{h\rightarrow 0}\left( h\frac{\partial\textbf{B}}{\partial t}\times\hat{\textbf{n}}\right),\nonumber\\
+\big(\textbf{E}_{2}-\textbf{E}_{1}\big)(\hat{\textbf{n}}\cdot\hat{\textbf{n}})-\hat{\textbf{n}}\left[ \big(\textbf{E}_{2}-\textbf{E}_{1}\big)\cdot \hat{\textbf{n}}\right]&=&\textbf{0},\nonumber\\
+\big(\textbf{E}_{2}-\textbf{E}_{1}\big)-\hat{\textbf{n}}\big(E_{2}-E_{1}\big)&=&\textbf{0}.
+\end{eqnarray}
+Usando la ec. (\ref{part trans y nor de e}) en esta \'ultima expresi\'on
+\begin{eqnarray}
+\textbf{E}_{2t}-\textbf{E}_{1t}&=&\textbf{0},\nonumber\\
+\Rightarrow\textbf{E}_{2t}&=&\textbf{E}_{1t}.
+\end{eqnarray}
+Lo que demuestra que las componentes tangenciales del campo el\'ectrico son continuas.
+
+
+
+%*********************EJEMPLO********************
+\begin{example}
+Un conductor met\'alico que contiene forma de un segmento de alambre de longitud $l$ se mueve en un campo $\textbf{B}$ con velocidad $\textbf{v}$ (figura \ref{alambre-mov-en-B}). Partiendo de una consideraci\'on detallada de la fuerza de Lorentz sobre los electrones en el alambre, demuestre que los extremos de este est\'an a la diferencia de potencial $\textbf{B}\cdot\textbf{l}\times\textbf{v}$.\\
+\begin{figure}[h]
+  \centering
+    \includegraphics[width=0.25\textwidth]{alambre-mov-en-B}
+        \caption{\emph{Potencial el\'ectrico producido por movimiento de segmento de alambre en un campo $\textbf{B}$.}}\label{alambre-mov-en-B}
+\end{figure}\\
+\emph{Soluci\'on.}\\
+Las cargas libres del conductor experimentan una fuerza de Lorentz que conduce a las cargas positivas y negativas a los extremos del alambre
+\begin{eqnarray}
+\textbf{F}&=&q(\textbf{E}+\textbf{v}\times\textbf{B}),\nonumber\\
+m\textbf{a}&=&q(\textbf{E}+\textbf{v}\times\textbf{B}).
+\end{eqnarray}
+Cuando las cargas no se mueven con respecto al alambre, la fuerza total sobre cada carga es cero, de modo que
+\begin{eqnarray}
+\textbf{E}&=&-\textbf{v}\times\textbf{B}.\label{fz d lor en alambr en cmp b}
+\end{eqnarray}
+Por otro lado, recordamos que la diferencia de potencial se puede calcular como
+\begin{eqnarray}
+\Delta\phi&=&-\int\textbf{E}\cdot d\textbf{l}.%,\nonumber\\
+%&=&-\textbf{E}\cdot\textbf{l}.
+\end{eqnarray}
+As\'i, de la ec. (\ref{fz d lor en alambr en cmp b}) se tiene que
+\begin{eqnarray}
+\Delta\phi&=&(\textbf{v}\times\textbf{B})\cdot\textbf{l},\nonumber\\
+&=&-(\textbf{B}\times\textbf{v})\cdot\textbf{l}.
+\end{eqnarray}
+Usando la identidad
+\begin{eqnarray}
+(\textbf{A}\times\textbf{B})\cdot\textbf{C}&=&\textbf{A}\cdot(\textbf{B}\times\textbf{C}).\nonumber\\
+&=&-\textbf{A}\cdot(\textbf{C}\times\textbf{B}).
+\end{eqnarray}
+Entonces
+\begin{eqnarray}
+\therefore\Delta\phi&=&\textbf{B}\cdot(\textbf{l}\times\textbf{v}).
+\end{eqnarray}
+\end{example}
+
+
+
+%*********************EJEMPLO********************
+\begin{example}
+Una varilla met\'alica de longitud $l$ gira en torno a un eje, que pasa por uno de sus extremos y es perpendicular a la varilla, con una velocidad angular $\omega$. El plano de rotaci\'on de la varilla es perpendicular a un campo de inducci\'on magn\'etica $\textbf{B}$ (figura \ref{varilla-girando-en-B}). ?`Cual es la fem de movimiento inducido entre los extremos de la varilla?.\\
+\begin{figure}[h]
+  \centering
+    \includegraphics[width=0.3\textwidth]{varilla-girando-en-B}
+        \caption{\emph{Varilla girando con una velocidad angular $\omega$ perpendicular a un campo de inducci\'on magn\'etica $\textbf{B}$.}}\label{varilla-girando-en-B}
+\end{figure}\\
+\emph{Soluci\'on.}\\
+Al igual que en el problema anterior, las cargas libres del conductor experimentan una fuerza de Lorentz que conduce a las cargas positivas y negativas a los extremos del alambre
+\begin{eqnarray}
+\textbf{F}&=&q(\textbf{E}+\textbf{v}\times\textbf{B}),\nonumber
+\end{eqnarray}
+En el caso estacionario la fuerza total sobre cada carga es cero, con lo que
+\begin{eqnarray}
+\textbf{E}&=&-\textbf{v}\times\textbf{B}.
+\end{eqnarray}
+Como $\textbf{v}\perp\textbf{B}$ entonces
+\begin{eqnarray}
+E&=&\mbox{v}B,\nonumber\\
+&=&\omega lB\,\,\,\,,\,\,\,\,\mbox{con}\,\,\,\,\mbox{v}=\omega l.\label{e cn v perp b y vwl}
+\end{eqnarray}
+Por otro lado, de la ec. (\ref{ley de faraday}) sabemos que
+\begin{eqnarray*}
+\xi_{ind}&=&-\frac{d\Phi}{dt}.
+\end{eqnarray*}
+Pero sabemos tambi\'en que la  fem inducida puede interpretarse como la presencia de un campo el\'ectrico inducido $\textbf{E}_{ind}$ no conservativo a lo largo del alambre, de modo que
+\begin{eqnarray}
+\xi_{ind}&=&\int\textbf{E}_{ind}\cdot d\textbf{l}.
+\end{eqnarray}
+Usando la ec. (\ref{E tot iq Ec + Eind}) y despues (\ref{e cn v perp b y vwl}) se obtiene
+\begin{eqnarray}
+\xi_{ind}&=&\int_0^l\textbf{E}\cdot d\textbf{l}.\nonumber\\
+&=&\int_0^l \omega lB\,\,dl,\nonumber\\
+\therefore\xi_{ind}&=&\omega B\,\frac{l^2}{2}.
+\end{eqnarray}
+\end{example}
+
+
+%*********************EJEMPLO********************
+\begin{example}
+El generador homopolar de Faraday consiste en un disco de metal que gira en un campo magn\'etico uniforme que es perpendicular a su plano (figura \ref{generador-homopolar-de-Faraday}). Demuestre que la diferencia de potencial que se genera entre el centro y la periferia del disco es $\xi=f\,\Phi$, donde $\Phi$ es el flujo que atraviesa el disco y $f$ es la frecuencia con la que gira.\\
+\begin{figure}[h]
+  \centering
+    \includegraphics[width=0.35\textwidth]{generador-homopolar-de-Faraday}
+        \caption{\emph{Generador homopolar de Faraday.}}\label{generador-homopolar-de-Faraday}
+\end{figure}\\
+\emph{Soluci\'on.}\\
+Sabemos que
+\begin{eqnarray*}
+\xi_{ind}&=&\int\textbf{E}\cdot d\textbf{l},
+\end{eqnarray*}
+En el caso estacionario, de la fuerza de Lorentz se tiene
+\begin{eqnarray}
+\textbf{E}&=&-\textbf{v}\times\textbf{B},\nonumber\\
+\Rightarrow E&=&\mbox{v}B,\nonumber\\
+&=&\omega rB,\nonumber\\
+&=&2\pi\,f\,r\,B.
+\end{eqnarray}
+Donde se us\'o $\mbox{v}=\omega r=2\pi\,fr$. Con esto se tiene que
+\begin{eqnarray}
+\xi_{ind}&=&\int 2\pi\,frB\,\,dr,\nonumber\\
+&=&\pi\,fBr^2.\label{xi en disc}
+\end{eqnarray}
+Por otro lado recordamos que el flujo magn\'etico est\'a dado por
+\begin{eqnarray}
+\Phi&=&\int \textbf{B}\cdot d\textbf{a},\nonumber\\
+&=&B\pi r^2.
+\end{eqnarray}
+Sustituyendo esta \'ultima expreci\'on en (\ref{xi en disc}) se obtiene finalmente que
+\begin{eqnarray}
+\therefore\xi_{ind}&=&f\,\Phi.
+\end{eqnarray}
+\end{example}
+
+
+
+
+%*********************EJEMPLO********************
+\begin{example}
+Un cilindro diel\'ectrico de permitividad $\varepsilon$ gira entorno a su eje con una velocidad $\omega$. Si existe un campo magn\'etico uniforme $\textbf{B}$ paralelo al eje del cilindro, halle la carga de polarizaci\'on inducida en el diel\'ectrico.\\
+\begin{figure}[h]
+  \centering
+    \includegraphics[width=0.35\textwidth]{Cilindro-dielectrico-girando-en-campo-B}
+        \caption{\emph{Cilindro diel\'ectrico giratorio, inmerso en campo $\textbf{B}$.}}\label{Cilindro-dielectrico-girando-en-campo-B}
+\end{figure}\\
+\emph{Soluci\'on.}\\
+Supongamos que el eje del cilindro se orienta paralelo al eje $z$ (figura \ref{Cilindro-dielectrico-girando-en-campo-B}). Las cargas del diel\'ectrico experimentan una fuerza de Lorentz que las alinea de forma radial al eje del cilindro
+\begin{eqnarray*}
+\textbf{F}&=&q(\textbf{E}+\textbf{v}\times\textbf{B}).
+\end{eqnarray*}
+Cuando las cargas no se mueven con respecto al cilindro, la fuerza total sobre cada carga es cero, de modo que
+\begin{eqnarray}
+\textbf{E}&=&-\textbf{v}\times\textbf{B},
+\end{eqnarray}
+donde
+\begin{eqnarray}
+\textbf{v}&=& r\omega\,\hat{\pmb{\varphi}}.\\
+\textbf{B}&=&B\,\hat{\textbf{k}}.
+\end{eqnarray}
+Entonces
+\begin{eqnarray}
+\textbf{E}&=&-r\omega B (\hat{\pmb{\varphi}}\times\hat{\textbf{k}}),\nonumber\\
+&=&-r\omega B\,\hat{\pmb {r}}.
+\end{eqnarray}
+Por otro lado, recordamos que la polarizaci\'on se puede obtener como
+\begin{eqnarray}
+\textbf{P}&=&\chi\textbf{E},\nonumber\\
+&=&-\chi r\omega B\,\hat{\pmb {r}},\nonumber\\
+&=&(\varepsilon_0-\varepsilon) r\omega B\,\hat{\pmb {r}}\,\,\,\,\,\,\,;\,\,\,\,\,\,\,con\,\,\,\,\,\,\,\,\chi=\varepsilon-\varepsilon_0.
+\end{eqnarray}
+De la ec. (\ref{carga de polarizacion}) se tiene que la carga de polarizaci\'on est\'a dada como
+\begin{eqnarray}
+Q_p&=&\oint_S\textbf{P}\cdot\hat{\textbf{n}}\,\,da\textbf{'}-\int_V\nabla\cdot\textbf{P}\,\,d\mbox{v}\textbf{'},\nonumber\\
+&=&(\varepsilon_0-\varepsilon)\omega B\int_{0}^{L}\int_{0}^{r}\,\,r\textbf{'}^2dr\textbf{'}dz\textbf{'}-(\varepsilon_0-\varepsilon)\omega B\int_{0}^{L}\int_{0}^{2\pi}\int_{0}^{r}\frac{1}{r\textbf{'}}\frac{\partial r\textbf{'}^2}{\partial r\textbf{'}}\,r\textbf{'}dr\textbf{'}\,d\varphi\textbf{'}dz\textbf{'},\nonumber\\
+&=&(\varepsilon_0-\varepsilon)\omega B\left(\frac{L\,r^3}{3}-2\pi \,L\,r^2 \right), \nonumber\\
+\nonumber\\
+\therefore Q_p&=&(\varepsilon_0-\varepsilon)\omega B\,L\,r^2\left(\frac{r}{3}-2\pi\right).
+\end{eqnarray}
+\end{example}
+
+
+
+
+%*********************SECCION********************
+\section{Inductancia. Inductancia mutua}
+Consideremos dos circuitos filamentales $C_1$ y $C_2$, con las corrientes $I_1$ e $I_2$ respectivamente (figura \ref{fig6.1}). La corriente $I_2$ producir\'a una inducci\'on $\textbf{B}_2$ en cada punto de la superficie $S_1$ encerrada por $C_1$, por lo que es posible calcular el flujo $\Phi_{2\rightarrow 1}$ en $C_1$ por medio de (\ref{flujo madnetico})
+\begin{eqnarray}
+\Phi_{2\rightarrow 1}&=&\int_{S_1}\textbf{B}_2(\textbf{r}_1)\cdot d\textbf{a}_1.
+\end{eqnarray}
+\begin{figure}[h]
+  \centering
+    \includegraphics[width=0.3\textwidth]{Induc}
+        \caption{\emph{Inducci\'on magn\'etica.}}\label{fig6.1}
+\end{figure}
+Sustituyendo la ec. (\ref{rot A})
+\begin{eqnarray}
+\Phi_{2\rightarrow 1}&=&\int_{S_1}\left[ \nabla\times\textbf{A}_2(\textbf{r}_1)\right] \cdot d\textbf{a}_1,
+\end{eqnarray}
+usando el teorema de Stokes
+\begin{eqnarray}
+\Phi_{2\rightarrow 1}&=&\oint_{C_1} \textbf{A}_2(\textbf{r}_1)\cdot d\textbf{l}_1.
+\end{eqnarray}
+Ahora sustituimos la ec. (\ref{potencial magnetico filamental})
+\begin{eqnarray}
+\Phi_{2\rightarrow 1}=\frac{\mu_0}{4\pi}\oint_{C_1}\oint_{C_2}\frac{I_2\,d\textbf{l}_1\cdot d\textbf{l}_2}{R_{12}},\label{fluj pji 2-1}
+\end{eqnarray}
+definimos la \emph{inductancia mutua} de los circuitos $1$ y $2$ como
+\begin{eqnarray}
+M_{12}= \frac{\mu_0}{4\pi}\oint_{C_1}\oint_{C_2}\frac{d\textbf{l}_1\cdot d\textbf{l}_2}{R_{12}}.
+\end{eqnarray}
+En general para dos circuitos $C_i$ y $C_j$
+\begin{eqnarray}
+M_{ij}= \frac{\mu_0}{4\pi}\oint_{C_i}\oint_{C_j}\frac{d\textbf{l}_i\cdot d\textbf{l}_j}{R_{ij}},\label{inductancia mutua}
+\end{eqnarray}
+de esta forma el flujo a trav\'es de $C_i$ debido a $C_j$ ser\'a
+\begin{eqnarray}
+\Phi_{j\rightarrow i}&=&M_{ij}\,I_j.\label{flujo marn en term de M}
+\end{eqnarray}
+Podemos observar de (\ref{inductancia mutua}) que la inductancia mutua es un factor puramente geom\'etrico que relaciona los tama\~nos y orientaciones de los circuitos. Dado que las unidades de $\mu_0$ son henry/metro, entonces la unidad de la inductancia mutua es el henry.\\
+\\
+De manera an\'aloga, si se calcula el flujo en $C_j$ debido a $C_i$ se encuentra que
+\begin{eqnarray}
+M_{ji}&=& \frac{\mu_0}{4\pi}\oint_{C_j}\oint_{C_i}\frac{d\textbf{l}_j\cdot d\textbf{l}_i}{R_{ji}},\label{Mji}\\
+\Phi_{i\rightarrow j}&=&M_{ji}\,I_i.
+\end{eqnarray}
+Es evidente que
+\begin{eqnarray}
+M_{ij}=M_{ji}.
+\end{eqnarray}
+La fem total inducida que producir\'a uno de los circuitos por una corriente cambiante en el otro, puede expresarse en funci\'on de  la inductancia mutua sustituyendo (\ref{flujo marn en term de M})  en (\ref{ley de faraday})
+\begin{eqnarray}
+\xi_{j\rightarrow i}=-\,M_{ij}\,\frac{dI_j}{dt}.
+\end{eqnarray}
+Si existe mas de un circuito produciendo un campo $\textbf{B}$ a trav\'es de $C_i$, el flujo total ser\'a una suma de t\'erminos como (\ref{flujo marn en term de M})
+\begin{eqnarray}
+\Phi_i=\sum_j\Phi_{j\rightarrow i}\,\,\,=\,\,\,\sum_jM_{ij}\,I_j.\label{fluj tot en Ci}
+\end{eqnarray}
+De manera que la fem total inducida en $C_i$ por los otros circuitos ser\'a
+\begin{eqnarray}
+\xi_{i}&=&-\,\sum_jM_{ij}\,\frac{dI_j}{dt}.\label{fem ind C_i}
+\end{eqnarray}
+
+Para encontrar una expresi\'on mas detallada de (\ref{Mji}) se usa la figura \ref{Induct}, de la cual se deduce
+\begin{equation}
+R=\sqrt{d^2_{ij}+r^2},\ \ \ r=\sqrt{r^2_i+r^2_j-2\ r_i\ r_j \cos \theta},
+\end{equation}
+adem\'as
+\begin{equation}
+d\textbf{l}_i\cdot d\textbf{l}_j=dl_i\ dl_j \cos \theta\,\,\, \mbox{y}\,\, \,    dl_i=r_i\ d\theta.
+\end{equation}
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=.25]{Induc1}
+\includegraphics[scale=.2]{Induc2}
+\caption{{\it Dos lazos conductores de radios $r_j$ y $r_i$.}} \label{Induct}
+\end{figure}
+As\'i se tiene
+\begin{eqnarray}
+M_{ij}&=&\dfrac{\mu_0}{4\pi}\oint \int^{2\pi}_0\dfrac{r_i\ \cos \theta\, d\theta\ dl_j}{\sqrt{d^2_{ij}+r^2_i+r^2_j-2\ r_i\ r_j \cos \theta}},
+\end{eqnarray}
+para continuar se hace el cambio de variable $\theta=2\alpha$, as\'i que
+\begin{eqnarray}
+M_{ij}&=&\dfrac{\mu_0}{4\pi} r_i (2\pi r_j)\int^{\pi}_0\dfrac{\cos (2\alpha)\, 2d\alpha}{\sqrt{d^2_{ij}+r^2_i+r^2_j-2\ r_i\ r_j \cos (2\alpha)}},\nonumber\\
+&=&\mu_0 r_i\ r_j\int^{\pi}_0\dfrac{\cos (2\alpha)\, d\alpha}{\sqrt{d^2_{ij}+r^2_i+r^2_j-2\ r_i\ r_j \cos (2\alpha)}}.
+\end{eqnarray}
+Dado que $\cos (2\alpha)=1-2\sen^2\alpha$ entonces
+\begin{eqnarray}
+M_{ij}&=&\mu_0\ r_i\ r_j\int^{\pi}_0\dfrac{(1-2\sin^2 \alpha)\, d\alpha}{\sqrt{d^2_{ij}+(r_i-r_j)^2+4\ r_i\ r_j \sin^2 \alpha}},
+\end{eqnarray}
+ahora se emplea
+\begin{equation}
+\sin^2\alpha+\cos^2\alpha=1, \label{iTrig}
+\end{equation}
+por lo cual
+\begin{eqnarray}
+d^2_{ij}+(r_i-r_j)^2+4\ r_i\ r_j \sin^2 \alpha&=&\big(d^2_{ij}+(r_i-r_j)^2 \big)(\cos^2\alpha+\sin^2\alpha)+4\ r_i\ r_j \sin^2 \alpha,\nonumber\\
+&=&\Big(d^2_{ij}+(r_i-r_j)^2 \Big) \cos^2\alpha+\Big(d^2_{ij}+(r_i+r_j)^2 \Big) \sin^2 \alpha ,\nonumber\\
+&=&\Big(d^2_{ij}+(r_i-r_j)^2 \Big) \left[ \cos^2\alpha+\frac{d^2_{ij}+(r_i+r_j)^2}{d^2_{ij}+(r_i-r_j)^2}\sin^2 \alpha\right]  ,\nonumber\\
+&=&\Big(d^2_{ij}+(r_i-r_j)^2 \Big) \left[ \cos^2\alpha+k^2_c \sin^2 \alpha \right],
+\end{eqnarray}
+con
+\begin{equation}
+k^2_c:=\frac{d^2_{ij}+(r_i+r_j)^2}{d^2_{ij}+(r_i-r_j)^2}.
+\end{equation}
+Al usar estas expresiones en el c\'aculo para $M_{ij}$ se tiene
+\begin{eqnarray}
+M_{ij}&=&\frac{\mu_0\ r_i\ r_j}{\sqrt{d^2_{ij}+(r_i-r_j)^2}} \int^{\pi}_0\dfrac{(1-2\sin^2 \alpha)\, d\alpha}{\sqrt{\cos^2\alpha+k^2_c \sin^2 \alpha}},\nonumber\\
+&=&\frac{\mu_0\ r_i\ r_j}{\sqrt{d^2_{ij}+(r_i-r_j)^2}}\left( \int^{\pi}_0\dfrac{d\alpha}{\sqrt{\cos^2\alpha+k^2_c \sin^2 \alpha}}-2\int^{\pi}_0\dfrac{\sin^2 \alpha\ d\alpha}{\sqrt{\cos^2\alpha+k^2_c \sin^2 \alpha}}\right),\nonumber\\
+\end{eqnarray}
+nuevamente se usa (\ref{iTrig}) para simplificar un poco esta \'ultima expresi\'on (con $a^2:=k^2_c-1$)
+\begin{eqnarray}
+M_{ij}&=&\frac{\mu_0\ r_i\ r_j}{\sqrt{d^2_{ij}+(r_i-r_j)^2}}\left( \int^{\pi}_0\dfrac{d\alpha}{\sqrt{1+a^2 \sin^2 \alpha}}-2\int^{\pi}_0\dfrac{\sin^2 \alpha\ d\alpha}{\sqrt{1+a^2 \sin^2 \alpha}}\right).
+\end{eqnarray}
+Dada la simetr\'ia del integrando se puede hacer un cambio en los l\'imites de integraci\'on, de tal forma que se tiene
+\begin{eqnarray}
+M_{ij}&=&\frac{2\mu_0\ r_i\ r_j}{\sqrt{d^2_{ij}+(r_i-r_j)^2}}\left( \int^{\pi/2}_0\dfrac{d\alpha}{\sqrt{1+a^2 \sin^2 \alpha}}-2\int^{\pi/2}_0\dfrac{\sin^2 \alpha\ d\alpha}{\sqrt{1+a^2 \sin^2 \alpha}}\right),\, \, \, \, \label{IntElip}
+\end{eqnarray}
+este resultado se puede  escribir de la forma (Ver Ap\'endice \ref{Integrales})
+\begin{eqnarray}
+M_{ij}&=&\mu_0 \sqrt{r_ir_j}\dfrac{2}{k}\left[\left(1 -\frac{k^2}{2}\right) F[k,\pi/2]-E[k,\pi/2]\right],%COINCIDE CON INDUCT2.PDF
+\end{eqnarray}
+con $k^2:=\frac{a^2}{1+a^2}$. Estas integrales el\'ipticas, $F[k,\pi/2]$ y $E[k,\pi/2]$ no se pueden resolver anal\'iticamente por lo cual se resuelven num\'ericamente. Por ejemplo usando  {\it MATHEMATICA 9.0.1}  se tiene
+\begin{eqnarray}
+&&\mbox{EllipticeF}[\pi/2,0.4]=1.77752,\\
+&&\mbox{EllipticeE}[\pi/2,0.4]=1.39939\, .
+\end{eqnarray}
+
+%%%%%%%%%%%%%%%%%%%%SECCION%%%%%%%%%%%%%
+\section{Autoinductancia}
+Es posible que el circuito $C_i$ produzca un flujo $\Phi_{i\rightarrow i}$ que pase a trav\'es de s\'i mismo (figura \ref{Bt}). El coeficiente de proporcionalidad en este caso se denomina \emph{autoinductancia}. Entonces de la ec. (\ref{fluj pji 2-1})
+\begin{eqnarray}
+\Phi_{i\rightarrow i}&=& \frac{\mu_0}{4\pi}\oint_{C_i}\oint_{C_i}\frac{I_i\,d\textbf{l}_i\cdot d\textbf{l}_i'}{R_{ii}}.
+\end{eqnarray}
+\begin{figure}[h]
+  \centering
+    \includegraphics[width=0.4\textwidth]{AutoIn}
+        \caption{Autoinductancia.}\label{Bt}
+\end{figure}
+
+As\'i
+\begin{eqnarray}
+L_{ii}&=& \frac{\mu_0}{4\pi}\oint_{C_i}\oint_{C_i}\frac{d\textbf{l}_i\cdot d\textbf{l}_i'}{R_{ii}},\\
+\Rightarrow\Phi_{i\rightarrow i}&=&L_{ii}I_i.\label{fluj de Ci en Ci}
+\end{eqnarray}
+La doble integral se toma dos veces sobre el mismo circuito, y d$\textbf{l}$ y d$\textbf{l'}$ son dos elementos lineales pertenecientes a $C_i$. Si la corriente $I_i$ est\'a cambiando existir\'a una fem inducida debido a su propio flujo, denominada \emph{fem autoinducida} o \emph{contra fem} y est\'a dada por
+\begin{eqnarray}
+\xi_i &=&-\,L_{ii}\,\frac{dI_i}{dt}.\label{fem aut ind}
+\end{eqnarray}
+A menudo se suprimen uno o m\'as de los \'indices de la autoinductancia siempre que esto no cause confusi\'on.\\
+\\
+Si existen otros circuitos en las cercan\'ias, el flujo total en $C_i$ ser\'a la suma de (\ref{fluj tot en Ci}) y (\ref{fluj de Ci en Ci})
+\begin{eqnarray}
+\Phi_i&=&\sum_jM_{ij}\,I_j+L_{ii}I_i,\nonumber\\
+\Phi_i&=&\sum_jM_{ij}\,I_j\,\,\,\,\,\,con\,\,\,\,\,\,\,M_{ii}=L_{ii}.\label{fluj tot en Ci inclu C_i}
+\end{eqnarray}
+El \'indice $i$ toma el valor de $j$. Por otro lado la fem total inducida ser\'a la suma de (\ref{fem ind C_i}) y (\ref{fem aut ind})
+\begin{eqnarray}
+\xi_i&=&-\,\sum_jM_{ij}\,\frac{dI_j}{dt}-L_{ii}\,\frac{dI_i}{dt},\nonumber\\
+\xi_i&=&-\,\sum_jM_{ij}\,\frac{dI_j}{dt}.\label{fem tot ind en C_i}
+\end{eqnarray}
+
+
+
+
+
+%*********************EJEMPLO********************
+\begin{example}
+Un circuito est\'a formado por dos c\'ascaras cil\'indricas coaxiales de radios $R_1$ y $R_2$ ($R_2>R_1$) y de longitud com\'un $L$, conectados por placas  de extremos planos. La carga fluye hacia una c\'ascara y regresa  a la otra (figura \ref{cascaras-cilindricas-coaxiales-con-corriente}). ?`Cu\'al es la autoinductancia de este circuito?.\\
+\begin{figure}[h]
+  \centering
+    \includegraphics[width=0.35\textwidth]{cascaras-cilindricas-coaxiales-con-corriente}
+        \caption{\emph{C\'ascaras cil\'indricas coaxiales de longitud $L$.}}\label{cascaras-cilindricas-coaxiales-con-corriente}
+\end{figure}\\
+\emph{Soluci\'on.}\\
+Supongamos que las c\'ascaras cil\'indricas se orientan paralelas al eje $z$. De la ec. (\ref{fluj de Ci en Ci}) se obtiene
+\begin{eqnarray}
+d\Phi&=&L\,dI,\nonumber\\
+\Rightarrow L&=&\frac{d \Phi}{dI}.
+\end{eqnarray}
+Donde $\Phi$ est\'a dado por
+\begin{eqnarray*}
+\Phi&=&\int_S\textbf{B}\cdot d\textbf{a}.
+\end{eqnarray*}
+Por otro lado, recordamos de la ley de Ampere que
+\begin{eqnarray*}
+\oint_C\textbf{B}\cdot d\textbf{l}&=&\mu_0\,I_{enc}.
+\end{eqnarray*}
+Consideremos una curva de radio $R_1<r<R_2$, as\'i
+\begin{eqnarray}
+\int_0^{2\pi}\textbf{B}\cdot d\textbf{l}&=&\mu_0\,I,\nonumber\\
+B&=&\frac{\mu_0\, I}{2\pi\,r},\nonumber\\
+\Rightarrow\textbf{B}&=&\frac{\mu_0\, I}{2\pi\,r}\,\hat{\pmb{\varphi}}.
+\end{eqnarray}
+Con lo que
+\begin{eqnarray}
+\Phi&=&\frac{\mu_0\, I}{2\pi}\int_{R_1}^{R_2}\int_{0}^{L} \frac{1}{r}\,\,dz\,dr,\nonumber\\
+&=&\frac{\mu_0\, I\, L}{2\pi}\ln\left( \frac{R_2}{R_1}\right).
+\end{eqnarray}
+De esta forma
+\begin{eqnarray}
+L&=&\frac{\mu_0\, L}{2\pi}\ln\left( \frac{R_2}{R_1}\right)\frac{d\,I}{dI},\nonumber\\
+\therefore L&=&\frac{\mu_0\, L}{2\pi}\ln\left( \frac{R_2}{R_1}\right).
+\end{eqnarray}
+\end{example}
+
+
+%%%%%%%%%%%%%%%%EJEMPLO%%%%%%%%%
+\begin{example}Circuito R-L.
+
+\begin{figure}[ht]
+  \centering
+    \includegraphics[width=0.4\textwidth]{RL}
+        \caption{\emph{Circuito R-L.}}\label{RL}
+\end{figure}
+Considerese el circuito que se muestra en la figura \ref{RL}, el cual se cierra en $t=0$. Al considerar el inductor se tiene
+\begin{eqnarray}
+\xi+\xi_L&=&R\ I\nonumber\\
+\xi-L\dfrac{dI}{dt}&=&R\ I\, ,
+\end{eqnarray}
+as\'i que
+\begin{eqnarray} \label{ecI}
+\dfrac{dI}{dt}+\dfrac{R}{L}I-\dfrac{\xi}{L}=0\, .
+\end{eqnarray}
+Un truco para resolver esta \'ultima ecuaci\'on diferencial es derivar nuevamente, con lo cual se tiene
+\begin{eqnarray}
+\dfrac{d^2I}{dt^2}+\mu\dfrac{dI}{dt}=0\, ,
+\end{eqnarray}
+con $\mu=R/L$. La soluci\'on correspondiente es de la forma
+\begin{eqnarray}
+I(t)=A+B \mbox{e}^{-\mu t}\, ,
+\end{eqnarray}
+con $A$ y $B$ son constantes que se determinan enseguida. Si en $t=0$ se tiene $I(t=0)=0$, entonces se obtiene
+\begin{equation}
+B=-A,
+\end{equation}
+de esta forma
+\begin{equation}
+I(t)=A\left(1- \mbox{e}^{-\mu t} \right). \label{sI}
+\end{equation}
+Al sustituir (\ref{sI}) en (\ref{ecI}) se tiene
+\begin{equation}
+\mu\ A\ \mbox{e}^{-\mu t}+\mu A \left(1- \mbox{e}^{-\mu t} \right)-\dfrac{\xi}{L}=0\,,
+\end{equation}
+de lo cual se encuentra el valor de $A$
+\begin{equation}
+A=\dfrac{\xi}{R}.
+\end{equation}
+Finalmente se tiene la expresi\'on de la corriente $I$
+\begin{equation}
+I(t)=\dfrac{\xi}{R}\left(1- \mbox{e}^{-\frac{R}{L} t} \right),
+\end{equation}
+la cantidad $\tau=L/R$ se conoce como {\it constante de tiempo}. El comportamiento de la corriente el\'ectrica se muestra en la figura \ref{I}.
+\begin{figure}[h]
+\centering
+\hspace{20pt}\includegraphics[scale=.4]{sinL}
+\hfill
+\includegraphics[scale=.35]{conL}
+\hspace{20pt}
+\caption{Comportamiento de $I(t)$ en presencia de una resistencia (izquierda) y con un inductor (derecha).} \label{I}
+\end{figure}
+\end{example}
+
+
+%%%%%%%%%%%%%%%%%%%%%%EJEMPLO%%%%%%%%%%%%%%%%%%%
+\begin{example}Circuito R-L-C.%\cite{RMC}
+El segundo ejemplo es considerar un circuito serie $R-L-C$ que se conecta repentinamente a un voltaje constante $V$. Este circuito se muestra en la figura \ref{RLC}
+\begin{figure}[ht]
+  \centering
+    \includegraphics[width=0.35\textwidth]{RLC}
+        \caption{\emph{Circuito R-L-C.}}\label{RLC}
+\end{figure}
+Sabemos que el voltaje al que est\'a sometida la resistencia es dado por $RI$, para el inductor es $-\frac{dI}{dt}$ y para el capacitor(consideramos la capacitancia constante) se determina observando que
+\begin{equation}
+I(t)=\dfrac{dQ}{dt}=\dfrac{d(CV)}{dt}=C\dfrac{dV}{dt},
+\end{equation}
+por lo cual
+\begin{equation}
+V=\dfrac{1}{C}\int^t_0 I(\tau)d\tau,
+\end{equation}
+as\'i que
+\begin{equation}
+V=RI(t)+L\dfrac{dI(t)}{dt}+\dfrac{1}{C}\int^t_0 I(\tau)d\tau.\label{VT}
+\end{equation}
+Para resolver esta ecuaci\'on diferencial se hace un truco semejante al ejemplo anterior, esto es derivar nuevamente con respecto al tiempo:
+\begin{equation}
+\dfrac{dV}{dt}=R\dfrac{dI(t)}{dt}+L\dfrac{d^2I(t)}{dt^2}+\dfrac{1}{C} I(t),\label{dVdI}
+\end{equation}
+o bien, se puede escribir
+\begin{equation}
+\dfrac{dV}{dt}=\dfrac{d^2I(t)}{dt^2}+\dfrac{R}{L}\dfrac{dI(t)}{dt}+\dfrac{1}{CL} I(t).
+\end{equation}
+Para el caso en que $\frac{dV}{dt}=0$ se tiene la ecuaci\'on diferencial
+\begin{equation}
+\dfrac{d^2I(t)}{dt^2}+\dfrac{R}{L}\dfrac{dI(t)}{dt}+\dfrac{1}{CL} I(t)=0, \label{IRCL}
+\end{equation}
+las ra\'ices del polinomio caracter\'istico son
+\begin{equation}
+r_\pm=-\dfrac{R}{2L}\pm\sqrt{\dfrac{R^2}{4L^2}-\dfrac{1}{CL}}.
+\end{equation}
+Al definir
+\begin{equation}
+\omega_n=\sqrt{\dfrac{1}{CL}-\dfrac{R^2}{4L^2}},
+\end{equation}
+se tiene
+\begin{equation}
+r_\pm=-\dfrac{R}{2L}\pm i\ \omega_n.
+\end{equation}
+Con esto, las soluciones de (\ref{IRCL}) son de la forma
+\begin{equation}
+I(t)=\Big(A\ \mbox{e}^{i\ \omega_n\ t}+B\ \mbox{e}^{-i\ \omega_n\ t} \Big) \mbox{e}^{-\frac{R}{2L}t},
+\end{equation}
+con $A$ y $B$ constantes.
+Si $I(t=0)=0$ entonces $B=-A$, por lo cual
+\begin{equation}
+I(t)=D \sin(\omega_n\ t) \mbox{e}^{-\frac{R}{2L}t},\label{ID}
+\end{equation}
+con $D$ una constante que se determina usando (\ref{VT}) para el tiempo $t=0$:
+\begin{equation}
+V=L\dfrac{dI(t)}{dt}\Bigg|_{t=0},
+\end{equation}
+pero de (\ref{ID}) se tiene
+\begin{equation}
+\dfrac{dI(t)}{dt}\Bigg|_{t=0}=D\ \omega_n,
+\end{equation}
+entonces
+\begin{equation}
+D=\frac{V}{L \omega_n}.
+\end{equation}
+Finalmente se tiene la forma completa de la corriente
+\begin{equation}
+I(t)=\frac{V}{L \omega_n}\sin(\omega_n\ t)\ \mbox{e}^{-\frac{R}{2L}t},
+\end{equation}
+cuyo comportamiento se muestra en la figura \ref{IRLC}.
+\begin{figure}[h]
+  \centering
+    \includegraphics[width=0.7\textwidth]{IRLC}
+        \caption{\emph{Comportamiento de la corriente para el circuito R-L-C.}}\label{IRLC}
+\end{figure}
+
+Es sencillo observar que en el caso cuando $R=0$ se tiene una corriente dada por
+\begin{equation}
+I(t)=V \sqrt{\frac{C}{L}}\ \sin\left(\dfrac{1}{\sqrt{CL}}\ t\right),
+\end{equation}
+este caso tan sencillo es importante ya que est\'a presente en la {\it bobina de Tesla}.
+\end{example}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%EJEMPLO%%%%%%%%%%%%%%%
+\begin{example}: En este ejemplo se usa nuevamente el circuito RLC pero con un voltaje dado por $V(t)=V_0\ \cos(\omega t)$. El truco que ahora se usa consiste en introducir {\it corrientes ficticias} a partir de la ec. (\ref{dVdI}):
+\begin{equation}
+\dfrac{dV_1}{dt}+i\dfrac{dV_2}{dt}=\left(L\dfrac{d^2I_1}{dt^2}+R\dfrac{dI_1}{dt}+\dfrac{I_1}{C}\right)+i\left(L\dfrac{d^2I_2}{dt^2}+R\dfrac{dI_2}{dt}+\dfrac{I_2}{C}\right).\label{Iim}
+\end{equation}
+Dada la forma de $V(t)$, el lado derecho de (\ref{Iim}) se simplifica considerablemente al usar $V(t)=V_0\ \mbox{e}^{i\omega t}$ y a partir de esta expresi\'on se puede deteminar la corriente $I(t)$:
+\begin{equation}
+I(t)=C\dfrac{dV}{dt}=iC\ V_0\ \omega\ \mbox{e}^{i\omega t}=I_0 \mbox{e}^{i\omega t},\label{IComplex}
+\end{equation}
+con $I_0=iC\ V_0\ \omega$. Entonces la ec. (\ref{Iim}) se escribe de la forma
+\begin{eqnarray}
+i\omega V_0\ \mbox{e}^{i\omega t}&=&\left[L \big(-\omega^2 I_0\ \mbox{e}^{i\omega t}\big)+R \big(i\omega I_0 \ \mbox{e}^{i\omega t}  \big) +\dfrac{I_0}{C} \ \mbox{e}^{i\omega t}  \right]\nonumber\\
+&=&\left[-\omega^2 L+i R +\dfrac{1}{C}\right]I_0 \ \mbox{e}^{i\omega t}.
+\end{eqnarray}
+Al multiplicar esta \'ultima expresi\'on por $-\frac{i}{\omega}$
+\begin{eqnarray}
+V_0 =\left[R +i\left(\omega L-\dfrac{1}{\omega C}\right)\right]I_0.\label{VoIo}
+\end{eqnarray}
+Se define la {\bf impadencia}, Z, del circuito como la cantidad compleja
+\begin{eqnarray}
+Z:=R +i\left(\omega L-\dfrac{1}{\omega C}\right),
+\end{eqnarray}
+la parte real es la {\bf resistencia} ($R$) y la parte compleja es la {\bf reactancia} ($X$). La reactancia a su vez se divide en  {\bf reactancia inductiva}
+\begin{eqnarray}
+X_L:=\omega L,\label{XL}
+\end{eqnarray}
+ y la {\bf reactancia capacitiva}
+\begin{eqnarray}
+X_C:=-\dfrac{1}{\omega C}.\label{XC}
+\end{eqnarray}
+El comportamiento de $X_L$ y $X_C$ se muestra en la figura \ref{xlxc}.
+\begin{figure}[ht]
+  \centering
+    \includegraphics[width=0.6\textwidth]{XLXC}
+        \caption{\emph{Comportamiento de las reactancias.}}\label{xlxc}
+\end{figure}
+
+Al escribir la impadencia en su forma polar
+\begin{eqnarray}
+Z=|Z|\mbox{e}^{i\theta},
+\end{eqnarray}
+con
+\begin{eqnarray}
+|Z|^2=R^2 +\left(\omega L-\dfrac{1}{\omega C}\right)^2,
+\end{eqnarray}
+y
+\begin{eqnarray}
+\theta=\tan^{-1}\left(\dfrac{\omega L-\dfrac{1}{\omega C}}{R}\right).
+\end{eqnarray}
+Al usar la forma polar de la impedancia en la ec. (\ref{VoIo}) y sustituir $I_0$ en la ec. (\ref{IComplex}) se tiene
+\begin{eqnarray}
+I(t)=\dfrac{V_0}{|Z|}\cos(\omega\ t-\theta).
+\end{eqnarray}
+Si $\theta$ es mayor que cero, la corriente alcanza una fase dada m\'as tarde que el voltaje y se dice que se retrasa con respecto al voltaje. En caso contrario, la corriente se adelanta al voltaje.
+\end{example}
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%SECTION%%%%%%%%%%%%%%%%%%%%%%
+\section{Transformador} \label{Transformador}
+Este dispositivo se hace con dos (o mas) embobinados distintos sobre un solo n\'ucleo, por lo general de fierro o ferrita.
+\begin{figure}[ht]
+  \centering
+    \includegraphics[width=0.5\textwidth]{transf}
+        \caption{\emph{Transformador.}}
+\end{figure}
+
+\subsection{Transformador perfecto}
+Esta secci\'on es extra\'ida de \cite{MA}. No presenta p\'erdidas de energ\'ia y el flujo producido por un embobando es interceptado por el otro. Llamaremos a los embobinados primario, $N_1$ vueltas, y el secundario, $N_2$ vueltas.
+
+Al considerar que todo el flujo de un embobando es interceptado por el otro, estamos diciendo que el flujo a trav\'es de cada vuelta de cada embobando es exactamente el mismo ($\Phi_1=\Phi_2=\Phi$)
+\begin{eqnarray}
+V_1=\xi_1=-N_1 \dfrac{d\Phi}{dt}\ \ \ &\text{y}& \ \ \ V_2=\xi_2=-N_2 \dfrac{d\Phi}{dt},\\
+\dfrac{V_1}{V_2}&=&\dfrac{N_1}{N_2},
+\end{eqnarray}
+o bien
+\begin{equation}
+V_2=\dfrac{N_2}{N_1} V_1. \label{v2v1}
+\end{equation}
+Para aumentar el voltaje, hay que mentar el n\'umero de vueltas (aumentamos el flujo y el cambio de flujo).
+
+El transformador es un elemento pasivo, y no puede proporcional m\'as potencia en el secundario que la provista en el primario (por conservaci\'on de la energ\'ia). En el transformador ideal, la potencial del secundario es igual al a potencia en el primario:
+\begin{equation}
+P_1=V_1\ I_1, \ \ \ P_2=V_2\ I_2,
+\end{equation}
+entonces
+\begin{equation}
+V_1\ I_1=V_2\ I_2, \label{i2i1}
+\end{equation}
+al usar (\ref{v2v1}) en (\ref{i2i1}) se encuentra
+\begin{equation}
+I_1\ N_1=I_2\ N_2.
+\end{equation}
+
+
+%%%%%%%%%%%%%%%%%%%EJEMPLO%%%%%%%%%%%%%%%%%%
+\begin{example}: La energ\'ia el\'ectrica para consumo dom\'estico o industrial se transporta en forma de corriente alterna, debido principalmente a que es f\'acil generar corriente alterna con un generador mediante la {\it ley de Faraday}, pero sobre todo que puede producirse las p\'erdidas por {\it efecto Joule} al trasmitirla de esta manera. Pongamos por ejemplo, que una planta generadora de electricidad quiere trasmitir $100 \ KW$ a una distancia de $10\ Km$, mediante un cable de cobre de $26\ mm$ de di\'ametro.\\
+{\it Sol.} La potencia recibida en el destino ($P_f$) ser\'a la potencia a la que se manda la energ\'ia ($P_i$) menos las p\'erdidas por efecto Joule en el cable:
+\begin{equation}
+P_f=P_i-I^2\ R.
+\end{equation}
+La resistencia del cable se obtiene de
+\begin{equation}
+R=\dfrac{l}{A} \eta,
+\end{equation}
+donde $l$ es la longitud del cable, $A$ es el \'area seccional y $\eta$ es la resistividad. Entonces
+\begin{eqnarray}
+A&=&5.309\times 10^{-4}\ m^2,\\
+\eta&=&1.7\times 10^{-8}\ \Omega\ m,
+\end{eqnarray}
+as\'i
+\begin{equation}
+R=l(3.202 \times 10^{-5}\Omega/m).
+\end{equation}
+
+Si la trasmisi\'on se hace en corriente directa, a $100\ V$, la corriente ser\'ia
+\[I=\dfrac{P}{V}=1000 A,\]
+y las p\'erdidas por efecto Joules ser\'ian
+\begin{equation}
+I^2\ R = l(32.02\ W/m).
+\end{equation}
+
+Dado que $P=I^2\ R$ y $P=100\ KW$, entonces
+\[l=\dfrac{100 000\ W}{32.02\ W/m }=3.123\ Km\ !\]
+
+
+Supongamos que la planta tiene un transformador que eleva el voltaje a $100 000\ V$ para trasmitirla a $1\ A$ de corriente. Las p\'erdidas en este caso:
+\begin{eqnarray*}
+I^2\ R &=& (1\ A^2)\ l \ (3.202 \times 10^{-5} \Omega/m)\\
+&=&l(3.202\times10^{-5}W/m),
+\end{eqnarray*}
+por lo cual
+\[l=\dfrac{100 000\ W}{3.202\times10^{-5}W/m}=3.123 \times10^6\ Km.\]
+Al trasmitir $100\ KW$ una distancia de $10 Km$ las p\'ardidas son
+\[I^2\ R= (10 000\ m) (3.202\times10^{-5}W/m)=0.3202\ W.\ !\]
+Al llegar al destino, se tiene un transformador que baja el voltaje. Si el voltaje baja a $100\ V$, entonces se tiene $1000\ A$.
+\end{example}
+
+
+%%%%%%%%%%%%%%%%%%SECCION%%%%%%%%%%%%%%%%%%
+\subsection{Transformador real}
+Esta secci\'on es extra\'ida de \cite{MA}. En un transformador real no toda la potencia del primer bobinado se transfiere al secundario, esto es debido a la existencia de corrientes par\'asitas\footnote{Ver ap\'endice \ref{ParasitasI}}.  Otras p\'erdidas de energ\'ia se representan por la resistencia finita de los alambres de los embobinados y adem\'as por la capacitancia par\'asita\footnote{Ver ap\'endice \ref{ParasitasC}} entre cada una de la vueltas.
+
+La representaci\'on de un transformador real se muestra en la figura \ref{TR}.
+\begin{figure}[ht]
+  \centering
+    \includegraphics[width=0.7\textwidth]{TransR}
+        \caption{\emph{Transformador real.}}\label{TR}
+\end{figure}
+Las inductancias $L_1$ y $L_2$ representan la parte del flujo no interceptado por el otro embobinado, $R_1$ y $R_2$ son las resistencias de los embobinados, y $C_1$ y $C_2$ indican las capacitancias de los mismos.  La inductancia $L_m$ es la asociada con el flujo de corriente en {\color{red} situaci\'on de circuito abierto en el secundario}.
+
+A bajas frecuencias, la mayor parte de la energ\'ia se pierde en la magnetizaci\'on del n\'ucleo y por la capacitancia p\'arasita, mientras que a altas frecuencias la mayor\'ia se pierde por los inductancias $L_1$ y $L_2$ (ver la ec. (\ref{XL}) para este \'ultimo argumento). As\'i que los transformadores reales son dise\~nados para operar en cierto rango de frecuencias. Tambi\'en se pierde energ\'ia en el n\'ucleo ya que toda la ener\'ia usada en la magnetizaci\'on no se recupera.
+
+La potencia entregada al bobinado secundario por el primario, se expresa mediante
+\begin{equation}
+P_2=e\,P_1,
+\end{equation}
+donde $e$ es el {\it factor de eficiencia}.
+
+
+%*********************SECCION********************
+\section{Energ\'ia almacenada en un sistema de solenoides con corrientes estacionarias}
+Consideremos un sistema de corrientes libres de un grupo de $n$ circuitos r\'igidos y fijos en el espacio. Se desea calcular el trabajo necesario para comenzar de una situacio\'n en la que todas las corrientes son cero y terminar en una situaci\'on en la que la corriente del circuito $Ci$ tenga un valor final $I_i$, siendo $i=1,2,...,n$.\\
+\\
+Sup\'ongase que al tiempo $0<t<t_f$ la corriente de cada circuito $C_i$ est\'a dada por
+\begin{eqnarray}
+i_i&=&\frac{dq_i}{dt},
+\end{eqnarray}
+de modo que no han alcanzado su valor final $I_i$. Un cambio en una de las corrientes en un lapso de tiempo $dt$ provocar\'a un cambio en el flujo $d\Phi_i$ a trav\'es de  $C_i$ y de acuerdo con (\ref{ley de faraday}) provocar\'a tambi\'en una fem inducida. A fin de mantener el sistema, una fuente externa debe suministrar una fem igual a este valor pero en sentido opuesto, de esta forma, el trabajo realizado por la fuente externa ser\'a
+\begin{eqnarray}
+dW_{ext,\,\,i}&=&\xi_{ext}\,\,dq_i,\nonumber\\
+&=&-\xi_{i,\,ind}\,\,i_i\,dt.
+\end{eqnarray}
+Usando (\ref{ley de faraday}) se tiene que el trabajo realizado por la fuente externa es
+\begin{eqnarray}
+dW_{ext,\,\,i}&=&i_i\,\,d\Phi_i.
+\end{eqnarray}
+Al sumar la contribuci\'on de todas las corrientes se encuentra que el trabajo total, y por lo tanto, la energ\'ia magn\'etica ser\'a
+\begin{eqnarray}
+dW_{ext}&=&dU_{m}\,\,\,=\,\,\,\sum_{i=1}^n i_i\,\,d\Phi_i.\label{Wtot iq Um}
+\end{eqnarray}
+Dado que los circuitos son constantes en forma y configuraci\'on, la \'unica manera en la que los flujos pueden cambiar es que haya cambios en la corrientes, entonces de (\ref{fluj tot en Ci inclu C_i})
+\begin{eqnarray}
+d\Phi_i&=&\sum_{j=1}^nM_{ij}\,di_j.
+\end{eqnarray}
+Al combinar con (\ref{Wtot iq Um}) se obtiene
+\begin{eqnarray}
+dU_{m}&=&\sum_{i=1}^n \sum_{j=1}^n M_{ij}\,i_i\,di_j.\label{dUm}
+\end{eqnarray}
+Ahora sup\'ongase que al instante dado $t$, cada una de las corrientes se encuentra a la misma fracci\'on $f$ de su valor final, de tal forma que
+\begin{eqnarray}
+i_i(t)&=&f(t)\, I_i.
+\end{eqnarray}
+Entonces
+\begin{eqnarray}
+di_j&=&I_j\,df,
+\end{eqnarray}
+as\'i, de (\ref{dUm}) se tiene que
+\begin{eqnarray}
+dU_{m}&=&\sum_{i=1}^n \sum_{j=1}^n M_{ij}\,I_iI_j\,f\,df,\nonumber\\
+\Rightarrow U_{m}&=&\sum_{i=1}^n \sum_{j=1}^n M_{ij}\,I_iI_j\int_0^1f\,df,\nonumber\\
+&=&\frac{1}{2}\sum_{i=1}^n \sum_{j=1}^n M_{ij}\,I_iI_j.
+\end{eqnarray}
+Utilizando nuevamente (\ref{fluj tot en Ci inclu C_i})
+\begin{eqnarray}
+U_{m}&=&\frac{1}{2}\sum_{i=1}^n \,I_i\Phi_i.\label{energia magnetica}
+\end{eqnarray}
+Siendo $\Phi_i$ el flujo total a trav\'es de $C_i$ proveniente de todas las fuentes, incluyendo ella misma.\\
+\\
+Podemos expresar la energ\'ia magn\'etica en t\'ermino de distribuciones de corriente. Recordamos de (\ref{flujo en term d A teor Sto}) que
+\begin{eqnarray}
+\Phi&=&\oint_C\textbf{A}(\textbf{r})\cdot d\textbf{l}.\nonumber
+\end{eqnarray}
+Sustituyendo en (\ref{energia magnetica}) se obtiene
+\begin{eqnarray}
+U_{m}&=&\frac{1}{2}\sum_{i=1}^n \oint_{C_i}\textbf{A}(\textbf{r}_i)\cdot I_i\,d\textbf{l}_i,\label{energia magnetica en term A}
+\end{eqnarray}
+donde $\textbf{A}(\textbf{r}_i)$ es el potencial vectorial total en $\textbf{r}_i$ del elemento de corriente $I_i\,d\textbf{l}_i$ de $C_i$. La suma sobre $i$ es la contribuci\'on de todos los elementos de corriente de todo el sistema. Por otro lado, recordamos tambi\'en la equivalencia (\ref{elementos de corriente eq})
+\begin{eqnarray}
+I\,d\textbf{l}&=&\textbf{J}\,dv\,\,\,=\,\,\,\textbf{K}\,da.\nonumber
+\end{eqnarray}
+Se debe tener en cuenta que se est\'an manejando corrientes libres, en consecuencia se debe integrar con respecto a todas las regiones que contienen corrientes, as\'i de (\ref{energia magnetica en term A})
+\begin{eqnarray}
+U_{m}&=&\frac{1}{2}\int_{S}\textbf{K}_l(\textbf{r})\cdot\textbf{A}(\textbf{r})\,da.\label{energia magnetica dist sup}
+\end{eqnarray}
+En las regiones en las que no hay corriente $\textbf{K}_l=0$, de esta forma se puede extender la regi\'on de integraci\'on para cubrir todo el espacio, con lo que la energ\'ia magn\'etica se puede expresar como
+\begin{eqnarray}
+U_{m}&=&\frac{1}{2}\int_{todo\,el\,espacio}\textbf{K}_l(\textbf{r})\cdot\textbf{A}(\textbf{r})\,da.\label{energia magnetica sup}
+\end{eqnarray}
+Si existen corrientes volum\'etricas
+\begin{eqnarray}
+U_{m}&=&\frac{1}{2}\int_{todo\,el\,espacio}\textbf{J}_l(\textbf{r})\cdot\textbf{A}(\textbf{r})\,d\mbox{v}.\label{energia magnetica volumetrica}
+\end{eqnarray}
+
+
+%*********************SECCION********************
+\section{Densidad de energ\'ia y tensor de esfuerzos de Maxwell en el campo magnetost\'atico}
+Como se est\'an considerando corrientes libres podemos ocupar (\ref{forma diferencial ley de ampere})
+\begin{eqnarray}
+\nabla\times\textbf{B}&=&\mu_0\,\textbf{J},\nonumber
+\end{eqnarray}
+para expresar (\ref{energia magnetica volumetrica}) como
+\begin{eqnarray}
+U_{m}&=&\frac{1}{2\mu_0}\int_{todo\,el\,espacio}(\nabla\times\textbf{B})\cdot\textbf{A}\,d\mbox{v},\label{um rot b}
+\end{eqnarray}
+donde
+\begin{eqnarray}
+(\nabla\times\textbf{B})\cdot\textbf{A}&=&\textbf{B}\cdot(\nabla\times \textbf{A})-\nabla\cdot(\textbf{A}\times\textbf{B}).
+\end{eqnarray}
+Sustituyendo en (\ref{um rot b}) y usando $\textbf{B}=\nabla\times\textbf{A}$ se tiene
+\begin{eqnarray}
+U_{m}&=&\frac{1}{2\mu_0}\int_{V}\textbf{B}^2\,d\mbox{v}-\frac{1}{2\mu_0}\int_{V}\nabla\cdot(\textbf{A}\times\textbf{B})\,d\mbox{v}.
+\end{eqnarray}
+Usando el teorema de la divergencia en la segunda integral se obtiene
+\begin{eqnarray}
+U_{m}&=&\frac{1}{2\mu_0}\int_{V}\textbf{B}^2\,d\mbox{v}-\frac{1}{2\mu_0}\oint_{S}(\textbf{A}\times\textbf{B})\cdot da.\label{um con v y s}
+\end{eqnarray}
+Se debe considerar a $V$ como un volumen muy grande y $S$ como su superficie de frontera. A medida que $V\rightarrow\infty$, $S$ tambi\'en se extiende hasta el infinito. Podemos observar de (\ref{potencial magnetico volumetrico}) y (\ref{induccion mag de una dist volumetrica}) que
+\begin{eqnarray}
+\textbf{A}\sim\frac{1}{R}\,\,\,\,,\,\,\,\,\textbf{B}\sim\frac{1}{R^2}
+\end{eqnarray}
+A medida que $R\rightarrow\infty$ observamos que la segunda integral de (\ref{um con v y s}) se anula
+\begin{eqnarray}
+\oint_{S}(\textbf{A}\times\textbf{B})\cdot da\sim\frac{1}{R^3}\cdot R\sim\frac{1}{R}\longrightarrow 0,
+\end{eqnarray}
+con lo que la energ\'ia magn\'etica queda como
+\begin{eqnarray}
+U_{m}&=&\frac{1}{2\mu_0}\int_{todo\,el\,espacio}\textbf{B}^2\,d\mbox{v}.\label{magnetic energy}
+\end{eqnarray}
+La energ\'ia mag\'etica se encuentra distribuida en forma continua a trav\'es del espacio con una \emph{densidad de energ\'ia} dada por
+\begin{eqnarray}
+u_{m}&=&\frac{1}{2\mu_0}\textbf{B}^2,\label{densidad energia mag}
+\end{eqnarray}
+de manera que
+\begin{eqnarray}
+U_{m}&=&\int_{todo\,el\,espacio}u_m\,d\mbox{v}.\label{densidad magnetic energy}
+\end{eqnarray}
+Las unidades de $u_m$ son $joule/metro^3$.\\
+\\
+Supongamos ahora que una parte del sistema efect\'ue un desplazamiento $d\textbf{r}$ bajo la influencia de las fuerzas magn\'eticas sobre \'el, permaneciendo constantes todas las corrientes. El trabajo mec\'anico efectuado por la fuerza $\textbf{F}$ que act\'ua sobre el sistema es
+\begin{eqnarray}
+dW&=&\textbf{F}\cdot d\textbf{r}.\label{trab mec caso magnetico}
+\end{eqnarray}
+ Cuando los circuitos se mueven con respecto a otro, se registrar\'a un cambio en los flujos a trav\'es de ellos, lo que provocar\'a la existencia de una fem inducida y, para que las corrientes se mantengan constantes, las fuentes externas deber\'an realizar trabajo en contra de la fem. En estas circunstancias, al igual que en el caso el\'ectrico el trabajo tiene dos contribuciones como en la ec. (\ref{W electrico con Wex y Uelec}), as\'i el trabajo realizado por el sistema y las fuentes externas de energ\'ia resulta ser
+\begin{eqnarray}
+dW&=&dW_{ext}-dU_m,\label{Wtot mag Wext Um}
+\end{eqnarray}
+donde $dU_m$ es el cambio en la energ\'ia magn\'etica del sistema y $dW_{ext}$ es el trabajo realizado por las fuentes de energ\'ia externas para mantener las corrientes constantes.\\
+
+Ya se encontr\'o en (\ref{Wtot iq Um}) el trabajo que deben proporcionar las fuentes externas, sin embargo, se debe recordar que en este caso las corrientes ya se encuentran en sus estados finales, de esta forma
+\begin{eqnarray}
+dW_{ext}&=&\sum_{i=1}^n I_i\,\,d\Phi_i\nonumber\\
+&=&2\,dU_m.
+\end{eqnarray}
+Donde se us\'o (\ref{energia magnetica}). Sustituyendo en (\ref{Wtot mag Wext Um}) y combinando con (\ref{trab mec caso magnetico}) obtenemos
+\begin{eqnarray}
+dU_m&=&\textbf{F}\cdot d\textbf{r}.\\
+\Rightarrow \textbf{F}&=&(\nabla U_m)_{I}.\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,(corrientes\,\,\,constantes)\label{fza iq grad de Um corr cte}
+\end{eqnarray}
+Si el circuito se restringe a moverse de tal modo que gire en torno a un eje, la ec. (\ref{trab mec caso magnetico}) puede sustituirse por
+\begin{eqnarray}
+dW&=&\pmb{\tau}\cdot d\pmb{\theta},
+\end{eqnarray}
+donde $\pmb{\tau}$ es el momento magn\'etico sobre el circuito y $d\pmb{\theta}$ es un desplazamiento angular. En estas condiciones
+\begin{eqnarray}
+\tau_i&=&\left(\frac{\partial U_m}{\partial\theta_i} \right)_I.\label{torq iq grad de Um corr cte}
+\end{eqnarray}
+En algunos otros casos, los flujos que atraviesan los circuitos pueden mantenerse constantes en lugar de las corrientes, con lo cual no se requerir\'a de un cambio en las fuentes de energ\'ia externas, de manera que $dW_{ext}=0$ en (\ref{Wtot mag Wext Um}), as\'i
+\begin{eqnarray}
+dW&=&-dU_m,\\
+\Rightarrow dU_m&=&-\textbf{F}\cdot d\textbf{r}.
+\end{eqnarray}
+Por lo tanto
+\begin{eqnarray}
+ \textbf{F}&=&-(\nabla U_m)_{\Phi}.\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,(flujos\,\,\,constantes)\label{fza iq -grad de Um flujo cte}
+\end{eqnarray}
+Y
+\begin{eqnarray}
+\tau_i&=&-\left(\frac{\partial U_m}{\partial\theta_i} \right)_\Phi.\label{torq iq -grad de Um flujo cte}
+\end{eqnarray}
+
+
+
+
+%*********************EJEMPLO********************
+\begin{example}
+Se da un circuito de corriente en un campo magn\'etico prescrito. La fuerza magn\'etica sobre cada elemento de circuito $d\textbf{l}$ est\'a dada por $I\,\,d\textbf{l}\times\textbf{B}$. Si el circuito se puede mover bajo las influencias de las fuerzas magn\'eticas, de tal modo que un elemento t\'ipico se desplaza $\delta r$ y al mismo tiempo la intensidad de la corriente $I$ se mantiene constante, demuestre por c\'alculo directo que el trabajo mec\'anico efectuado por el circuito es $\delta W=I\,\,\delta\Phi$, donde $\delta\Phi$ es el flujo adicional que atraviesa el circuito.\\
+\emph{Soluci\'on}.\\
+El trabajo mec\'anico se puede calcular como
+\begin{eqnarray}
+\delta W&=&\textbf{F}\cdot\delta\textbf{r}.
+\end{eqnarray}
+Por otro lado, la fuerza sobre un elemento de corriente es
+\begin{eqnarray}
+\textbf{F}&=&I\,\,d\textbf{l}\times\textbf{B},
+\end{eqnarray}
+As\'i, el trabajo mec\'anico
+\begin{eqnarray}
+\delta W&=&I\,(d\textbf{l}\times\textbf{B})\cdot\delta\textbf{r},\nonumber\\
+&=&-I\,(\textbf{B}\times d\textbf{l})\cdot\delta\textbf{r}.
+\end{eqnarray}
+Usando la identidad vectorial
+\begin{eqnarray}
+(\textbf{A}\times\textbf{B})\cdot\textbf{C}&=&\textbf{A}\cdot(\textbf{B}\times\textbf{C}).
+\end{eqnarray}
+Con lo que
+\begin{eqnarray}
+\delta W&=&-I\,\textbf{B}\cdot(d\textbf{l}\times\delta\textbf{r}),\nonumber\\
+&=&I\,\textbf{B}\cdot(\delta\textbf{r}\times d\textbf{l}).
+\end{eqnarray}
+De la definici\'on de producto vectorial se tiene que la magnitud del producto cruz es igual al \'area del paralelogramo que tiene a $d\textbf{l}$ y $\delta\textbf{r}$ como lados, es decir,
+\begin{eqnarray}
+|\delta\textbf{r}\times d\textbf{l}|&=&|\delta\textbf{r}|\,\,|d\textbf{l}|\,\sin\theta\,\,\,=\,\,\,\delta a.\\
+\Rightarrow \delta\textbf{r}\times d\textbf{l}&=&\delta\textbf{a}.
+\end{eqnarray}
+De esta forma
+\begin{eqnarray}
+\delta W&=&I\,\textbf{B}\cdot \delta\textbf{a}.
+\end{eqnarray}
+Usando la definici\'on de flujo magn\'etico, ec. (\ref{flujo madnetico}) se obtiene finalmente
+\begin{eqnarray}
+\therefore\delta W&=&I\,\delta\Phi.
+\end{eqnarray}
+\end{example}
+
+
+
+%*********************EJEMPLO********************
+\begin{example}
+Un circuito en forma de una vuelta de alambre de radio $b$ se coloca en el centro de una vuelta m\'as grande de radio $a$, $b\ll a$. El circuito peque\~no se fija de modo que puede girar libremente en torno a uno de sus di\'ametros, localiz\'andose este di\'ametro en el plano del circuito mayor. Los circuitos conducen corrientes estacionarias $I_b$ e $I_a$, respectivamente. Si el \'angulo entre las normales de los dos circuitos es $\theta$ (figura \ref{circuito-giratorio}), calcule el momento de rotaci\'on sobre el circuito m\'ovil.
+\begin{figure}[h]
+  \centering
+    \includegraphics[width=0.45\textwidth]{circuito-giratorio}
+        \caption{\emph{Circuito de radio $b$ que gira en el centro de un circuito de radio $a$}}\label{circuito-giratorio}
+\end{figure}\\
+\emph{Soluci\'on.}\\
+Como el circuito de radio $b$ se mueve con respecto al otro, se registra un cambio en el flujo a trav\'es del mismo, lo cual provoca una fem inducida, pero en \'este caso, las corrientes en los circuitos son estacionarias, de esta forma, debe existir una fuente externa que genere trabajo en contra de la fem para mantener a la corriente $I_a$ constante, este trabajo se puede obtener con la ec. (\ref{Wtot iq Um}), recordando que la corriente $I_a$ ya se encuentra en su estado fina, as\'i
+\begin{eqnarray}
+dU_{m}&=&I_b\,d\Phi,
+\end{eqnarray}
+donde $d\Phi$ es el flujo que pasa a trav\'es del circuito de radio $b$, el cual es producido por el circuito de radio $a$. Podemos obtener este flujo, apartir de la ec. (\ref{flujo magnetico})
+\begin{eqnarray}
+d\Phi&=&\textbf{B} \cdot d\textbf{a},\nonumber\\
+&=&B\,\cos\theta\,\, da.
+\end{eqnarray}
+Recordamos de la ec. (\ref{B de una espira con corriente}) que la inducci\'on magn\'etica producida por una espira circular que conduce una corriente est\'a dado por
+\begin{eqnarray*}
+\textbf{B}&=&\frac{\mu_0\,I}{2}\frac{a^2}{(a^2+z^2)^{3/2}}\,\textbf{k}.
+\end{eqnarray*}
+De esta forma, la inducci\'on magn\'etica producida por el circuito de radio $a$ en un punto sobre su plano ($z=0$) resulta ser
+\begin{eqnarray}
+\textbf{B}&=&\frac{\mu_0\,I_a}{2\,a}\,\textbf{k},
+\end{eqnarray}
+con lo que
+\begin{eqnarray}
+d\Phi&=& \frac{\mu_0\,I_a}{2\,a}\cos\theta\,\,da.
+\end{eqnarray}
+As\'i
+\begin{eqnarray}
+U_{m}&=&I_b \frac{\mu_0\,I_a}{2\,a}\cos\theta\,\,da,\nonumber\\
+&=&I_b \frac{\mu_0\,I_a}{2\,a}\cos\theta\int_{0}^{b}\int_{0}^{2\pi}r\,dr\,d\varphi,\nonumber\\
+&=& \frac{\mu_0\,\pi\,b^2}{2\,a}I_aI_b \cos\theta.
+\end{eqnarray}
+Por otro lado, para calcular el momento de rotaci\'on, se tiene la ec. (\ref{torq iq grad de Um corr cte})
+\begin{eqnarray}
+\tau&=&\left(\frac{\partial U_m}{\partial\theta} \right)_I,\nonumber\\
+&=&\frac{\partial}{\partial\theta}\left( \frac{\mu_0\,\pi\,b^2}{2\,a}I_aI_b\cos\theta\right),\nonumber\\
+\therefore \tau&=&-\frac{\mu_0\,\pi\,b^2}{2\,a}I_aI_b\sin\theta.
+\end{eqnarray}
+\end{example}
+
+
+
+
+%*********************EJEMPLO********************
+\begin{example}\label{esp cn ind rad}
+Un circuito r\'igido que consiste en una sola espira de alambre se sit\'ua en un campo de inducci\'on magn\'etica radial inversa de cuadrado, $\textbf{B}=K\textbf{r}/r^3$. Demuestre que la fuerza sobre el circuito es $\textbf{F}=KI\nabla\Omega$, donde $\Omega$ es el \'angulo s\'olido que el circuito subtiende desde el centro del campo, e $I$ es la corriente del circuito.\\
+\emph{Soluci\'on.}\\
+Sabemos de la ec. (\ref{Wtot iq Um}) que
+\begin{eqnarray*}
+dU_{m}&=&I\,d\Phi,
+\end{eqnarray*}
+donde $d\Phi$ es el flujo magn\'etico que pasa a trav\'es de la espira y est\'a dado por la ec. (\ref{flujo magnetico})
+\begin{eqnarray}
+dU_{m}&=&I\,\textbf{B}\cdot d\textbf{a},\nonumber\\
+&=&IK\,\frac{\textbf{r}\cdot d\textbf{a}}{r^3},\nonumber\\
+&=&IK\,d\Omega\,\,\,\,\,\,\,\,\,\,\,\,\,con\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,d\Omega =\frac{\textbf{r}\cdot d\textbf{a}}{r^3}.
+\end{eqnarray}
+Entonces
+\begin{eqnarray}
+U_{m}&=&IK\,\Omega.
+\end{eqnarray}
+Por otro lado, de la ec. (\ref{fza iq grad de Um corr cte}) se tiene que
+\begin{eqnarray*}
+\textbf{F}&=&(\nabla U_m)_{I}.
+\end{eqnarray*}
+As\'i
+\begin{eqnarray}
+\therefore \textbf{F}&=&IK\nabla\Omega.
+\end{eqnarray}
+\end{example}
+
+
+
+%*********************EJEMPLO********************
+\begin{example}
+El centro de un circuito circular plano, de radio $R$, que consiste en una vuelta, est\'a en el eje $x$ a una distancia $\mbox{x}$ del origen. El circuito lleva una corriente $I$, y su normal positiva apunta en direcci\'on $-x$ (figura \ref{fza-sobre-circuito-por-campoB}). Halle la fuerza ejercida sobre el circuito por un campo de inducci\'on magn\'etica radial que fluye desde el origen, $\textbf{B}=K\textbf{r}/r^3$.
+\begin{figure}[h]
+  \centering
+    \includegraphics[width=0.4\textwidth]{fza-sobre-circuito-por-campoB}
+        \caption{\emph{Campo $\textbf{B}$ radial que fluye desde el origen.}}\label{fza-sobre-circuito-por-campoB}
+\end{figure}\\
+\emph{Soluci\'on.}\\
+En el ejemplo (\ref{esp cn ind rad}) se encontr\'o que la fuerza sobre una espira circular situada en el campo $\textbf{B}=K\textbf{r}/r^3$ est\'a dada por
+\begin{eqnarray*}
+ \textbf{F}&=&IK\nabla\Omega.
+\end{eqnarray*}
+Con
+\begin{eqnarray}
+\Omega &=&-\int_S\frac{\hat{\textbf{r}}\cdot \textbf{i}\,da}{r^2},\nonumber\\
+&=&-\frac{\sin\theta\cos\varphi}{r^2}\int_S da,\nonumber\\
+&=&-\pi\,R^2\,\frac{\sin\theta\cos\varphi}{r^2}.
+\end{eqnarray}
+Entonces
+\begin{eqnarray}
+\nabla\Omega&=&\frac{\partial \Omega}{\partial r}\hat{\textbf{r}}+\frac{1}{r}\frac{\partial \Omega}{\partial \theta}\hat{\pmb{\theta}}+\frac{1}{r\sin\theta}\frac{\partial \Omega}{\partial \varphi}\hat{\pmb{\varphi}},\nonumber\\
+&=&\pi\,R^2\left( 2\frac{\sin\theta\cos\varphi}{r^3}\hat{\textbf{r}}-\frac{\cos\theta\cos\varphi}{r^3}\hat{\pmb{\theta}}+\frac{\sin\varphi}{r^3}\hat{\pmb{\varphi}}\right) .
+\end{eqnarray}
+Finalmente, la fuerza ejercida sobre el circuito es
+\begin{eqnarray}
+\textbf{F}&=&IK\frac{\pi\,R^2}{r^3}\left( 2\sin\theta\cos\varphi\,\hat{\textbf{r}}-\cos\theta\cos\varphi\,\hat{\pmb{\theta}}+\sin\varphi\,\hat{\pmb{\varphi}}\right).
+\end{eqnarray}
+Con
+\begin{eqnarray}
+r&=&\sqrt{x^2+R^2},\\
+\therefore \textbf{F}&=&\frac{IK\pi\,R^2}{(x^2+R^2)^{3/2}}\left( 2\sin\theta\cos\varphi\,\hat{\textbf{r}}-\cos\theta\cos\varphi\,\hat{\pmb{\theta}}+\sin\varphi\,\hat{\pmb{\varphi}}\right).
+\end{eqnarray}
+\end{example}
+
+
+
+\end{document}
