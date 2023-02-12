@@ -3,13 +3,22 @@ Podemos resumir los resultados generales que se han obtenido en cuatro ecuacione
 
 \begin{align}
 	\label{Eq:EqElectrostatica}
-	 & \divergence{\E} = \rho,       \\
-	 & \divergence{\B} = 0,          \\
-	 & \rotational{\E} = \textbf{0}, \\
-	 & \rotational{\B} = \textbf{J},
+	 & \divergence{\E} = \frac{\rho}{\varepsilon_{0}}, \\
+	 & \divergence{\B} = 0,                            \\
+	 & \rotational{\E} = \textbf{0},                   \\
+	 & \rotational{\B} = \mu_{0}\; \textbf{J},
 \end{align}
 
-Por otra parte, la ecuación que contiene el rotacional $\E$ requiere una modificación cuando se trabaja con circuitos electricos.
+Así como también tenemos las ecuaciones que expresa la ley de conservación de la carga y la fuerza que experimenta una carga en presencia de campos eléctricos y magnéticos:
+
+\begin{align}
+	 & \divergence{\textbf{J}} + \diffp{\rho}{t} = 0,           \\
+	 & \textbf{F} = q \left( \E + \textbf{v} \times \B \right).
+\end{align}
+
+Podemos observar que las ecuaciones \eqref{Eq:EqElectrostatica} perteneces a el caso en que los campos $\E$ y $\B$ no cambian con el tiempo, además que forman dos conjuntos completamente independientes entre si, sin implicar alguna conexión entre los campos. Dodo que estas ecuaciones, se obtubieron del estudio de campos estáticos a excecpción de la derivación de la ley de conservación de la carga en donde se consideraron algunos casos que son dependientes del tiempo; por lo que para continuar es necesario suponer que estas ecuaciones son también validas para casos no estáticos a menos que los experiemntos indiquen lo contrario.
+
+% Faraday sospecho que debería haber alguna conexión entre ellos, por lo que diseñó muchos experiemntos para tratar de demostrarlo. Una de las ideas de Faraday era que dado que una corriente que circula por un conductor produce un campo magnético $\B$ al rededor de mismo, entonces podria un campo estacionario producir una corriente eléctrica.
 
 
 % %*********************SECCION********************
