@@ -1,35 +1,30 @@
 \chapter{Inducción electromagnética}
-Podemos resumir los resultados generales que se han obtenido en cuatro ecuaciones diferenciales para campos vectoriales dados por
+Podemos resumir los resultados generales que se han obtenido en cuatro ecuaciones diferenciales para campos vectoriales dadas por
 
-\begin{eqnarray}
-	\label{ecs electrostatica}
-	\begin{split}
-		\nabla\cdot\textbf{D}&=&\rho,\\
-		\nabla\cdot\textbf{B}&=&0,\\
-		\nabla\times\textbf{E}&=&\textbf{0},\\
-		\nabla\times\textbf{H}&=&\textbf{J},
-	\end{split}
-\end{eqnarray}
-con
-\begin{eqnarray}
-	\textbf{E}=-\nabla\phi \,\,\mbox{y}\,\,\textbf{B}=\nabla\times\textbf{A}.\label{PotencialfA}
-\end{eqnarray}
-Por otra parte, la ecuación que contiene el rotacional $\textbf{E}$ requiere una modificación cuando se trabaja con circuitos electricos.
+\begin{align}
+	\label{Eq:EqElectrostatica}
+	 & \nabla \cdot \E = \rho,                \\
+	 & \nabla \cdot \B = 0,                   \\
+	 & \nabla \times \E = \textbf{0},         \\
+	 & \nabla \times \textbf{H} = \textbf{J},
+\end{align}
+
+Por otra parte, la ecuación que contiene el rotacional $\E$ requiere una modificación cuando se trabaja con circuitos electricos.
 
 
 % %*********************SECCION********************
 % \section{Fuerza electromotriz}
 % De la electrostática se sabe
 % \begin{eqnarray}
-% \nabla\times\textbf{E}&=&\textbf{0},\nonumber
+% \nabla\times\E&=&\textbf{0},\nonumber
 % \end{eqnarray}
 % al usar el teorema de Stokes se tiene
 % \begin{eqnarray}
-% \oint\textbf{E}\cdot d\textbf{l}&=&0,\nonumber
+% \oint\E\cdot d\textbf{l}&=&0,\nonumber
 % \end{eqnarray}
-% lo cual muestra el carácter conservativo del campo eléctrico. Estas ecuaciones no son afectadas por la fuerza magnética debida a una corriente constante. Sin embargo, no son validas para campos dependientes del tiempo ($\textbf{E}_{nc}$ no conservativo ), consideremos ahora este caso. Definimos la \emph{fuerza electromotriz (fem)} alrededor de un circuito por
+% lo cual muestra el carácter conservativo del campo eléctrico. Estas ecuaciones no son afectadas por la fuerza magnética debida a una corriente constante. Sin embargo, no son validas para campos dependientes del tiempo ($\E_{nc}$ no conservativo ), consideremos ahora este caso. Definimos la \emph{fuerza electromotriz (fem)} alrededor de un circuito por
 % \begin{eqnarray}
-% \xi=\oint\textbf{E}_{nc}\cdot d\textbf{l},\label{fza electrom}
+% \xi=\oint\E_{nc}\cdot d\textbf{l},\label{fza electrom}
 % \end{eqnarray}
 % la unidad para la fem es el \emph{Volt}. La fuente mas común de estos campos no conservativos es la batería.
 %
@@ -38,11 +33,11 @@ Por otra parte, la ecuación que contiene el rotacional $\textbf{E}$ requiere un
 % %*********************SECCION********************
 %
 % \section{Inducción electromagnética. Ley de Faraday-Lenz-Henry en sus formas fenomenológica, integral, diferencial y de condiciones de frontera}
-% Supongamos tener un circuito cerrado $C$, formado por un alambre conductor como se muestra en la figura (\ref{Phi-a-traves-C}). Supóngase también que existe un campo $\textbf{B}$, de manera que existe un flujo $\Phi$ dado por la ec. (\ref{flujo madnetico}) a través de la superficie $S$ encerrada por $C$.\\
+% Supongamos tener un circuito cerrado $C$, formado por un alambre conductor como se muestra en la figura (\ref{Phi-a-traves-C}). Supóngase también que existe un campo $\B$, de manera que existe un flujo $\Phi$ dado por la ec. (\ref{flujo madnetico}) a través de la superficie $S$ encerrada por $C$.\\
 % \begin{figure}[h]
 %   \centering
 %     \includegraphics[width=0.25\textwidth]{Phi-a-traves-C}
-%         \caption{\emph{Flujo del campo $\textbf{B}$ a través de un circuito cerrado $C$.}}\label{Phi-a-traves-C}
+%         \caption{\emph{Flujo del campo $\B$ a través de un circuito cerrado $C$.}}\label{Phi-a-traves-C}
 % \end{figure}\\
 % Si el flujo a través de $C$ es constante, es decir
 % \begin{eqnarray}
@@ -58,104 +53,104 @@ Por otra parte, la ecuación que contiene el rotacional $\textbf{E}$ requiere un
 % \end{eqnarray}
 % resultado que es conocido como \emph{ley de Faraday}. El signo negativo representa la dirección de la fem inducida en comparación con el sentido elegido para el recorrido de $C$. Este sentido queda descrito por \emph{la ley de Lenz} la cual dice que: la dirección de la fem inducida (y, por lo tanto la corriente inducida) tiende a \emph{oponerse al cambio que la provoca}.\\
 % \\
-% De la ec. (\ref{fza electrom}) se puede observar que la fem inducida puede interpretarse como la presencia de un campo eléctrico inducido $\textbf{E}_{ind}$ no conservativo a lo largo del alambre, de modo que podemos expresar (\ref{ley de faraday}) como
+% De la ec. (\ref{fza electrom}) se puede observar que la fem inducida puede interpretarse como la presencia de un campo eléctrico inducido $\E_{ind}$ no conservativo a lo largo del alambre, de modo que podemos expresar (\ref{ley de faraday}) como
 % \begin{eqnarray}
-% \oint\textbf{E}_{ind}\cdot d\textbf{l}&=&-\frac{d\Phi}{dt}.\label{E ind}
+% \oint\E_{ind}\cdot d\textbf{l}&=&-\frac{d\Phi}{dt}.\label{E ind}
 % \end{eqnarray}
-% Para cualquier punto del espacio, el campo eléctrico total se puede expresar como la suma de una parte conservativa $\textbf{E}_c$, y una parte no conservativa $\textbf{E}_{ind}$, es decir $\textbf{E}=\textbf{E}_c+\textbf{E}_{ind}$, de esta forma
+% Para cualquier punto del espacio, el campo eléctrico total se puede expresar como la suma de una parte conservativa $\E_c$, y una parte no conservativa $\E_{ind}$, es decir $\E=\E_c+\E_{ind}$, de esta forma
 % \begin{eqnarray}
-% \oint\textbf{E}\cdot d\textbf{l}&=&\oint\textbf{E}_{c}\cdot d\textbf{l}+\oint\textbf{E}_{ind}\cdot d\textbf{l}.\label{E tot iq Ec + Eind}
+% \oint\E\cdot d\textbf{l}&=&\oint\E_{c}\cdot d\textbf{l}+\oint\E_{ind}\cdot d\textbf{l}.\label{E tot iq Ec + Eind}
 % \end{eqnarray}
 % De acuerdo con la ec. (\ref{campo E conserv}) la primera integral es cero debido a que es un campo conservativo. Usando las ecs. (\ref{flujo madnetico}) y (\ref{E tot iq Ec + Eind}) se tiene que (\ref{E ind}) se reduce a
 % \begin{eqnarray}
-% \oint\textbf{E}\cdot d\textbf{l}&=&-\frac{d}{dt}\int_S\textbf{B}\cdot d\textbf{a},\nonumber\\
-% &=&-\int_S\frac{\partial\textbf{B}}{\partial t}\cdot d\textbf{a}.\label{e to iq m part B}
+% \oint\E\cdot d\textbf{l}&=&-\frac{d}{dt}\int_S\B\cdot d\textbf{a},\nonumber\\
+% &=&-\int_S\frac{\partial\B}{\partial t}\cdot d\textbf{a}.\label{e to iq m part B}
 % \end{eqnarray}
 % Usando el teorema de Stokes en el lado izquierdo de la igualdad
 % \begin{eqnarray}
-% \int_S(\nabla\times\textbf{E})\cdot d\textbf{a}&=&-\int_S\frac{\partial\textbf{B}}{\partial t}\cdot d\textbf{a}.
+% \int_S(\nabla\times\E)\cdot d\textbf{a}&=&-\int_S\frac{\partial\B}{\partial t}\cdot d\textbf{a}.
 % \end{eqnarray}
 % Dado que esta expresión es valida para cualquier superficie $S$, entonces
 % \begin{eqnarray}
-% \nabla\times\textbf{E}&=&-\frac{\partial\textbf{B}}{\partial t},\label{ley de faraday diferencia}
+% \nabla\times\E&=&-\frac{\partial\B}{\partial t},\label{ley de faraday diferencia}
 % \end{eqnarray}
-% esta expresión es conocida como la \emph{forma diferencial de la ley de Faraday}, y es la generalización de $\nabla\times \textbf{E}=\textbf{0}$, que era valida para campos estáticos.
+% esta expresión es conocida como la \emph{forma diferencial de la ley de Faraday}, y es la generalización de $\nabla\times \E=\textbf{0}$, que era valida para campos estáticos.
 % \begin{obs}
 % Al considerar las ecuaciones  (\ref{PotencialfA}) y  (\ref{ley de faraday diferencia}), se observa
 % \begin{eqnarray}
-% \nabla\times\textbf{E}&=&-\frac{\partial\textbf{B}}{\partial t}=-\frac{\partial}{\partial t}(\nabla\times\textbf{A})=\nabla\times\left(-\dfrac{\partial \textbf{A}}{\partial t}\right).
+% \nabla\times\E&=&-\frac{\partial\B}{\partial t}=-\frac{\partial}{\partial t}(\nabla\times\textbf{A})=\nabla\times\left(-\dfrac{\partial \textbf{A}}{\partial t}\right).
 % \end{eqnarray}
 % Si además se considera que para una función escalar $\varphi$ siempre se satisface $\nabla\times (\nabla\varphi)=\mathbf{0}$, entonces
 % es posible escribir
 % \begin{eqnarray}
-% \nabla\times\textbf{E}&=&\nabla\times\left(-\dfrac{\partial \textbf{A}}{\partial t}\pm\nabla\varphi\right),
+% \nabla\times\E&=&\nabla\times\left(-\dfrac{\partial \textbf{A}}{\partial t}\pm\nabla\varphi\right),
 % \end{eqnarray}
 % es decir
 % \begin{eqnarray*}
-% \textbf{E}=-\dfrac{\partial \textbf{A}}{\partial t}\pm\nabla\varphi.
+% \E=-\dfrac{\partial \textbf{A}}{\partial t}\pm\nabla\varphi.
 % \end{eqnarray*}
 % Para que este último resultado sea compatible con el caso electrostático, es necesario que la función escalar $\varphi$ sea proporcional al potencial electrostático $\phi$. Por lo tanto
 % \begin{eqnarray}
-% \textbf{E}=-\nabla\phi-\dfrac{\partial \textbf{A}}{\partial t}.\label{EPhiA}
+% \E=-\nabla\phi-\dfrac{\partial \textbf{A}}{\partial t}.\label{EPhiA}
 % \end{eqnarray}
 % \end{obs}
 %
 %
 %
 %
-% Dado que ahora $\nabla\times\textbf{E}\neq \textbf{0}$, es necesario estudiar las componentes tangenciales de $\textbf{E}$ en una superficie de discontinuidad, para ello consideramos un peque\~no elemento de superficie en la capa de transición que sea perpendicular al flujo, tal como se ilustra en la figura (\ref{}), donde $\hat{\textbf{n}}\textbf{'}$ es el vector unitario normal a la superficie encerrada por la trayectoria $C$ y paralelo a la superficie entre $1$ y $2$, $\hat{\textbf{n}}$ es el vector unitario perpendicular a la  superficie, y el vector unitario $\hat{\textbf{t}}$ es paralelo al plano de $C$, de esta forma la integral de $\textbf{E}$ alrededor de $C$ es
+% Dado que ahora $\nabla\times\E\neq \textbf{0}$, es necesario estudiar las componentes tangenciales de $\E$ en una superficie de discontinuidad, para ello consideramos un peque\~no elemento de superficie en la capa de transición que sea perpendicular al flujo, tal como se ilustra en la figura (\ref{}), donde $\hat{\textbf{n}}\textbf{'}$ es el vector unitario normal a la superficie encerrada por la trayectoria $C$ y paralelo a la superficie entre $1$ y $2$, $\hat{\textbf{n}}$ es el vector unitario perpendicular a la  superficie, y el vector unitario $\hat{\textbf{t}}$ es paralelo al plano de $C$, de esta forma la integral de $\E$ alrededor de $C$ es
 % \begin{eqnarray}
-% \oint_C\textbf{E}\cdot d\textbf{l}&=&\textbf{E}_2\cdot\hat{\textbf{t}}\,\,\Delta L-\textbf{E}_1\cdot\hat{\textbf{t}}\,\,\Delta L+ \kappa\nonumber\\
-% &=&\hat{\textbf{t}}\cdot\big(\textbf{E}_2-\textbf{E}_1\big)\,\Delta L+\kappa,\label{E en tra c}
+% \oint_C\E\cdot d\textbf{l}&=&\E_2\cdot\hat{\textbf{t}}\,\,\Delta L-\E_1\cdot\hat{\textbf{t}}\,\,\Delta L+ \kappa\nonumber\\
+% &=&\hat{\textbf{t}}\cdot\big(\E_2-\E_1\big)\,\Delta L+\kappa,\label{E en tra c}
 % \end{eqnarray}
-% donde $\textbf{E}_2$ y $\textbf{E}_1$ son los valores de $\textbf{E}$ en sus respectivas regiones, y $\kappa$ es la contribución a la integral de línea que resulta de los extremos de la trayectoria.
+% donde $\E_2$ y $\E_1$ son los valores de $\E$ en sus respectivas regiones, y $\kappa$ es la contribución a la integral de línea que resulta de los extremos de la trayectoria.
 % Por otro lado, de la ec. (\ref{e to iq m part B}) se tiene que
 % \begin{eqnarray}
-% \oint_C\textbf{E}\cdot d\textbf{l}&=&-\int_S\frac{\partial\textbf{B}}{\partial t}\cdot d\textbf{a}.
+% \oint_C\E\cdot d\textbf{l}&=&-\int_S\frac{\partial\B}{\partial t}\cdot d\textbf{a}.
 % \end{eqnarray}
 % De modo que
 % \begin{eqnarray}
-% \oint_C\textbf{E}\cdot d\textbf{l}&=&-\frac{\partial\textbf{B}}{\partial t}\cdot\hat{\textbf{n}}\textbf{'}\,h\,\Delta L.\label{E constok i j}
+% \oint_C\E\cdot d\textbf{l}&=&-\frac{\partial\B}{\partial t}\cdot\hat{\textbf{n}}\textbf{'}\,h\,\Delta L.\label{E constok i j}
 % \end{eqnarray}
 % Igualando (\ref{E en tra c}) y (\ref{E constok i j}) obtenemos
 % \begin{eqnarray}
-% \hat{\textbf{t}}\cdot\big(\textbf{E}_2-\textbf{E}_1\big)\,\Delta L+\kappa+\frac{\partial\textbf{B}}{\partial t}\cdot\hat{\textbf{n}}'\,h\,\Delta L&=&0.
+% \hat{\textbf{t}}\cdot\big(\E_2-\E_1\big)\,\Delta L+\kappa+\frac{\partial\B}{\partial t}\cdot\hat{\textbf{n}}'\,h\,\Delta L&=&0.
 % \end{eqnarray}
 % Podemos observar de la figura que $\hat{\textbf{t}}=\hat{\textbf{n}}\times\hat{\textbf{n}}\textbf{'}$, entonces de la última expresión se tiene
 % \begin{eqnarray}
-% (\hat{\textbf{n}}\times\hat{\textbf{n}}\textbf{'})\cdot\big(\textbf{E}_2-\textbf{E}_1\big)\,\Delta L+\frac{\partial\textbf{B}}{\partial t}\cdot\hat{\textbf{n}}\textbf{'}\,h\,\Delta L&=&-\kappa.
+% (\hat{\textbf{n}}\times\hat{\textbf{n}}\textbf{'})\cdot\big(\E_2-\E_1\big)\,\Delta L+\frac{\partial\B}{\partial t}\cdot\hat{\textbf{n}}\textbf{'}\,h\,\Delta L&=&-\kappa.
 % \end{eqnarray}
 % Para el primer término usamos la identidad
 % \begin{eqnarray}
-% (\textbf{A}\times\textbf{B})\cdot\textbf{C}&=&(\textbf{C}\times\textbf{A})\cdot\textbf{B},
+% (\textbf{A}\times\B)\cdot\textbf{C}&=&(\textbf{C}\times\textbf{A})\cdot\B,
 % \end{eqnarray}
 % así
 % \begin{eqnarray}
-% -\kappa&=&\big[\big(\textbf{E}_2-\textbf{E}_1\big)\times\hat{\textbf{n}}\big]\cdot\hat{\textbf{n}}\textbf{'}\,\Delta L+\frac{\partial\textbf{B}}{\partial t}\cdot\hat{\textbf{n}}\textbf{'}\,h\,\Delta L\nonumber\\
-% &=&\left[ \big(\textbf{E}_2-\textbf{E}_1\big)\times\hat{\textbf{n}}+\frac{\partial\textbf{B}}{\partial t}\,h\right] \cdot\hat{\textbf{n}}\textbf{'}\Delta L.
+% -\kappa&=&\big[\big(\E_2-\E_1\big)\times\hat{\textbf{n}}\big]\cdot\hat{\textbf{n}}\textbf{'}\,\Delta L+\frac{\partial\B}{\partial t}\cdot\hat{\textbf{n}}\textbf{'}\,h\,\Delta L\nonumber\\
+% &=&\left[ \big(\E_2-\E_1\big)\times\hat{\textbf{n}}+\frac{\partial\B}{\partial t}\,h\right] \cdot\hat{\textbf{n}}\textbf{'}\Delta L.
 % \end{eqnarray}
 % Si ahora hacemos que $h\rightarrow 0$ entonces $\kappa\rightarrow 0$, de esta forma
 % \begin{eqnarray}
-% \left[ \left( \textbf{E}_2-\textbf{E}_1\right) \times\hat{\textbf{n}}+\lim_{h\rightarrow 0}\left( \frac{\partial\textbf{B}}{\partial t}\,h\right) \right] \cdot\hat{\textbf{n}}\textbf{'}\Delta L&=&0,
+% \left[ \left( \E_2-\E_1\right) \times\hat{\textbf{n}}+\lim_{h\rightarrow 0}\left( \frac{\partial\B}{\partial t}\,h\right) \right] \cdot\hat{\textbf{n}}\textbf{'}\Delta L&=&0,
 % \end{eqnarray}
 % Entonces
 % \begin{eqnarray}
-% \big(\textbf{E}_2-\textbf{E}_1\big)\times\hat{\textbf{n}}&=&-\lim_{h\rightarrow 0}\left( \frac{\partial\textbf{B}}{\partial t}\,h\right).\label{co f E tim}
+% \big(\E_2-\E_1\big)\times\hat{\textbf{n}}&=&-\lim_{h\rightarrow 0}\left( \frac{\partial\B}{\partial t}\,h\right).\label{co f E tim}
 % \end{eqnarray}
-% Podemos expresar $\textbf{E}$ como la suma de sus componentes normales y transversales a la superficie de separación, es decir
+% Podemos expresar $\E$ como la suma de sus componentes normales y transversales a la superficie de separación, es decir
 % \begin{eqnarray}
-% \textbf{E}&=&\textbf{E}_n+\textbf{E}_t\,\,\,=\,\,\,E_n\,\hat{\textbf{n}}+\textbf{E}_t.\label{part trans y nor de e}
+% \E&=&\E_n+\E_t\,\,\,=\,\,\,E_n\,\hat{\textbf{n}}+\E_t.\label{part trans y nor de e}
 % \end{eqnarray}
 % Si realizamos el producto cruz con $\hat{\textbf{n}}$ en ambos miembros de (\ref{co f E tim})
 % \begin{eqnarray}
-% \left[ \big(\textbf{E}_{2}-\textbf{E}_{1}\big)\times\hat{\textbf{n}}\right] \times\hat{\textbf{n}}&=&-\lim_{h\rightarrow 0}\left( h\frac{\partial\textbf{B}}{\partial t}\times\hat{\textbf{n}}\right),\nonumber\\
-% \big(\textbf{E}_{2}-\textbf{E}_{1}\big)(\hat{\textbf{n}}\cdot\hat{\textbf{n}})-\hat{\textbf{n}}\left[ \big(\textbf{E}_{2}-\textbf{E}_{1}\big)\cdot \hat{\textbf{n}}\right]&=&\textbf{0},\nonumber\\
-% \big(\textbf{E}_{2}-\textbf{E}_{1}\big)-\hat{\textbf{n}}\big(E_{2}-E_{1}\big)&=&\textbf{0}.
+% \left[ \big(\E_{2}-\E_{1}\big)\times\hat{\textbf{n}}\right] \times\hat{\textbf{n}}&=&-\lim_{h\rightarrow 0}\left( h\frac{\partial\B}{\partial t}\times\hat{\textbf{n}}\right),\nonumber\\
+% \big(\E_{2}-\E_{1}\big)(\hat{\textbf{n}}\cdot\hat{\textbf{n}})-\hat{\textbf{n}}\left[ \big(\E_{2}-\E_{1}\big)\cdot \hat{\textbf{n}}\right]&=&\textbf{0},\nonumber\\
+% \big(\E_{2}-\E_{1}\big)-\hat{\textbf{n}}\big(E_{2}-E_{1}\big)&=&\textbf{0}.
 % \end{eqnarray}
 % Usando la ec. (\ref{part trans y nor de e}) en esta última expresión
 % \begin{eqnarray}
-% \textbf{E}_{2t}-\textbf{E}_{1t}&=&\textbf{0},\nonumber\\
-% \Rightarrow\textbf{E}_{2t}&=&\textbf{E}_{1t}.
+% \E_{2t}-\E_{1t}&=&\textbf{0},\nonumber\\
+% \Rightarrow\E_{2t}&=&\E_{1t}.
 % \end{eqnarray}
 % Lo que demuestra que las componentes tangenciales del campo eléctrico son continuas.
 %
@@ -163,40 +158,40 @@ Por otra parte, la ecuación que contiene el rotacional $\textbf{E}$ requiere un
 %
 % %*********************EJEMPLO********************
 % \begin{example}
-% Un conductor metálico que contiene forma de un segmento de alambre de longitud $l$ se mueve en un campo $\textbf{B}$ con velocidad $\textbf{v}$ (figura \ref{alambre-mov-en-B}). Partiendo de una consideración detallada de la fuerza de Lorentz sobre los electrones en el alambre, demuestre que los extremos de este están a la diferencia de potencial $\textbf{B}\cdot\textbf{l}\times\textbf{v}$.\\
+% Un conductor metálico que contiene forma de un segmento de alambre de longitud $l$ se mueve en un campo $\B$ con velocidad $\textbf{v}$ (figura \ref{alambre-mov-en-B}). Partiendo de una consideración detallada de la fuerza de Lorentz sobre los electrones en el alambre, demuestre que los extremos de este están a la diferencia de potencial $\B\cdot\textbf{l}\times\textbf{v}$.\\
 % \begin{figure}[h]
 %   \centering
 %     \includegraphics[width=0.25\textwidth]{alambre-mov-en-B}
-%         \caption{\emph{Potencial eléctrico producido por movimiento de segmento de alambre en un campo $\textbf{B}$.}}\label{alambre-mov-en-B}
+%         \caption{\emph{Potencial eléctrico producido por movimiento de segmento de alambre en un campo $\B$.}}\label{alambre-mov-en-B}
 % \end{figure}\\
 % \emph{Solución.}\\
 % Las cargas libres del conductor experimentan una fuerza de Lorentz que conduce a las cargas positivas y negativas a los extremos del alambre
 % \begin{eqnarray}
-% \textbf{F}&=&q(\textbf{E}+\textbf{v}\times\textbf{B}),\nonumber\\
-% m\textbf{a}&=&q(\textbf{E}+\textbf{v}\times\textbf{B}).
+% \textbf{F}&=&q(\E+\textbf{v}\times\B),\nonumber\\
+% m\textbf{a}&=&q(\E+\textbf{v}\times\B).
 % \end{eqnarray}
 % Cuando las cargas no se mueven con respecto al alambre, la fuerza total sobre cada carga es cero, de modo que
 % \begin{eqnarray}
-% \textbf{E}&=&-\textbf{v}\times\textbf{B}.\label{fz d lor en alambr en cmp b}
+% \E&=&-\textbf{v}\times\B.\label{fz d lor en alambr en cmp b}
 % \end{eqnarray}
 % Por otro lado, recordamos que la diferencia de potencial se puede calcular como
 % \begin{eqnarray}
-% \Delta\phi&=&-\int\textbf{E}\cdot d\textbf{l}.%,\nonumber\\
-% %&=&-\textbf{E}\cdot\textbf{l}.
+% \Delta\phi&=&-\int\E\cdot d\textbf{l}.%,\nonumber\\
+% %&=&-\E\cdot\textbf{l}.
 % \end{eqnarray}
 % Así, de la ec. (\ref{fz d lor en alambr en cmp b}) se tiene que
 % \begin{eqnarray}
-% \Delta\phi&=&(\textbf{v}\times\textbf{B})\cdot\textbf{l},\nonumber\\
-% &=&-(\textbf{B}\times\textbf{v})\cdot\textbf{l}.
+% \Delta\phi&=&(\textbf{v}\times\B)\cdot\textbf{l},\nonumber\\
+% &=&-(\B\times\textbf{v})\cdot\textbf{l}.
 % \end{eqnarray}
 % Usando la identidad
 % \begin{eqnarray}
-% (\textbf{A}\times\textbf{B})\cdot\textbf{C}&=&\textbf{A}\cdot(\textbf{B}\times\textbf{C}).\nonumber\\
-% &=&-\textbf{A}\cdot(\textbf{C}\times\textbf{B}).
+% (\textbf{A}\times\B)\cdot\textbf{C}&=&\textbf{A}\cdot(\B\times\textbf{C}).\nonumber\\
+% &=&-\textbf{A}\cdot(\textbf{C}\times\B).
 % \end{eqnarray}
 % Entonces
 % \begin{eqnarray}
-% \therefore\Delta\phi&=&\textbf{B}\cdot(\textbf{l}\times\textbf{v}).
+% \therefore\Delta\phi&=&\B\cdot(\textbf{l}\times\textbf{v}).
 % \end{eqnarray}
 % \end{example}
 %
@@ -204,22 +199,22 @@ Por otra parte, la ecuación que contiene el rotacional $\textbf{E}$ requiere un
 %
 % %*********************EJEMPLO********************
 % \begin{example}
-% Una varilla metálica de longitud $l$ gira en torno a un eje, que pasa por uno de sus extremos y es perpendicular a la varilla, con una velocidad angular $\omega$. El plano de rotación de la varilla es perpendicular a un campo de inducción magnética $\textbf{B}$ (figura \ref{varilla-girando-en-B}). ?`Cual es la fem de movimiento inducido entre los extremos de la varilla?.\\
+% Una varilla metálica de longitud $l$ gira en torno a un eje, que pasa por uno de sus extremos y es perpendicular a la varilla, con una velocidad angular $\omega$. El plano de rotación de la varilla es perpendicular a un campo de inducción magnética $\B$ (figura \ref{varilla-girando-en-B}). ?`Cual es la fem de movimiento inducido entre los extremos de la varilla?.\\
 % \begin{figure}[h]
 %   \centering
 %     \includegraphics[width=0.3\textwidth]{varilla-girando-en-B}
-%         \caption{\emph{Varilla girando con una velocidad angular $\omega$ perpendicular a un campo de inducción magnética $\textbf{B}$.}}\label{varilla-girando-en-B}
+%         \caption{\emph{Varilla girando con una velocidad angular $\omega$ perpendicular a un campo de inducción magnética $\B$.}}\label{varilla-girando-en-B}
 % \end{figure}\\
 % \emph{Solución.}\\
 % Al igual que en el problema anterior, las cargas libres del conductor experimentan una fuerza de Lorentz que conduce a las cargas positivas y negativas a los extremos del alambre
 % \begin{eqnarray}
-% \textbf{F}&=&q(\textbf{E}+\textbf{v}\times\textbf{B}),\nonumber
+% \textbf{F}&=&q(\E+\textbf{v}\times\B),\nonumber
 % \end{eqnarray}
 % En el caso estacionario la fuerza total sobre cada carga es cero, con lo que
 % \begin{eqnarray}
-% \textbf{E}&=&-\textbf{v}\times\textbf{B}.
+% \E&=&-\textbf{v}\times\B.
 % \end{eqnarray}
-% Como $\textbf{v}\perp\textbf{B}$ entonces
+% Como $\textbf{v}\perp\B$ entonces
 % \begin{eqnarray}
 % E&=&\mbox{v}B,\nonumber\\
 % &=&\omega lB\,\,\,\,,\,\,\,\,\mbox{con}\,\,\,\,\mbox{v}=\omega l.\label{e cn v perp b y vwl}
@@ -228,13 +223,13 @@ Por otra parte, la ecuación que contiene el rotacional $\textbf{E}$ requiere un
 % \begin{eqnarray*}
 % \xi_{ind}&=&-\frac{d\Phi}{dt}.
 % \end{eqnarray*}
-% Pero sabemos también que la  fem inducida puede interpretarse como la presencia de un campo eléctrico inducido $\textbf{E}_{ind}$ no conservativo a lo largo del alambre, de modo que
+% Pero sabemos también que la  fem inducida puede interpretarse como la presencia de un campo eléctrico inducido $\E_{ind}$ no conservativo a lo largo del alambre, de modo que
 % \begin{eqnarray}
-% \xi_{ind}&=&\int\textbf{E}_{ind}\cdot d\textbf{l}.
+% \xi_{ind}&=&\int\E_{ind}\cdot d\textbf{l}.
 % \end{eqnarray}
 % Usando la ec. (\ref{E tot iq Ec + Eind}) y despues (\ref{e cn v perp b y vwl}) se obtiene
 % \begin{eqnarray}
-% \xi_{ind}&=&\int_0^l\textbf{E}\cdot d\textbf{l}.\nonumber\\
+% \xi_{ind}&=&\int_0^l\E\cdot d\textbf{l}.\nonumber\\
 % &=&\int_0^l \omega lB\,\,dl,\nonumber\\
 % \therefore\xi_{ind}&=&\omega B\,\frac{l^2}{2}.
 % \end{eqnarray}
@@ -252,11 +247,11 @@ Por otra parte, la ecuación que contiene el rotacional $\textbf{E}$ requiere un
 % \emph{Solución.}\\
 % Sabemos que
 % \begin{eqnarray*}
-% \xi_{ind}&=&\int\textbf{E}\cdot d\textbf{l},
+% \xi_{ind}&=&\int\E\cdot d\textbf{l},
 % \end{eqnarray*}
 % En el caso estacionario, de la fuerza de Lorentz se tiene
 % \begin{eqnarray}
-% \textbf{E}&=&-\textbf{v}\times\textbf{B},\nonumber\\
+% \E&=&-\textbf{v}\times\B,\nonumber\\
 % \Rightarrow E&=&\mbox{v}B,\nonumber\\
 % &=&\omega rB,\nonumber\\
 % &=&2\pi\,f\,r\,B.
@@ -268,7 +263,7 @@ Por otra parte, la ecuación que contiene el rotacional $\textbf{E}$ requiere un
 % \end{eqnarray}
 % Por otro lado recordamos que el flujo magnético está dado por
 % \begin{eqnarray}
-% \Phi&=&\int \textbf{B}\cdot d\textbf{a},\nonumber\\
+% \Phi&=&\int \B\cdot d\textbf{a},\nonumber\\
 % &=&B\pi r^2.
 % \end{eqnarray}
 % Sustituyendo esta última expreción en (\ref{xi en disc}) se obtiene finalmente que
@@ -282,34 +277,34 @@ Por otra parte, la ecuación que contiene el rotacional $\textbf{E}$ requiere un
 %
 % %*********************EJEMPLO********************
 % \begin{example}
-% Un cilindro dieléctrico de permitividad $\varepsilon$ gira entorno a su eje con una velocidad $\omega$. Si existe un campo magnético uniforme $\textbf{B}$ paralelo al eje del cilindro, halle la carga de polarización inducida en el dieléctrico.\\
+% Un cilindro dieléctrico de permitividad $\varepsilon$ gira entorno a su eje con una velocidad $\omega$. Si existe un campo magnético uniforme $\B$ paralelo al eje del cilindro, halle la carga de polarización inducida en el dieléctrico.\\
 % \begin{figure}[h]
 %   \centering
 %     \includegraphics[width=0.35\textwidth]{Cilindro-dielectrico-girando-en-campo-B}
-%         \caption{\emph{Cilindro dieléctrico giratorio, inmerso en campo $\textbf{B}$.}}\label{Cilindro-dielectrico-girando-en-campo-B}
+%         \caption{\emph{Cilindro dieléctrico giratorio, inmerso en campo $\B$.}}\label{Cilindro-dielectrico-girando-en-campo-B}
 % \end{figure}\\
 % \emph{Solución.}\\
 % Supongamos que el eje del cilindro se orienta paralelo al eje $z$ (figura \ref{Cilindro-dielectrico-girando-en-campo-B}). Las cargas del dieléctrico experimentan una fuerza de Lorentz que las alinea de forma radial al eje del cilindro
 % \begin{eqnarray*}
-% \textbf{F}&=&q(\textbf{E}+\textbf{v}\times\textbf{B}).
+% \textbf{F}&=&q(\E+\textbf{v}\times\B).
 % \end{eqnarray*}
 % Cuando las cargas no se mueven con respecto al cilindro, la fuerza total sobre cada carga es cero, de modo que
 % \begin{eqnarray}
-% \textbf{E}&=&-\textbf{v}\times\textbf{B},
+% \E&=&-\textbf{v}\times\B,
 % \end{eqnarray}
 % donde
 % \begin{eqnarray}
 % \textbf{v}&=& r\omega\,\hat{\pmb{\varphi}}.\\
-% \textbf{B}&=&B\,\hat{\textbf{k}}.
+% \B&=&B\,\hat{\textbf{k}}.
 % \end{eqnarray}
 % Entonces
 % \begin{eqnarray}
-% \textbf{E}&=&-r\omega B (\hat{\pmb{\varphi}}\times\hat{\textbf{k}}),\nonumber\\
+% \E&=&-r\omega B (\hat{\pmb{\varphi}}\times\hat{\textbf{k}}),\nonumber\\
 % &=&-r\omega B\,\hat{\pmb {r}}.
 % \end{eqnarray}
 % Por otro lado, recordamos que la polarización se puede obtener como
 % \begin{eqnarray}
-% \textbf{P}&=&\chi\textbf{E},\nonumber\\
+% \textbf{P}&=&\chi\E,\nonumber\\
 % &=&-\chi r\omega B\,\hat{\pmb {r}},\nonumber\\
 % &=&(\varepsilon_0-\varepsilon) r\omega B\,\hat{\pmb {r}}\,\,\,\,\,\,\,;\,\,\,\,\,\,\,con\,\,\,\,\,\,\,\,\chi=\varepsilon-\varepsilon_0.
 % \end{eqnarray}
@@ -328,9 +323,9 @@ Por otra parte, la ecuación que contiene el rotacional $\textbf{E}$ requiere un
 %
 % %*********************SECCION********************
 % \section{Inductancia. Inductancia mutua}
-% Consideremos dos circuitos filamentales $C_1$ y $C_2$, con las corrientes $I_1$ e $I_2$ respectivamente (figura \ref{fig6.1}). La corriente $I_2$ producirá una inducción $\textbf{B}_2$ en cada punto de la superficie $S_1$ encerrada por $C_1$, por lo que es posible calcular el flujo $\Phi_{2\rightarrow 1}$ en $C_1$ por medio de (\ref{flujo madnetico})
+% Consideremos dos circuitos filamentales $C_1$ y $C_2$, con las corrientes $I_1$ e $I_2$ respectivamente (figura \ref{fig6.1}). La corriente $I_2$ producirá una inducción $\B_2$ en cada punto de la superficie $S_1$ encerrada por $C_1$, por lo que es posible calcular el flujo $\Phi_{2\rightarrow 1}$ en $C_1$ por medio de (\ref{flujo madnetico})
 % \begin{eqnarray}
-% \Phi_{2\rightarrow 1}&=&\int_{S_1}\textbf{B}_2(\textbf{r}_1)\cdot d\textbf{a}_1.
+% \Phi_{2\rightarrow 1}&=&\int_{S_1}\B_2(\textbf{r}_1)\cdot d\textbf{a}_1.
 % \end{eqnarray}
 % \begin{figure}[h]
 %   \centering
@@ -376,7 +371,7 @@ Por otra parte, la ecuación que contiene el rotacional $\textbf{E}$ requiere un
 % \begin{eqnarray}
 % \xi_{j\rightarrow i}=-\,M_{ij}\,\frac{dI_j}{dt}.
 % \end{eqnarray}
-% Si existe mas de un circuito produciendo un campo $\textbf{B}$ a través de $C_i$, el flujo total será una suma de términos como (\ref{flujo marn en term de M})
+% Si existe mas de un circuito produciendo un campo $\B$ a través de $C_i$, el flujo total será una suma de términos como (\ref{flujo marn en term de M})
 % \begin{eqnarray}
 % \Phi_i=\sum_j\Phi_{j\rightarrow i}\,\,\,=\,\,\,\sum_jM_{ij}\,I_j.\label{fluj tot en Ci}
 % \end{eqnarray}
@@ -505,17 +500,17 @@ Por otra parte, la ecuación que contiene el rotacional $\textbf{E}$ requiere un
 % \end{eqnarray}
 % Donde $\Phi$ está dado por
 % \begin{eqnarray*}
-% \Phi&=&\int_S\textbf{B}\cdot d\textbf{a}.
+% \Phi&=&\int_S\B\cdot d\textbf{a}.
 % \end{eqnarray*}
 % Por otro lado, recordamos de la ley de Ampere que
 % \begin{eqnarray*}
-% \oint_C\textbf{B}\cdot d\textbf{l}&=&\mu_0\,I_{enc}.
+% \oint_C\B\cdot d\textbf{l}&=&\mu_0\,I_{enc}.
 % \end{eqnarray*}
 % Consideremos una curva de radio $R_1<r<R_2$, así
 % \begin{eqnarray}
-% \int_0^{2\pi}\textbf{B}\cdot d\textbf{l}&=&\mu_0\,I,\nonumber\\
+% \int_0^{2\pi}\B\cdot d\textbf{l}&=&\mu_0\,I,\nonumber\\
 % B&=&\frac{\mu_0\, I}{2\pi\,r},\nonumber\\
-% \Rightarrow\textbf{B}&=&\frac{\mu_0\, I}{2\pi\,r}\,\hat{\pmb{\varphi}}.
+% \Rightarrow\B&=&\frac{\mu_0\, I}{2\pi\,r}\,\hat{\pmb{\varphi}}.
 % \end{eqnarray}
 % Con lo que
 % \begin{eqnarray}
@@ -914,39 +909,39 @@ Por otra parte, la ecuación que contiene el rotacional $\textbf{E}$ requiere un
 % \section{Densidad de energía y tensor de esfuerzos de Maxwell en el campo magnetostático}
 % Como se están considerando corrientes libres podemos ocupar (\ref{forma diferencial ley de ampere})
 % \begin{eqnarray}
-% \nabla\times\textbf{B}&=&\mu_0\,\textbf{J},\nonumber
+% \nabla\times\B&=&\mu_0\,\textbf{J},\nonumber
 % \end{eqnarray}
 % para expresar (\ref{energia magnetica volumetrica}) como
 % \begin{eqnarray}
-% U_{m}&=&\frac{1}{2\mu_0}\int_{todo\,el\,espacio}(\nabla\times\textbf{B})\cdot\textbf{A}\,d\mbox{v},\label{um rot b}
+% U_{m}&=&\frac{1}{2\mu_0}\int_{todo\,el\,espacio}(\nabla\times\B)\cdot\textbf{A}\,d\mbox{v},\label{um rot b}
 % \end{eqnarray}
 % donde
 % \begin{eqnarray}
-% (\nabla\times\textbf{B})\cdot\textbf{A}&=&\textbf{B}\cdot(\nabla\times \textbf{A})-\nabla\cdot(\textbf{A}\times\textbf{B}).
+% (\nabla\times\B)\cdot\textbf{A}&=&\B\cdot(\nabla\times \textbf{A})-\nabla\cdot(\textbf{A}\times\B).
 % \end{eqnarray}
-% Sustituyendo en (\ref{um rot b}) y usando $\textbf{B}=\nabla\times\textbf{A}$ se tiene
+% Sustituyendo en (\ref{um rot b}) y usando $\B=\nabla\times\textbf{A}$ se tiene
 % \begin{eqnarray}
-% U_{m}&=&\frac{1}{2\mu_0}\int_{V}\textbf{B}^2\,d\mbox{v}-\frac{1}{2\mu_0}\int_{V}\nabla\cdot(\textbf{A}\times\textbf{B})\,d\mbox{v}.
+% U_{m}&=&\frac{1}{2\mu_0}\int_{V}\B^2\,d\mbox{v}-\frac{1}{2\mu_0}\int_{V}\nabla\cdot(\textbf{A}\times\B)\,d\mbox{v}.
 % \end{eqnarray}
 % Usando el teorema de la divergencia en la segunda integral se obtiene
 % \begin{eqnarray}
-% U_{m}&=&\frac{1}{2\mu_0}\int_{V}\textbf{B}^2\,d\mbox{v}-\frac{1}{2\mu_0}\oint_{S}(\textbf{A}\times\textbf{B})\cdot da.\label{um con v y s}
+% U_{m}&=&\frac{1}{2\mu_0}\int_{V}\B^2\,d\mbox{v}-\frac{1}{2\mu_0}\oint_{S}(\textbf{A}\times\B)\cdot da.\label{um con v y s}
 % \end{eqnarray}
 % Se debe considerar a $V$ como un volumen muy grande y $S$ como su superficie de frontera. A medida que $V\rightarrow\infty$, $S$ también se extiende hasta el infinito. Podemos observar de (\ref{potencial magnetico volumetrico}) y (\ref{induccion mag de una dist volumetrica}) que
 % \begin{eqnarray}
-% \textbf{A}\sim\frac{1}{R}\,\,\,\,,\,\,\,\,\textbf{B}\sim\frac{1}{R^2}
+% \textbf{A}\sim\frac{1}{R}\,\,\,\,,\,\,\,\,\B\sim\frac{1}{R^2}
 % \end{eqnarray}
 % A medida que $R\rightarrow\infty$ observamos que la segunda integral de (\ref{um con v y s}) se anula
 % \begin{eqnarray}
-% \oint_{S}(\textbf{A}\times\textbf{B})\cdot da\sim\frac{1}{R^3}\cdot R\sim\frac{1}{R}\longrightarrow 0,
+% \oint_{S}(\textbf{A}\times\B)\cdot da\sim\frac{1}{R^3}\cdot R\sim\frac{1}{R}\longrightarrow 0,
 % \end{eqnarray}
 % con lo que la energía magnética queda como
 % \begin{eqnarray}
-% U_{m}&=&\frac{1}{2\mu_0}\int_{todo\,el\,espacio}\textbf{B}^2\,d\mbox{v}.\label{magnetic energy}
+% U_{m}&=&\frac{1}{2\mu_0}\int_{todo\,el\,espacio}\B^2\,d\mbox{v}.\label{magnetic energy}
 % \end{eqnarray}
 % La energía magética se encuentra distribuida en forma continua a través del espacio con una \emph{densidad de energía} dada por
 % \begin{eqnarray}
-% u_{m}&=&\frac{1}{2\mu_0}\textbf{B}^2,\label{densidad energia mag}
+% u_{m}&=&\frac{1}{2\mu_0}\B^2,\label{densidad energia mag}
 % \end{eqnarray}
 % de manera que
 % \begin{eqnarray}
@@ -1001,7 +996,7 @@ Por otra parte, la ecuación que contiene el rotacional $\textbf{E}$ requiere un
 %
 % %*********************EJEMPLO********************
 % \begin{example}
-% Se da un circuito de corriente en un campo magnético prescrito. La fuerza magnética sobre cada elemento de circuito $d\textbf{l}$ está dada por $I\,\,d\textbf{l}\times\textbf{B}$. Si el circuito se puede mover bajo las influencias de las fuerzas magnéticas, de tal modo que un elemento típico se desplaza $\delta r$ y al mismo tiempo la intensidad de la corriente $I$ se mantiene constante, demuestre por cálculo directo que el trabajo mecánico efectuado por el circuito es $\delta W=I\,\,\delta\Phi$, donde $\delta\Phi$ es el flujo adicional que atraviesa el circuito.\\
+% Se da un circuito de corriente en un campo magnético prescrito. La fuerza magnética sobre cada elemento de circuito $d\textbf{l}$ está dada por $I\,\,d\textbf{l}\times\B$. Si el circuito se puede mover bajo las influencias de las fuerzas magnéticas, de tal modo que un elemento típico se desplaza $\delta r$ y al mismo tiempo la intensidad de la corriente $I$ se mantiene constante, demuestre por cálculo directo que el trabajo mecánico efectuado por el circuito es $\delta W=I\,\,\delta\Phi$, donde $\delta\Phi$ es el flujo adicional que atraviesa el circuito.\\
 % \emph{Solución}.\\
 % El trabajo mecánico se puede calcular como
 % \begin{eqnarray}
@@ -1009,21 +1004,21 @@ Por otra parte, la ecuación que contiene el rotacional $\textbf{E}$ requiere un
 % \end{eqnarray}
 % Por otro lado, la fuerza sobre un elemento de corriente es
 % \begin{eqnarray}
-% \textbf{F}&=&I\,\,d\textbf{l}\times\textbf{B},
+% \textbf{F}&=&I\,\,d\textbf{l}\times\B,
 % \end{eqnarray}
 % Así, el trabajo mecánico
 % \begin{eqnarray}
-% \delta W&=&I\,(d\textbf{l}\times\textbf{B})\cdot\delta\textbf{r},\nonumber\\
-% &=&-I\,(\textbf{B}\times d\textbf{l})\cdot\delta\textbf{r}.
+% \delta W&=&I\,(d\textbf{l}\times\B)\cdot\delta\textbf{r},\nonumber\\
+% &=&-I\,(\B\times d\textbf{l})\cdot\delta\textbf{r}.
 % \end{eqnarray}
 % Usando la identidad vectorial
 % \begin{eqnarray}
-% (\textbf{A}\times\textbf{B})\cdot\textbf{C}&=&\textbf{A}\cdot(\textbf{B}\times\textbf{C}).
+% (\textbf{A}\times\B)\cdot\textbf{C}&=&\textbf{A}\cdot(\B\times\textbf{C}).
 % \end{eqnarray}
 % Con lo que
 % \begin{eqnarray}
-% \delta W&=&-I\,\textbf{B}\cdot(d\textbf{l}\times\delta\textbf{r}),\nonumber\\
-% &=&I\,\textbf{B}\cdot(\delta\textbf{r}\times d\textbf{l}).
+% \delta W&=&-I\,\B\cdot(d\textbf{l}\times\delta\textbf{r}),\nonumber\\
+% &=&I\,\B\cdot(\delta\textbf{r}\times d\textbf{l}).
 % \end{eqnarray}
 % De la definición de producto vectorial se tiene que la magnitud del producto cruz es igual al área del paralelogramo que tiene a $d\textbf{l}$ y $\delta\textbf{r}$ como lados, es decir,
 % \begin{eqnarray}
@@ -1032,7 +1027,7 @@ Por otra parte, la ecuación que contiene el rotacional $\textbf{E}$ requiere un
 % \end{eqnarray}
 % De esta forma
 % \begin{eqnarray}
-% \delta W&=&I\,\textbf{B}\cdot \delta\textbf{a}.
+% \delta W&=&I\,\B\cdot \delta\textbf{a}.
 % \end{eqnarray}
 % Usando la definición de flujo magnético, ec. (\ref{flujo madnetico}) se obtiene finalmente
 % \begin{eqnarray}
@@ -1057,16 +1052,16 @@ Por otra parte, la ecuación que contiene el rotacional $\textbf{E}$ requiere un
 % \end{eqnarray}
 % donde $d\Phi$ es el flujo que pasa a través del circuito de radio $b$, el cual es producido por el circuito de radio $a$. Podemos obtener este flujo, apartir de la ec. (\ref{flujo magnetico})
 % \begin{eqnarray}
-% d\Phi&=&\textbf{B} \cdot d\textbf{a},\nonumber\\
+% d\Phi&=&\B \cdot d\textbf{a},\nonumber\\
 % &=&B\,\cos\theta\,\, da.
 % \end{eqnarray}
 % Recordamos de la ec. (\ref{B de una espira con corriente}) que la inducción magnética producida por una espira circular que conduce una corriente está dado por
 % \begin{eqnarray*}
-% \textbf{B}&=&\frac{\mu_0\,I}{2}\frac{a^2}{(a^2+z^2)^{3/2}}\,\textbf{k}.
+% \B&=&\frac{\mu_0\,I}{2}\frac{a^2}{(a^2+z^2)^{3/2}}\,\textbf{k}.
 % \end{eqnarray*}
 % De esta forma, la inducción magnética producida por el circuito de radio $a$ en un punto sobre su plano ($z=0$) resulta ser
 % \begin{eqnarray}
-% \textbf{B}&=&\frac{\mu_0\,I_a}{2\,a}\,\textbf{k},
+% \B&=&\frac{\mu_0\,I_a}{2\,a}\,\textbf{k},
 % \end{eqnarray}
 % con lo que
 % \begin{eqnarray}
@@ -1091,7 +1086,7 @@ Por otra parte, la ecuación que contiene el rotacional $\textbf{E}$ requiere un
 %
 % %*********************EJEMPLO********************
 % \begin{example}\label{esp cn ind rad}
-% Un circuito rígido que consiste en una sola espira de alambre se sitúa en un campo de inducción magnética radial inversa de cuadrado, $\textbf{B}=K\textbf{r}/r^3$. Demuestre que la fuerza sobre el circuito es $\textbf{F}=KI\nabla\Omega$, donde $\Omega$ es el ángulo sólido que el circuito subtiende desde el centro del campo, e $I$ es la corriente del circuito.\\
+% Un circuito rígido que consiste en una sola espira de alambre se sitúa en un campo de inducción magnética radial inversa de cuadrado, $\B=K\textbf{r}/r^3$. Demuestre que la fuerza sobre el circuito es $\textbf{F}=KI\nabla\Omega$, donde $\Omega$ es el ángulo sólido que el circuito subtiende desde el centro del campo, e $I$ es la corriente del circuito.\\
 % \emph{Solución.}\\
 % Sabemos de la ec. (\ref{Wtot iq Um}) que
 % \begin{eqnarray*}
@@ -1099,7 +1094,7 @@ Por otra parte, la ecuación que contiene el rotacional $\textbf{E}$ requiere un
 % \end{eqnarray*}
 % donde $d\Phi$ es el flujo magnético que pasa a través de la espira y está dado por la ec. (\ref{flujo magnetico})
 % \begin{eqnarray}
-% dU_{m}&=&I\,\textbf{B}\cdot d\textbf{a},\nonumber\\
+% dU_{m}&=&I\,\B\cdot d\textbf{a},\nonumber\\
 % &=&IK\,\frac{\textbf{r}\cdot d\textbf{a}}{r^3},\nonumber\\
 % &=&IK\,d\Omega\,\,\,\,\,\,\,\,\,\,\,\,\,con\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,d\Omega =\frac{\textbf{r}\cdot d\textbf{a}}{r^3}.
 % \end{eqnarray}
@@ -1121,14 +1116,14 @@ Por otra parte, la ecuación que contiene el rotacional $\textbf{E}$ requiere un
 %
 % %*********************EJEMPLO********************
 % \begin{example}
-% El centro de un circuito circular plano, de radio $R$, que consiste en una vuelta, está en el eje $x$ a una distancia $\mbox{x}$ del origen. El circuito lleva una corriente $I$, y su normal positiva apunta en dirección $-x$ (figura \ref{fza-sobre-circuito-por-campoB}). Halle la fuerza ejercida sobre el circuito por un campo de inducción magnética radial que fluye desde el origen, $\textbf{B}=K\textbf{r}/r^3$.
+% El centro de un circuito circular plano, de radio $R$, que consiste en una vuelta, está en el eje $x$ a una distancia $\mbox{x}$ del origen. El circuito lleva una corriente $I$, y su normal positiva apunta en dirección $-x$ (figura \ref{fza-sobre-circuito-por-campoB}). Halle la fuerza ejercida sobre el circuito por un campo de inducción magnética radial que fluye desde el origen, $\B=K\textbf{r}/r^3$.
 % \begin{figure}[h]
 %   \centering
 %     \includegraphics[width=0.4\textwidth]{fza-sobre-circuito-por-campoB}
-%         \caption{\emph{Campo $\textbf{B}$ radial que fluye desde el origen.}}\label{fza-sobre-circuito-por-campoB}
+%         \caption{\emph{Campo $\B$ radial que fluye desde el origen.}}\label{fza-sobre-circuito-por-campoB}
 % \end{figure}\\
 % \emph{Solución.}\\
-% En el ejemplo (\ref{esp cn ind rad}) se encontró que la fuerza sobre una espira circular situada en el campo $\textbf{B}=K\textbf{r}/r^3$ está dada por
+% En el ejemplo (\ref{esp cn ind rad}) se encontró que la fuerza sobre una espira circular situada en el campo $\B=K\textbf{r}/r^3$ está dada por
 % \begin{eqnarray*}
 %  \textbf{F}&=&IK\nabla\Omega.
 % \end{eqnarray*}
