@@ -66,7 +66,40 @@ entonces no existe corriente en el circuito. Sin embargo Faraday encontró que s
 	\xi_{ind} = -\diff{\Phi}{t},
 \end{equation}
 
-Este resultado que es conocido como \emph{ley de Faraday}. El signo negativo representa la dirección de la fem inducida en comparación con el sentido elegido para el recorrido de $C$ Esta dirección queda debe oponerse al cambio del flujo del campo inducido lo que describe \emph{la ley de Lenz}.
+Este resultado que es conocido como \emph{ley de Faraday}. El signo negativo representa la dirección de la fem inducida en comparación con el sentido elegido para el recorrido de $C$ Esta dirección queda debe oponerse al cambio del flujo del campo inducido lo que describe \emph{la ley de Lenz}.\\
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.25\textwidth]{Phi-a-traves-C}
+	\caption{\emph{Flujo del campo $\B$ a través de un circuito cerrado $C$.}}\label{Phi-a-traves-C}
+\end{figure}
+
+La ley de Lenz es fundamental en el estudio de la energía electromagnética, es importante tener en cuenta que la ley de Lenz asegura que la transferencia de energía electromagnética se lleva a cabo de tal manera que se conserve la energía total del sistema, cumpliendo con el principio de conservación de la energía, ella establece que la dirección de la corriente inducida en un circuito cerrado $C$ es tal que se opone al cambio en el flujo magnético $\phi$ que la produce. Esto significa que la fem inducida $\xi_{ind$ tendrá una polaridad que se opone al cambio en el flujo magnético.
+
+	\begin{example}
+		Una barra conductora de longitud $l$ que descansa sobre otro conductor doblado en forma de U de lados $l$ y $x$, si la barra se desplaza sobre el conductor a una velocidad constante $v$ y existe un campo magnetico $B$ el cual es normal al conductor. Calcular la fuerza electromotriz inducida.\\
+		\emph{\textit{ Solución.}}\\
+
+		La fem inducida viene dada por la ecuación \eqref{Eq:FzaElectromotriz} de modo que,
+
+		\begin{equation*}
+			\xi_{ind} = -\diff{\phi}{t},
+		\end{equation*}
+
+		primero calculemos el flujo del campo magnético,
+
+		\begin{equation*}
+			\phi = \int_{S} \B \cdot \dl \textbf{s},
+		\end{equation*}
+
+		dado que el campo magnético $B$ es constante y normal a el area S, por lo que si consideramos que la barra se va desplazando, entonces el area S esta dado por, $S = lx$, de modo que,
+
+		\begin{align*}
+			\xi_{ind} &= -\diff*{\left( Blx \right) }{t},\\
+								&= -Bl \diff{x}{t},\\
+								&= -Blv.
+		\end{align*}
+	\end{example}
 
 De la ecuación \eqref{Eq:FzaElectromotriz} se puede observar que la fem inducida puede interpretarse como la presencia de un campo eléctrico inducido $\E_{ind}$ no conservativo a lo largo del alambre, de modo que podemos expresar \eqref{Eq:LeyFaraday} como:
 
@@ -83,48 +116,59 @@ Para cualquier punto del espacio, el campo eléctrico total se puede expresar co
 
 De acuerdo con la ecuación \eqref{Eq:CampoEConservativo} la primera integral del miembro derecho es cero debido a que se trata de un campo conservativo. Usando las ecuaciones  \eqref{Eq:FlujoMagnetico} y \eqref{Eq:CampoETotal} podemos escribir:
 
+\begin{equation}
+	\label{Eq:FaradayVectoresCampo}
+	\oint_{C} \E \cdot \dl \textbf{l} = -\diff*{ \int_{S} \B \cdot \dl \textbf{s} }{t}.
+\end{equation}
+
+La ecuación \eqref{Eq:FaradayVectoresCampo}, representa las leyes de Faraday y Lenz expresadas en función de los campos y es valoda para cualquier trayectoria cerrada $C$ y por cuyalquier motivo por el cual el flujo de campo $\phi$ pueda cambiar. Debido a todas las formas en que este puede cambar, se estudiaran dos grandes categorias, si el medio esta en moviemnto o en reposo.
+
+\subsection{Medios estacionarios}
+
+Esta categoria aplica para todo sistema en el cual los medios conductores o circuitos de interes no se encuentran en movimento, por lo que las trayectorias cerradas $C$ no cambian de forma o tamaño, de manera que el flujo $\phi$ solo puede variar por que el campo $\B$ depende del tiempo, es decir, $\B = \B(\textbf{r}, t)$. Usando el teorema de Stokes en el miembro izquierdo de la ecuación \eqref{Eq:FaradayVectoresCampo} obtenemos,
+
 \begin{align*}
-	\oint \E \cdot \dl \textbf{l} & = -\diff*{ \int_{s} \B \cdot \dl \textbf{s} }{t}, \\
-	                              & = -\int_{s} \diffp{\B}{t}\cdot \dl \textbf{s}.
+	\int_{S} \rotational{\E} \cdot \dl \textbf{s} &= -\diff*{ \int_{S} \B \cdot \dl \textbf{s} }{t},\\
+	&= - \int_{S} \diffp{\B}{t} \cdot \dl \textbf{s}.
 \end{align*}
-Usando el teorema de Stokes en el lado izquierdo de la igualdad
+
+Dado que esta expresión es valida para cualquier superficie $S$,
+
 \begin{equation}
-	\int_S(\nabla\times\E)\cdot \dl \textbf{a}&=&-\int_S\frac{\partial\B}{\partial t}\cdot d\textbf{a}.
+\label{Eq:LeyFaradayDiferencial}
+	\rotational{\E} = -\diffp{\B}{t},
 \end{equation}
-Dado que esta expresión es valida para cualquier superficie $S$, entonces
-\begin{equation}
-	\nabla\times\E&=&-\frac{\partial\B}{\partial t},\label{ley de faraday diferencia}
-\end{equation}
-esta expresión es conocida como la \emph{forma diferencial de la ley de Faraday}, y es la generalización de $\nabla\times \E=\textbf{0}$, que era valida para campos estáticos.
 
-
-
-\begin{figure}[h]
-	\centering
-	\includegraphics[width=0.25\textwidth]{Phi-a-traves-C}
-	\caption{\emph{Flujo del campo $\B$ a través de un circuito cerrado $C$.}}\label{Phi-a-traves-C}
-\end{figure}
-
-
+esta expresión es conocida como la \emph{forma diferencial de la ley de Faraday}, y es la generalización de $\rotational{\E} = \textbf{0}$, que era valida para campos estáticos.
 
 \begin{obs}
-	Al considerar las ecuaciones  (\ref{PotencialfA}) y  (\ref{ley de faraday diferencia}), se observa
-	\begin{equation}
-		\nabla\times\E&=&-\frac{\partial\B}{\partial t}=-\frac{\partial}{\partial t}(\nabla\times\textbf{A})=\nabla\times\left(-\dfrac{\partial \textbf{A}}{\partial t}\right).
-	\end{equation}
-	Si además se considera que para una función escalar $\varphi$ siempre se satisface $\nabla\times (\nabla\varphi)=\mathbf{0}$, entonces
-	es posible escribir
-	\begin{equation}
-		\nabla\times\E&=&\nabla\times\left(-\dfrac{\partial \textbf{A}}{\partial t}\pm\nabla\varphi\right),
-	\end{equation}
-	es decir
+	Dado que de las ecuaciones \eqref{Eq:EqElectrostatica} la única que ha sido modificada es $\rotational{\E} = \textbf{0}$. Entonces sigue siendo valida la expresión $\divergence{\B} = \textbf{0}$, enonces podemos escribir,
+
 	\begin{equation*}
-		\E=-\dfrac{\partial \textbf{A}}{\partial t}\pm\nabla\varphi.
+		\B = \rotational{\textbf{A}}
 	\end{equation*}
-	Para que este último resultado sea compatible con el caso electrostático, es necesario que la función escalar $\varphi$ sea proporcional al potencial electrostático $\phi$. Por lo tanto
+
+	Por lo tanto podemos reescribir a la ecuación \eqref{Eq:LeyFaradayDiferencial} como,
+
+	\begin{align*}
+		\rotational{\E} &= -\diffp{\B}{t},\\
+										&= -\diffp*{\left( \rotational{A} \right) }{t},\\
+										&= \rotational{ \left(-\diffp{\textbf{A}}{t}\right) }.
+	\end{align*}
+
+	Si además se considera que para una función escalar $\phi$ siempre se satisface $\rotational{ \left( -\nabla \phi \right)} = \mathbf{0}$, entonces es posible escribir
+
+	\begin{equation*}
+		\rotational{\E} = \rotational{ \left( -\nabla\phi -\diffp{\textbf{A}}{t} \right)},
+	\end{equation*}
+
+	es decir,
+
 	\begin{equation}
-		\E=-\nabla\phi-\dfrac{\partial \textbf{A}}{\partial t}.\label{EPhiA}
+		\E = -\nabla\phi -\diffp{\textbf{A}}{t}.
 	\end{equation}
+
+	Lo que demuestra que en general el campo electrico $\E(\textbf{r}, t)$ depende del potencial escalar $\phi$ como del vectorial $\textbf{A}$.
 \end{obs}
 %
 %
