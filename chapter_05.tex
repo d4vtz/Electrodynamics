@@ -170,65 +170,91 @@ esta expresión es conocida como la \emph{forma diferencial de la ley de Faraday
 
 	Lo que demuestra que en general el campo electrico $\E(\textbf{r}, t)$ depende del potencial escalar $\phi$ como del vectorial $\textbf{A}$.
 \end{obs}
-%
-%
-%
-%
-% Dado que ahora $\nabla\times\E\neq \textbf{0}$, es necesario estudiar las componentes tangenciales de $\E$ en una superficie de discontinuidad, para ello consideramos un peque\~no elemento de superficie en la capa de transición que sea perpendicular al flujo, tal como se ilustra en la figura (\ref{}), donde $\hat{\textbf{n}}\textbf{'}$ es el vector unitario normal a la superficie encerrada por la trayectoria $C$ y paralelo a la superficie entre $1$ y $2$, $\hat{\textbf{n}}$ es el vector unitario perpendicular a la  superficie, y el vector unitario $\hat{\textbf{t}}$ es paralelo al plano de $C$, de esta forma la integral de $\E$ alrededor de $C$ es
-% \begin{equation}
-% \oint_C\E\cdot \dl \textbf{l}&=&\E_2\cdot\hat{\textbf{t}}\,\,\Delta L-\E_1\cdot\hat{\textbf{t}}\,\,\Delta L+ \kappa\nonumber\\
-% &=&\hat{\textbf{t}}\cdot\big(\E_2-\E_1\big)\,\Delta L+\kappa,\label{E en tra c}
-% \end{equation}
-% donde $\E_2$ y $\E_1$ son los valores de $\E$ en sus respectivas regiones, y $\kappa$ es la contribución a la integral de línea que resulta de los extremos de la trayectoria.
-% Por otro lado, de la ec. (\ref{e to iq m part B}) se tiene que
-% \begin{equation}
-% \oint_C\E\cdot \dl \textbf{l}&=&-\int_S\frac{\partial\B}{\partial t}\cdot d\textbf{a}.
-% \end{equation}
-% De modo que
-% \begin{equation}
-% \oint_C\E\cdot \dl \textbf{l}&=&-\frac{\partial\B}{\partial t}\cdot\hat{\textbf{n}}\textbf{'}\,h\,\Delta L.\label{E constok i j}
-% \end{equation}
-% Igualando (\ref{E en tra c}) y (\ref{E constok i j}) obtenemos
-% \begin{equation}
-% \hat{\textbf{t}}\cdot\big(\E_2-\E_1\big)\,\Delta L+\kappa+\frac{\partial\B}{\partial t}\cdot\hat{\textbf{n}}'\,h\,\Delta L&=&0.
-% \end{equation}
-% Podemos observar de la figura que $\hat{\textbf{t}}=\hat{\textbf{n}}\times\hat{\textbf{n}}\textbf{'}$, entonces de la última expresión se tiene
-% \begin{equation}
-% (\hat{\textbf{n}}\times\hat{\textbf{n}}\textbf{'})\cdot\big(\E_2-\E_1\big)\,\Delta L+\frac{\partial\B}{\partial t}\cdot\hat{\textbf{n}}\textbf{'}\,h\,\Delta L&=&-\kappa.
-% \end{equation}
-% Para el primer término usamos la identidad
-% \begin{equation}
-% (\textbf{A}\times\B)\cdot\textbf{C}&=&(\textbf{C}\times\textbf{A})\cdot\B,
-% \end{equation}
-% así
-% \begin{equation}
-% -\kappa&=&\big[\big(\E_2-\E_1\big)\times\hat{\textbf{n}}\big]\cdot\hat{\textbf{n}}\textbf{'}\,\Delta L+\frac{\partial\B}{\partial t}\cdot\hat{\textbf{n}}\textbf{'}\,h\,\Delta L\nonumber\\
-% &=&\left[ \big(\E_2-\E_1\big)\times\hat{\textbf{n}}+\frac{\partial\B}{\partial t}\,h\right] \cdot\hat{\textbf{n}}\textbf{'}\Delta L.
-% \end{equation}
-% Si ahora hacemos que $h\rightarrow 0$ entonces $\kappa\rightarrow 0$, de esta forma
-% \begin{equation}
-% \left[ \left( \E_2-\E_1\right) \times\hat{\textbf{n}}+\lim_{h\rightarrow 0}\left( \frac{\partial\B}{\partial t}\,h\right) \right] \cdot\hat{\textbf{n}}\textbf{'}\Delta L&=&0,
-% \end{equation}
-% Entonces
-% \begin{equation}
-% \big(\E_2-\E_1\big)\times\hat{\textbf{n}}&=&-\lim_{h\rightarrow 0}\left( \frac{\partial\B}{\partial t}\,h\right).\label{co f E tim}
-% \end{equation}
-% Podemos expresar $\E$ como la suma de sus componentes normales y transversales a la superficie de separación, es decir
-% \begin{equation}
-% \E&=&\E_n+\E_t\,\,\,=\,\,\,E_n\,\hat{\textbf{n}}+\E_t.\label{part trans y nor de e}
-% \end{equation}
-% Si realizamos el producto cruz con $\hat{\textbf{n}}$ en ambos miembros de (\ref{co f E tim})
-% \begin{equation}
-% \left[ \big(\E_{2}-\E_{1}\big)\times\hat{\textbf{n}}\right] \times\hat{\textbf{n}}&=&-\lim_{h\rightarrow 0}\left( h\frac{\partial\B}{\partial t}\times\hat{\textbf{n}}\right),\nonumber\\
-% \big(\E_{2}-\E_{1}\big)(\hat{\textbf{n}}\cdot\hat{\textbf{n}})-\hat{\textbf{n}}\left[ \big(\E_{2}-\E_{1}\big)\cdot \hat{\textbf{n}}\right]&=&\textbf{0},\nonumber\\
-% \big(\E_{2}-\E_{1}\big)-\hat{\textbf{n}}\big(E_{2}-E_{1}\big)&=&\textbf{0}.
-% \end{equation}
-% Usando la ec. (\ref{part trans y nor de e}) en esta última expresión
-% \begin{equation}
-% \E_{2t}-\E_{1t}&=&\textbf{0},\nonumber\\
-% \Rightarrow\E_{2t}&=&\E_{1t}.
-% \end{equation}
-% Lo que demuestra que las componentes tangenciales del campo eléctrico son continuas.
+
+Dado que ahora el $\rotational{\E} \neq \textbf{0}$, es necesario estudiar las componentes tangenciales de $\E$ en una superficie de discontinuidad, para ello consideramos un pequeño elemento de superficie en la capa de transición que sea perpendicular al flujo, tal como se ilustra en la figura (\ref{}), donde $\hat{\textbf{n}}\textbf{'}$ es el vector unitario normal a la superficie encerrada por la trayectoria $C$ y paralelo a la superficie entre los medios $1$ y $2$, $\hat{\textbf{n}}$ es el vector unitario perpendicular a la  superficie, y el vector unitario $\hat{\textbf{t}}$ es paralelo al plano de $C$, de esta forma la integral de trayectoria $\E$ alrededor de $C$ esta dada por:
+
+\begin{align}
+	\label{Eq:ComponenteTangencialE}
+		\oint_{C} \E \cdot \dl \textbf{l} &= \E_{2} \cdot \hat{\textbf{t}} \,\, \Delta L - \E_{1} \cdot \hat{\textbf{t}} \,\, \Delta L + \kappa,\\
+																		&= \hat{\textbf{t}} \cdot \left( \E_{2} - \E_{1} \right) \, \Delta L + \kappa, \nonumber
+\end{align}
+
+donde $\E_{2}$ y $\E_{1}$ son los valores de los campos electricos en sus respectivas regiones, y $\kappa$ es la contribución a la integral de línea que resulta de los extremos de la trayectoria. Por otro lado, de la ecuación \eqref{Eq:FaradayVectoresCampo} se tiene que:
+
+\begin{equation*}
+	\oint_{C} \E\cdot \dl \textbf{l} = -\int_{S} \diffp{\B}{t} \cdot  \dl \textbf{s}.
+\end{equation*}
+
+De modo que
+
+\begin{equation}
+	\label{Eq:ComponenteTangencialB}
+	\oint_{C} \E \cdot \dl \textbf{l} = - h \; \Delta L \diffp{\B}{t} \cdot \hat{\textbf{n}} \textbf{'}.
+\end{equation}
+
+Igualando \eqref{Eq:ComponenteTangencialE} y \eqref{Eq:ComponenteTangencialB} obtenemos
+
+\begin{equation}
+	\hat{\textbf{t}} \cdot \left( \E_{2} - \E_{1} \right) \, \Delta L + \kappa + \diffp{\B}{t} \cdot \hat{\textbf{n}}' \, h\, \Delta L = 0.
+\end{equation}
+
+Podemos observar de la figura que $\hat{\textbf{t}} = \hat{\textbf{n}} \times \hat{\textbf{n}}\textbf{'}$, entonces de la última expresión se tiene
+
+\begin{equation}
+	\left( \hat{\textbf{n}} \times \hat{\textbf{n}}\textbf{'} \right) \cdot \left( \E_{2} - \E_{1} \right) \, \Delta L + \diffp{\B}{t} \cdot \hat{\textbf{n}}\textbf{'} \ ,h \, \Delta L = -\kappa.
+\end{equation}
+
+Para el primer término usamos la identidad
+
+\begin{equation}
+\left( \textbf{A} \times \B \right) \cdot \textbf{C} = \left( \textbf{C} \times \textbf{A} \right) \cdot \B,
+\end{equation}
+
+así
+
+\begin{align*}
+	-\kappa &= \left[ \left( \E_{2} - \E_{1} \right) \times \hat{\textbf{n}} \right] \cdot \hat{\textbf{n}}\textbf{'} \, \Delta L + \diffp{\B}{t} \cdot \hat{\textbf{n}}\textbf{'} \, h \,\Delta L,\\
+					&= \left[ \left( \E_{2} - \E_{1} \right) \times \hat{\textbf{n}} + \diffp{\B}{t} \, h \right] \cdot \hat{\textbf{n}}\textbf{'} \Delta L.
+\end{align*}
+
+Si ahora hacemos que $h\rightarrow 0$ entonces $\kappa\rightarrow 0$, de esta forma
+
+\begin{equation}
+	\left[ \left( \E_{2} - \E_{1} \right) \times \hat{\textbf{n}} + \lim_{h\rightarrow 0} \left( \diffp{\B}{t} \, h \right) \right] \cdot \hat{\textbf{n}}\textbf{'} \Delta L = 0,
+\end{equation}
+
+Entonces
+
+\begin{equation}
+	\label{co f E tim}
+	\left( \E_{2} - \E_{1} \right) \times \hat{\textbf{n}} = -\lim_{h\rightarrow 0} \left( \diffp{\B}{t} \, h \right).
+\end{equation}
+
+Podemos expresar $\E$ como la suma de sus componentes normales y transversales a la superficie de separación, es decir
+
+\begin{align}
+	\label{part trans y nor de e}
+	\E &= \E_{n} + \E_{t},\\
+		 &= \E_{n} \, \hat{\textbf{n}} + \E_{t}.
+\end{align}
+
+Si realizamos el producto cruz con $\hat{\textbf{n}}$ en ambos miembros de (\ref{co f E tim})
+
+\begin{align*}
+\left[ \left( \E_{2} - \E_{1} \right) \times \hat{\textbf{n}} \right] \times \hat{\textbf{n}},\\
+&= -\lim_{h\rightarrow 0} \left( h \diffp{\B}{t} \times \hat{\textbf{n}} \right),\\
+\big(\E_{2}-\E_{1}\big)(\hat{\textbf{n}}\cdot\hat{\textbf{n}})-\hat{\textbf{n}}\left[ \big(\E_{2}-\E_{1}\big)\cdot \hat{\textbf{n}}\right]&=&\textbf{0},\nonumber\\
+\big(\E_{2}-\E_{1}\big)-\hat{\textbf{n}}\big(E_{2}-E_{1}\big)&=&\textbf{0}.
+\end{align*}
+
+Usando la ec. (\ref{part trans y nor de e}) en esta última expresión
+
+\begin{equation}
+\E_{2t}-\E_{1t}&=&\textbf{0},\nonumber\\
+\Rightarrow\E_{2t}&=&\E_{1t}.
+\end{equation}
+
+Lo que demuestra que las componentes tangenciales del campo eléctrico son continuas.
 %
 %
 %
