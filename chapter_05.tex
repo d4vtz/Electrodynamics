@@ -16,9 +16,9 @@ Así como también tenemos las ecuaciones que expresa la ley de conservación de
 	 & \textbf{F} = q \left( \E + \textbf{v} \times \B \right).
 \end{align}
 
-Podemos observar que las ecuaciones \eqref{Eq:EqElectrostatica} perteneces a el caso en que los campos $\E$ y $\B$ no cambian con el tiempo, además que forman dos conjuntos completamente independientes entre si, sin implicar alguna conexión entre los campos. Dodo que estas ecuaciones, se obtubieron del estudio de campos estáticos a excecpción de la derivación de la ley de conservación de la carga en donde se consideraron algunos casos que son dependientes del tiempo; por lo que para continuar es necesario suponer que estas ecuaciones son también validas para casos no estáticos a menos que los experiemntos indiquen lo contrario.
+Podemos observar que las ecuaciones \eqref{Eq:EqElectrostatica} perteneces a el caso en que los campos $\E$ y $\B$ no cambian con el tiempo, además que forman dos conjuntos completamente independientes entre si, sin implicar alguna conexión entre los campos. Dado que estas ecuaciones, se obtuvieron del estudio de campos estáticos a excepción de la derivación de la ley de conservación de la carga en donde se consideraron algunos casos que son dependientes del tiempo; por lo que para continuar es necesario suponer que estas ecuaciones son también validas para casos no estáticos a menos que los experimentos indiquen lo contrario.
 
-%*********************SECCION********************
+%*********************SECTION********************
 \section{Fuerza electromotriz}
 De la electrostática se sabe podemos que,
 
@@ -39,9 +39,9 @@ lo cual muestra el carácter conservativo del campo eléctrico. Ahora bien, anal
 	\xi = \oint_{C} \E_{nc} \cdot \dl \textbf{l},
 \end{equation}
 
-% %*********************SECCION********************
+% %*********************SECTION********************
 \section{Ley de Faraday-Lenz-Henry}
-Supongamos tener un circuito cerrado $C$, formado por un alambre conductor como se muestra en la figura \ref{Phi-a-traves-C}. Supóngase también que existe un campo $\B$, de manera que genere un flujo $\Phi$ a través de la superficie $s$ encerrada por $C$, si se toma una dirección de recorrido arbitraria de $C$, ontonces queda definido la dirección del eleemnto de superficie $\dl \textbf{s} $ por lo que se puede calcular el flujo del campo magnético $\B$ como:
+Supongamos tener un circuito cerrado $C$, formado por un alambre conductor como se muestra en la figura \ref{Phi-a-traves-C}. Además también existe un campo $\B$, de manera que genere un flujo $\Phi$ a través de la superficie $s$ encerrada por $C$, si se toma una dirección de recorrido arbitraria de $C$, entonces queda definido la dirección del elemento de superficie $\dl \textbf{s} $ por lo que se puede calcular el flujo del campo magnético $\B$ como:
 
 \begin{equation}
 	\Phi = \int_{s} \B \cdot \dl \textbf{s}.
@@ -54,7 +54,7 @@ Si el flujo a través de $C$ es constante, es decir
 	\diff{\Phi}{t} = 0,
 \end{equation*}
 
-entonces no existe corriente en el circuito. Sin embargo Faraday encontró que si el flujo no es constante a través de $C$ por lo que debe exister una corriente \emph{inducida} en $C$ debido al cambio del flujo. Faraday asocio este resultado con la generación de una \emph{fem inducida},
+entonces no existe corriente en el circuito. Sin embargo Faraday encontró que si el flujo no es constante a través de $C$ por lo que debe existe una corriente \emph{inducida} en $C$ debido al cambio del flujo. Faraday asocio este resultado con la generación de una \emph{fem inducida},
 
 \begin{equation}
 	\label{Eq:LeyFaraday}
@@ -64,15 +64,16 @@ entonces no existe corriente en el circuito. Sin embargo Faraday encontró que s
 Este resultado que es conocido como \emph{ley de Faraday}. El signo negativo representa la dirección de la fem inducida en comparación con el sentido elegido para el recorrido de $C$ Esta dirección queda debe oponerse al cambio del flujo del campo inducido lo que describe \emph{la ley de Lenz}.\\
 
 \begin{figure}[H]
+	\label{Phi-a-traves-C}
 	\centering
 	\includegraphics[width=0.25\textwidth]{Phi-a-traves-C}
-	\caption{\emph{Flujo del campo $\B$ a través de un circuito cerrado $C$.}}\label{Phi-a-traves-C}
+	\caption{\emph{Flujo del campo $\B$ a través de un circuito cerrado $C$.}}
 \end{figure}
 
 La ley de Lenz es fundamental en el estudio de la energía electromagnética, es importante tener en cuenta que la ley de Lenz asegura que la transferencia de energía electromagnética se lleva a cabo de tal manera que se conserve la energía total del sistema, cumpliendo con el principio de conservación de la energía, ella establece que la dirección de la corriente inducida en un circuito cerrado $C$ es tal que se opone al cambio en el flujo magnético $\phi$ que la produce. Esto significa que la fem inducida $\xi_{ind}$ tendrá una polaridad que se opone al cambio en el flujo magnético.
 
 	\begin{example}
-		Una barra conductora de longitud $l$ que descansa sobre otro conductor doblado en forma de U de lados $l$ y $x$, si la barra se desplaza sobre el conductor a una velocidad constante $v$ y existe un campo magnetico $B$ el cual es normal al conductor. Calcular la fuerza electromotriz inducida.\\
+		Una barra conductora de longitud $l$ que descansa sobre otro conductor doblado en forma de U de lados $l$ y $x$, si la barra se desplaza sobre el conductor a una velocidad constante $v$ y existe un campo magnético $B$ el cual es normal al conductor. Calcular la fuerza electromotriz inducida.\\
 		\emph{\textit{ Solución.}}\\
 
 		La fem inducida viene dada por la ecuación \eqref{Eq:FzaElectromotriz} de modo que,
@@ -116,11 +117,11 @@ De acuerdo con la ecuación \eqref{Eq:CampoEConservativo} la primera integral de
 	\oint_{C} \E \cdot \dl \textbf{l} = -\diff*{ \int_{S} \B \cdot \dl \textbf{s} }{t}.
 \end{equation}
 
-La ecuación \eqref{Eq:FaradayVectoresCampo}, representa las leyes de Faraday y Lenz expresadas en función de los campos y es valoda para cualquier trayectoria cerrada $C$ y por cuyalquier motivo por el cual el flujo de campo $\phi$ pueda cambiar. Debido a todas las formas en que este puede cambar, se estudiaran dos grandes categorias, si el medio esta en moviemnto o en reposo.
+La ecuación \eqref{Eq:FaradayVectoresCampo}, representa las leyes de Faraday y Lenz expresadas en función de los campos y es valida para cualquier trayectoria cerrada $C$ y por cualquier motivo por el cual el flujo de campo $\phi$ pueda cambiar. Debido a todas las formas en que este puede cambar, se estudiaran dos grandes categorías, si el medio esta en movimiento o en reposo.
 
 \subsection{Medios estacionarios}
 
-Esta categoria aplica para todo sistema en el cual los medios conductores o circuitos de interes no se encuentran en movimento, por lo que las trayectorias cerradas $C$ no cambian de forma o tamaño, de manera que el flujo $\phi$ solo puede variar por que el campo $\B$ depende del tiempo, es decir, $\B = \B(\textbf{r}, t)$. Usando el teorema de Stokes en el miembro izquierdo de la ecuación \eqref{Eq:FaradayVectoresCampo} obtenemos,
+Esta categoría aplica para todo sistema en el cual los medios conductores o circuitos de interés no se encuentran en movimiento, por lo que las trayectorias cerradas $C$ no cambian de forma o tamaño, de manera que el flujo $\phi$ solo puede variar por que el campo $\B$ depende del tiempo, es decir, $\B = \B(\textbf{r}, t)$. Usando el teorema de Stokes en el miembro izquierdo de la ecuación \eqref{Eq:FaradayVectoresCampo} obtenemos,
 
 \begin{align*}
 	\int_{S} \rotational{\E} \cdot \dl \textbf{s} &= -\diff*{ \int_{S} \B \cdot \dl \textbf{s} }{t},\\
@@ -137,7 +138,7 @@ Dado que esta expresión es valida para cualquier superficie $S$,
 esta expresión es conocida como la \emph{forma diferencial de la ley de Faraday}, y es la generalización de $\rotational{\E} = \textbf{0}$, que era valida para campos estáticos.
 
 \begin{obs}
-	Dado que de las ecuaciones \eqref{Eq:EqElectrostatica} la única que ha sido modificada es $\rotational{\E} = \textbf{0}$. Entonces sigue siendo valida la expresión $\divergence{\B} = \textbf{0}$, enonces podemos escribir,
+	Dado que de las ecuaciones \eqref{Eq:EqElectrostatica} la única que ha sido modificada es $\rotational{\E} = \textbf{0}$. Entonces sigue siendo valida la expresión $\divergence{\B} = \textbf{0}$, entonces podemos escribir,
 
 	\begin{equation*}
 		\B = \rotational{\textbf{A}}
@@ -163,13 +164,13 @@ esta expresión es conocida como la \emph{forma diferencial de la ley de Faraday
 		\E = -\nabla\phi -\diffp{\textbf{A}}{t}.
 	\end{equation}
 
-	Lo que demuestra que en general el campo electrico $\E(\textbf{r}, t)$ depende del potencial escalar $\phi$ como del vectorial $\textbf{A}$.
+	Lo que demuestra que en general el campo eléctrico $\E(\textbf{r}, t)$ depende del potencial escalar $\phi$ como del vectorial $\textbf{A}$.
 \end{obs}
 
 
 \subsection{Condiciones de frontera}
 
-Dado que ahora el $\rotational{\E} \neq \textbf{0}$, es necesario estudiar las componentes tangenciales del campo eléctrico $\E$ en una superficie de discontinuidad, para ello consideramos un pequeño elemento de sup:erficie en la capa de transición que sea perpendicular al flujo, tal como se ilustra en la figura \ref{fig:CondicionesFrontera}, donde $ \hat{\textbf{m}}$ es el vector unitario normal a la superficie encerrada por la trayectoria $C$ y paralelo a la superficie entre los medios $1$ y $2$, $\hat{\textbf{n}}$ es el vector unitario perpendicular a la  superficie, y el vector unitario $\hat{\textbf{t}}$ es paralelo al plano de $C$, de esta forma la integral de trayectoria $\E$ alrededor de $C$ esta dada por:
+Dado que ahora el $\rotational{\E} \neq \textbf{0}$, es necesario estudiar las componentes tangenciales del campo eléctrico $\E$ en una superficie de discontinuidad, para ello consideramos un pequeño elemento de superficie en la capa de transición que sea perpendicular al flujo, tal como se ilustra en la figura \ref{fig:CondicionesFrontera}, donde $ \hat{\textbf{m}}$ es el vector unitario normal a la superficie encerrada por la trayectoria $C$ y paralelo a la superficie entre los medios $1$ y $2$, $\hat{\textbf{n}}$ es el vector unitario perpendicular a la  superficie, y el vector unitario $\hat{\textbf{t}}$ es paralelo al plano de $C$, de esta forma la integral de trayectoria $\E$ alrededor de $C$ esta dada por:
 
 
 
@@ -187,7 +188,7 @@ Dado que ahora el $\rotational{\E} \neq \textbf{0}$, es necesario estudiar las c
 																		&= \hat{\textbf{t}} \cdot \left( \E_{2} - \E_{1} \right) \, \Delta L + \kappa, \nonumber
 \end{align}
 
-donde $\E_{2}$ y $\E_{1}$ son los valores de los campos electricos en sus respectivas regiones, y $\kappa$ es la contribución a la integral de línea que resulta de los extremos de la trayectoria. Por otro lado, de la ecuación \eqref{Eq:FaradayVectoresCampo} se tiene que:
+donde $\E_{2}$ y $\E_{1}$ son los valores de los campos eléctricos en sus respectivas regiones, y $\kappa$ es la contribución a la integral de línea que resulta de los extremos de la trayectoria. Por otro lado, de la ecuación \eqref{Eq:FaradayVectoresCampo} se tiene que:
 
 \begin{equation*}
 	\oint_{C} \E \cdot \dl \textbf{l} = -\int_{S} \diffp{\B}{t} %\cdot  \dl \textfb{s},
@@ -340,7 +341,7 @@ Lo que demuestra que las componentes tangenciales del campo eléctrico son conti
 % \begin{equation}
 % \xi_{ind} = \int\E_{ind}\cdot \dl \textbf{l}.
 % \end{equation}
-% Usando la ec. (\ref{E tot iq Ec + Eind}) y despues (\ref{e cn v perp b y vwl}) se obtiene
+% Usando la ec. (\ref{E tot iq Ec + Eind}) y después (\ref{e cn v perp b y vwl}) se obtiene
 % \begin{equation}
 % \xi_{ind} = \int_0^l\E\cdot \dl \textbf{l}.\nonumber\\
 %  = 
@@ -384,7 +385,7 @@ Lo que demuestra que las componentes tangenciales del campo eléctrico son conti
 %  = 
 % B\pi r^2.
 % \end{equation}
-% Sustituyendo esta última expreción en (\ref{xi en disc}) se obtiene finalmente que
+% Sustituyendo esta última expresión en (\ref{xi en disc}) se obtiene finalmente que
 % \begin{equation}
 % \therefore\xi_{ind} = f\,\Phi.
 % \end{equation}
@@ -444,9 +445,9 @@ Lo que demuestra que las componentes tangenciales del campo eléctrico son conti
 % 
 % 
 % 
-% %*********************SECCION********************
+% %*********************SECCIÓN********************
 % \section{Inductancia. Inductancia mutua}
-% Consideremos dos circuitos filamentales $C_1$ y $C_2$, con las corrientes $I_1$ e $I_2$ respectivamente (figura \ref{fig6.1}). La corriente $I_2$ producirá una inducción $\B_2$ en cada punto de la superficie $S_1$ encerrada por $C_1$, por lo que es posible calcular el flujo $\Phi_{2\rightarrow 1}$ en $C_1$ por medio de (\ref{flujo madnetico})
+% Consideremos dos circuitos $C_1$ y $C_2$, con las corrientes $I_1$ e $I_2$ respectivamente (figura \ref{fig6.1}). La corriente $I_2$ producirá una inducción $\B_2$ en cada punto de la superficie $S_1$ encerrada por $C_1$, por lo que es posible calcular el flujo $\Phi_{2\rightarrow 1}$ en $C_1$ por medio de (\ref{flujo madnetico})
 % \begin{equation}
 % \Phi_{2\rightarrow 1} = \int_{S_1}\B_2(\textbf{r}_1)\cdot \dl \textbf{a}_1.
 % \end{equation}
@@ -550,7 +551,7 @@ Lo que demuestra que las componentes tangenciales del campo eléctrico son conti
 % \begin{equation}
 % k^2_c:=\frac{d^2_{ij}+(r_i+r_j)^2}{d^2_{ij}+(r_i-r_j)^2}.
 % \end{equation}
-% Al usar estas expresiones en el cáculo para $M_{ij}$ se tiene
+% Al usar estas expresiones en el cálculo para $M_{ij}$ se tiene
 % \begin{equation}
 % M_{ij} = \frac{\mu_0\ r_i\ r_j}{\sqrt{d^2_{ij}+(r_i-r_j)^2}} \int^{\pi}_0\dfrac{(1-2\sin^2 \alpha)\, d\alpha}{\sqrt{\cos^2\alpha+k^2_c \sin^2 \alpha}},\nonumber\\
 %  = 
@@ -575,7 +576,7 @@ Lo que demuestra que las componentes tangenciales del campo eléctrico son conti
 % & \mbox{EllipticeE}[\pi/2,0.4]=1.39939.
 % \end{align*}
 % 
-% %%%%%%%%%%%%%%%%%%%%SECCION%%%%%%%%%%%%%
+% %%%%%%%%%%%%%%%%%%%%SECCIÓN%%%%%%%%%%%%%
 % \section{Autoinductancia}
 % Es posible que el circuito $C_i$ produzca un flujo $\Phi_{i\rightarrow i}$ que pase a través de sí mismo (figura \ref{Bt}). El coeficiente de proporcionalidad en este caso se denomina \emph{autoinductancia}. Entonces de la ec. (\ref{fluj pji 2-1})
 % \begin{equation}
@@ -663,7 +664,7 @@ Lo que demuestra que las componentes tangenciales del campo eléctrico son conti
 %     \includegraphics[width=0.4\textwidth]{RL}
 %         \caption{\emph{Circuito R-L.}}\label{RL}
 % \end{figure}
-% Considerese el circuito que se muestra en la figura \ref{RL}, el cual se cierra en $t=0$. Al considerar el inductor se tiene
+% Considere el circuito que se muestra en la figura \ref{RL}, el cual se cierra en $t=0$. Al considerar el inductor se tiene
 % \begin{equation}
 % \xi+\xi_L = R\ I\nonumber\\
 % \xi-L\dfrac{dI}{dt} = R\ I\, ,
@@ -802,7 +803,7 @@ Lo que demuestra que las componentes tangenciales del campo eléctrico son conti
 % \begin{equation}
 % \dfrac{dV_1}{dt}+i\dfrac{dV_2}{dt}=\left(L\dfrac{d^2I_1}{dt^2}+R\dfrac{dI_1}{dt}+\dfrac{I_1}{C}\right)+i\left(L\dfrac{d^2I_2}{dt^2}+R\dfrac{dI_2}{dt}+\dfrac{I_2}{C}\right).\label{Iim}
 % \end{equation}
-% Dada la forma de $V(t)$, el lado derecho de (\ref{Iim}) se simplifica considerablemente al usar $V(t)=V_0\ \mbox{e}^{i\omega t}$ y a partir de esta expresión se puede deteminar la corriente $I(t)$:
+% Dada la forma de $V(t)$, el lado derecho de (\ref{Iim}) se simplifica considerablemente al usar $V(t)=V_0\ \mbox{e}^{i\omega t}$ y a partir de esta expresión se puede determinar la corriente $I(t)$:
 % \begin{equation}
 % I(t)=C\dfrac{dV}{dt}=iC\ V_0\ \omega\ \mbox{e}^{i\omega t}=I_0 \mbox{e}^{i\omega t},\label{IComplex}
 % \end{equation}
@@ -816,7 +817,7 @@ Lo que demuestra que las componentes tangenciales del campo eléctrico son conti
 % \begin{equation}
 % V_0 =\left[R +i\left(\omega L-\dfrac{1}{\omega C}\right)\right]I_0.\label{VoIo}
 % \end{equation}
-% Se define la {\bf impadencia}, Z, del circuito como la cantidad compleja
+% Se define la {\bf impedencia}, Z, del circuito como la cantidad compleja
 % \begin{equation}
 % Z:=R +i\left(\omega L-\dfrac{1}{\omega C}\right),
 % \end{equation}
@@ -908,7 +909,7 @@ Lo que demuestra que las componentes tangenciales del campo eléctrico son conti
 % \begin{equation}
 % R=\dfrac{l}{A} \eta,
 % \end{equation}
-% donde $l$ es la longitud del cable, $A$ es el área seccional y $\eta$ es la resistividad. Entonces
+% donde $l$ es la longitud del cable, $A$ es el área transversal y $\eta$ es la resistividad. Entonces
 % \begin{equation}
 % A = 5.309\times 10^{-4}\ m^2,\\
 % \eta = 1.7\times 10^{-8}\ \Omega\ m,
@@ -937,13 +938,13 @@ Lo que demuestra que las componentes tangenciales del campo eléctrico son conti
 % \end{equation*}
 % por lo cual
 % \[l=\dfrac{100 000\ W}{3.202\times10^{-5}W/m}=3.123 \times10^6\ Km.\]
-% Al trasmitir $100\ KW$ una distancia de $10 Km$ las párdidas son
+% Al trasmitir $100\ KW$ una distancia de $10 Km$ las perdidas son
 % \[I^2\ R= (10 000\ m) (3.202\times10^{-5}W/m)=0.3202\ W.\ !\]
 % Al llegar al destino, se tiene un transformador que baja el voltaje. Si el voltaje baja a $100\ V$, entonces se tiene $1000\ A$.
 % \end{example}
 % 
 % 
-% %%%%%%%%%%%%%%%%%%SECCION%%%%%%%%%%%%%%%%%%
+% %%%%%%%%%%%%%%%%%%SECCIÓN%%%%%%%%%%%%%%%%%%
 % \subsection{Transformador real}
 % Esta sección es extraída de \cite{MA}. En un transformador real no toda la potencia del primer bobinado se transfiere al secundario, esto es debido a la existencia de corrientes parásitas\footnote{Ver apéndice \ref{ParasitasI}}.  Otras pérdidas de energía se representan por la resistencia finita de los alambres de los embobinados y además por la capacitancia parásita\footnote{Ver apéndice \ref{ParasitasC}} entre cada una de la vueltas.
 % 
@@ -955,7 +956,7 @@ Lo que demuestra que las componentes tangenciales del campo eléctrico son conti
 % \end{figure}
 % Las inductancias $L_1$ y $L_2$ representan la parte del flujo no interceptado por el otro embobinado, $R_1$ y $R_2$ son las resistencias de los embobinados, y $C_1$ y $C_2$ indican las capacitancias de los mismos.  La inductancia $L_m$ es la asociada con el flujo de corriente en {\color{red} situación de circuito abierto en el secundario}.
 % 
-% A bajas frecuencias, la mayor parte de la energía se pierde en la magnetización del núcleo y por la capacitancia párasita, mientras que a altas frecuencias la mayoría se pierde por los inductancias $L_1$ y $L_2$ (ver la ec. (\ref{XL}) para este último argumento). Así que los transformadores reales son dise\~nados para operar en cierto rango de frecuencias. También se pierde energía en el núcleo ya que toda la enería usada en la magnetización no se recupera.
+% A bajas frecuencias, la mayor parte de la energía se pierde en la magnetización del núcleo y por la capacitancia párasita, mientras que a altas frecuencias la mayoría se pierde por los inductancias $L_1$ y $L_2$ (ver la ec. (\ref{XL}) para este último argumento). Así que los transformadores reales son diseñados para operar en cierto rango de frecuencias. También se pierde energía en el núcleo ya que toda la energía usada en la magnetización no se recupera.
 % 
 % La potencia entregada al bobinado secundario por el primario, se expresa mediante
 % \begin{equation}
@@ -964,9 +965,9 @@ Lo que demuestra que las componentes tangenciales del campo eléctrico son conti
 % donde $e$ es el {\it factor de eficiencia}.
 % 
 % 
-% %*********************SECCION********************
+% %*********************SECCIÓN********************
 % \section{Energía almacenada en un sistema de solenoides con corrientes estacionarias}
-% Consideremos un sistema de corrientes libres de un grupo de $n$ circuitos rígidos y fijos en el espacio. Se desea calcular el trabajo necesario para comenzar de una situacio\'n en la que todas las corrientes son cero y terminar en una situación en la que la corriente del circuito $Ci$ tenga un valor final $I_i$, siendo $i=1,2,...,n$.\\
+% Consideremos un sistema de corrientes libres de un grupo de $n$ circuitos rígidos y fijos en el espacio. Se desea calcular el trabajo necesario para comenzar de una situación en la que todas las corrientes son cero y terminar en una situación en la que la corriente del circuito $Ci$ tenga un valor final $I_i$, siendo $i=1,2,...,n$.\\
 % \\
 % Supóngase que al tiempo $0<t<t_f$ la corriente de cada circuito $C_i$ está dada por
 % \begin{equation}
@@ -1041,7 +1042,7 @@ Lo que demuestra que las componentes tangenciales del campo eléctrico son conti
 % \end{equation}
 % 
 % 
-% %*********************SECCION********************
+% %*********************SECCIÓN********************
 % \section{Densidad de energía y tensor de esfuerzos de Maxwell en el campo magnetostático}
 % Como se están considerando corrientes libres podemos ocupar (\ref{forma diferencial ley de ampere})
 % \begin{equation}
@@ -1075,7 +1076,7 @@ Lo que demuestra que las componentes tangenciales del campo eléctrico son conti
 % \begin{equation}
 % U_{m} = \frac{1}{2\mu_0}\int_{todo\,el\,espacio}\B^2\,d\mbox{v}.\label{magnetic energy}
 % \end{equation}
-% La energía magética se encuentra distribuida en forma continua a través del espacio con una \emph{densidad de energía} dada por
+% La energía magnética se encuentra distribuida en forma continua a través del espacio con una \emph{densidad de energía} dada por
 % \begin{equation}
 % u_{m} = \frac{1}{2\mu_0}\B^2,\label{densidad energia mag}
 % \end{equation}
@@ -1190,7 +1191,7 @@ Lo que demuestra que las componentes tangenciales del campo eléctrico son conti
 % \begin{equation}
 % dU_{m} = I_b\,d\Phi,
 % \end{equation}
-% donde $d\Phi$ es el flujo que pasa a través del circuito de radio $b$, el cual es producido por el circuito de radio $a$. Podemos obtener este flujo, apartir de la ec. (\ref{flujo magnetico})
+% donde $d\Phi$ es el flujo que pasa a través del circuito de radio $b$, el cual es producido por el circuito de radio $a$. Podemos obtener este flujo, a partir de la ec. (\ref{flujo magnetico})
 % \begin{equation}
 % d\Phi = \B \cdot \dl \textbf{a},\nonumber\\
 %  = 
