@@ -28,3 +28,9 @@
 \NewDocumentCommand\divergence{m}{
 	\nabla \cdot #1
 }
+
+
+\newcommand{\incfig}[1]{%
+    \def\svgwidth{\columnwidth}
+    \import{Pictures/}{#1.pdf_tex}
+}
