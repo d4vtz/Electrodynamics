@@ -277,90 +277,61 @@ Lo que demuestra que las componentes tangenciales del campo eléctrico son conti
 
 
 
-% %*********************EJEMPLO********************
-% \begin{example}
-% Un conductor metálico que contiene forma de un segmento de alambre de longitud $l$ se mueve en un campo $\B$ con velocidad $\textbf{v}$ (figura \ref{alambre-mov-en-B}). Partiendo de una consideración detallada de la fuerza de Lorentz sobre los electrones en el alambre, demuestre que los extremos de este están a la diferencia de potencial $\B\cdot\textbf{l}\times\textbf{v}$.\\
-% \begin{figure}[H]
-%   \centering
-%     \includegraphics[width=0.25\textwidth]{alambre-mov-en-B}
-%         \caption{\emph{Potencial eléctrico producido por movimiento de segmento de alambre en un campo $\B$.}}\label{alambre-mov-en-B}
-% \end{figure}\\
-% \emph{Solución.}\\
-% Las cargas libres del conductor experimentan una fuerza de Lorentz que conduce a las cargas positivas y negativas a los extremos del alambre
-% \begin{equation}
-% \textbf{F} = q(\E+\textbf{v}\times\B),\nonumber\\
-% m\textbf{a} = q(\E+\textbf{v}\times\B).
-% \end{equation}
-% Cuando las cargas no se mueven con respecto al alambre, la fuerza total sobre cada carga es cero, de modo que
-% \begin{equation}
-% \E = -\textbf{v}\times\B.\label{fz d lor en alambr en cmp b}
-% \end{equation}
-% Por otro lado, recordamos que la diferencia de potencial se puede calcular como
-% \begin{equation}
-% \Delta\phi = -\int\E\cdot \dl \textbf{l}.%,\nonumber\\
-% % = -\E\cdot\textbf{l}.
-% \end{equation}
-% Así, de la ec. (\ref{fz d lor en alambr en cmp b}) se tiene que
-% \begin{equation}
-% \Delta\phi = (\textbf{v}\times\B)\cdot\textbf{l},\nonumber\\
-%  = 
-% -(\B\times\textbf{v})\cdot\textbf{l}.
-% \end{equation}
-% Usando la identidad
-% \begin{equation}
-% (\textbf{A}\times\B)\cdot\textbf{C} = \textbf{A}\cdot(\B\times\textbf{C}).\nonumber\\
-%  = 
-% -\textbf{A}\cdot(\textbf{C}\times\B).
-% \end{equation}
-% Entonces
-% \begin{equation}
-% \therefore\Delta\phi = \B\cdot(\textbf{l}\times\textbf{v}).
-% \end{equation}
-% \end{example}
-% 
-% 
-% 
-% %*********************EJEMPLO********************
-% \begin{example}
-% Una varilla metálica de longitud $l$ gira en torno a un eje, que pasa por uno de sus extremos y es perpendicular a la varilla, con una velocidad angular $\omega$. El plano de rotación de la varilla es perpendicular a un campo de inducción magnética $\B$ (figura \ref{varilla-girando-en-B}). ?`Cual es la fem de movimiento inducido entre los extremos de la varilla?.\\
-% \begin{figure}[H]
-%   \centering
-%     \includegraphics[width=0.3\textwidth]{varilla-girando-en-B}
-%         \caption{\emph{Varilla girando con una velocidad angular $\omega$ perpendicular a un campo de inducción magnética $\B$.}}\label{varilla-girando-en-B}
-% \end{figure}\\
-% \emph{Solución.}\\
-% Al igual que en el problema anterior, las cargas libres del conductor experimentan una fuerza de Lorentz que conduce a las cargas positivas y negativas a los extremos del alambre
-% \begin{equation}
-% \textbf{F} = q(\E+\textbf{v}\times\B),\nonumber
-% \end{equation}
-% En el caso estacionario la fuerza total sobre cada carga es cero, con lo que
-% \begin{equation}
-% \E = -\textbf{v}\times\B.
-% \end{equation}
-% Como $\textbf{v}\perp\B$ entonces
-% \begin{equation}
-% E = \mbox{v}B,\nonumber\\
-%  = 
-% \omega lB\,\,\,\,,\,\,\,\,\mbox{con}\,\,\,\,\mbox{v}=\omega l.\label{e cn v perp b y vwl}
-% \end{equation}
-% Por otro lado, de la ec. (\ref{ley de faraday}) sabemos que
-% \begin{equation*}
-% \xi_{ind} = -\frac{d\Phi}{dt}.
-% \end{equation*}
-% Pero sabemos también que la  fem inducida puede interpretarse como la presencia de un campo eléctrico inducido $\E_{ind}$ no conservativo a lo largo del alambre, de modo que
-% \begin{equation}
-% \xi_{ind} = \int\E_{ind}\cdot \dl \textbf{l}.
-% \end{equation}
-% Usando la ec. (\ref{E tot iq Ec + Eind}) y después (\ref{e cn v perp b y vwl}) se obtiene
-% \begin{equation}
-% \xi_{ind} = \int_0^l\E\cdot \dl \textbf{l}.\nonumber\\
-%  = 
-% \int_0^l \omega lB\,\,dl,\nonumber\\
-% \therefore\xi_{ind} = \omega B\,\frac{l^2}{2}.
-% \end{equation}
-% \end{example}
-% 
-% 
+%*********************EJEMPLO********************
+\begin{example}
+	Una varilla metálica de longitud $l$ gira en torno a un eje, que pasa por uno de sus extremos y es perpendicular a la varilla, con una velocidad angular $\omega$. El plano de rotación de la varilla es perpendicular a un campo de inducción magnética $\B$, figura \ref{Fig:VarillaGirandoEnB}. ¿Cual es la fem de movimiento inducido entre los extremos de la varilla?.
+
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.3\textwidth]{varilla-girando-en-B}
+		\caption{\emph{Varilla girando con una velocidad angular $\omega$ perpendicular a un campo de inducción magnética $\B$.}}
+		\label{Fig:VarillaGirandoEnB}
+	\end{figure}
+
+	\emph{Solución.}\\
+	Las cargas libres del conductor experimentan una fuerza de Lorentz que conduce a las cargas positivas y negativas a los extremos del alambre,
+
+	\begin{equation*}
+		\textbf{F} = q \left( \E + \textbf{v} \times \B \right),
+	\end{equation*}
+
+	En el caso estacionario la fuerza total sobre cada carga es cero, con lo que
+
+	\begin{equation}
+		\E = -\textbf{v} \times \B.
+	\end{equation}
+
+	Como $\textbf{v} \perp \B$ entonces
+
+	\begin{align}
+		\label{Eq:EConFuerzaElectrica}
+		E & = vB, \nonumber \\
+		  & = \omega lB,
+	\end{align}
+
+	Por otro lado, de la ecuación \eqref{Eq:LeyFaraday} sabemos que
+
+	\begin{equation*}
+		\xi_{ind} = -\frac{d\Phi}{dt}.
+	\end{equation*}
+
+	Pero sabemos también que la  fem inducida puede interpretarse como la presencia de un campo eléctrico inducido $\E_{ind}$ no conservativo a lo largo del alambre, de modo que
+
+	\begin{equation}
+		\xi_{ind} = \int\E_{ind}\cdot \dl \textbf{l}.
+	\end{equation}
+
+	Sustituyendo la ecuación \eqref{Eq:EConFuerzaElectrica} obtenemos
+
+	\begin{align*}
+		\xi_{ind}           & = \int_{0}^{l} \E \cdot \dl \textbf{l}, \\
+		                    & = \int_{0}^{l} \omega lB \, \dl l,      \\
+		\therefore\xi_{ind} & = \omega B \,\frac{l^2}{2}.
+	\end{align*}
+
+\end{example}
+
+
 % %*********************EJEMPLO********************
 % \begin{example}
 % El generador homopolar de Faraday consiste en un disco de metal que gira en un campo magnético uniforme que es perpendicular a su plano (figura \ref{generador-homopolar-de-Faraday}). Demuestre que la diferencia de potencial que se genera entre el centro y la periferia del disco es $\xi=f\,\Phi$, donde $\Phi$ es el flujo que atraviesa el disco y $f$ es la frecuencia con la que gira.\\
