@@ -204,7 +204,7 @@ Igualando \eqref{Eq:ComponenteTangencialE} y \eqref{Eq:ComponenteTangencialB} ob
 	\hat{\textbf{t}} \cdot \left( \E_{1} - \E_{2} \right) \, \Delta L + \kappa + \diffp{\B}{t} \cdot  \hat{\textbf{m}} \, h\, \Delta L = 0.
 \end{equation}
 
-Podemos observar de la figura \ref{fig:CondicionesFrontera} que $\hat{\textbf{t}} = \hat{\textbf{m}} \times  \hat{\textbf{n}}$, entonces de la última expresión se tiene
+Podemos observar de la figura \ref{Fig:CondicionesFrontera} que $\hat{\textbf{t}} = \hat{\textbf{m}} \times  \hat{\textbf{n}}$, entonces de la última expresión se tiene
 
 \begin{equation}
 	\left( \hat{\textbf{m}} \times  \hat{\textbf{n}} \right) \cdot \left( \E_{1} - \E_{2} \right) \, \Delta L + \diffp{\B}{t} \cdot  \hat{\textbf{m}} \, h \, \Delta L = -\kappa.
@@ -331,50 +331,59 @@ Lo que demuestra que las componentes tangenciales del campo eléctrico son conti
 
 \end{example}
 
+%*********************EJEMPLO********************
+\begin{example}
+	El generador homopolar de Faraday consiste en un disco de metal que gira en un campo magnético uniforme que es perpendicular a su plano, ver figura \eqref{Fig:GeneradorHomopolarFaraday}. Demuestre que la diferencia de potencial que se genera entre el centro y la periferia del disco es $\xi=f\,\phi$, donde $\phi$ es el flujo que atraviesa el disco y $f$ es la frecuencia con la que gira.
 
-% %*********************EJEMPLO********************
-% \begin{example}
-% El generador homopolar de Faraday consiste en un disco de metal que gira en un campo magnético uniforme que es perpendicular a su plano (figura \ref{generador-homopolar-de-Faraday}). Demuestre que la diferencia de potencial que se genera entre el centro y la periferia del disco es $\xi=f\,\Phi$, donde $\Phi$ es el flujo que atraviesa el disco y $f$ es la frecuencia con la que gira.\\
-% \begin{figure}[H]
-%   \centering
-%     \includegraphics[width=0.35\textwidth]{generador-homopolar-de-Faraday}
-%         \caption{\emph{Generador homopolar de Faraday.}}\label{generador-homopolar-de-Faraday}
-% \end{figure}\\
-% \emph{Solución.}\\
-% Sabemos que
-% \begin{equation*}
-% \xi_{ind} = \int\E\cdot \dl \textbf{l},
-% \end{equation*}
-% En el caso estacionario, de la fuerza de Lorentz se tiene
-% \begin{equation}
-% \E = -\textbf{v}\times\B,\nonumber\\
-% \Rightarrow E = \mbox{v}B,\nonumber\\
-%  = 
-% \omega rB,\nonumber\\
-%  = 
-% 2\pi\,f\,r\,B.
-% \end{equation}
-% Donde se usó $\mbox{v}=\omega r=2\pi\,fr$. Con esto se tiene que
-% \begin{equation}
-% \xi_{ind} = \int 2\pi\,frB\,\,dr,\nonumber\\
-%  = 
-% \pi\,fBr^2.\label{xi en disc}
-% \end{equation}
-% Por otro lado recordamos que el flujo magnético está dado por
-% \begin{equation}
-% \Phi = \int \B\cdot \dl \textbf{a},\nonumber\\
-%  = 
-% B\pi r^2.
-% \end{equation}
-% Sustituyendo esta última expresión en (\ref{xi en disc}) se obtiene finalmente que
-% \begin{equation}
-% \therefore\xi_{ind} = f\,\Phi.
-% \end{equation}
-% \end{example}
-% 
-% 
-% 
-% 
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.35\textwidth]{generador-homopolar-de-Faraday}
+		\caption{\emph{Generador homopolar de Faraday.}}
+		\label{Fig:GeneradorHomopolarFaraday}
+	\end{figure}
+
+	\emph{Solución.}\\
+	Sabemos que la fem inducida por un campo eléctrica esta dado por:
+
+	\begin{equation*}
+		\xi_{ind} = \int \E \cdot \dl \textbf{l},
+	\end{equation*}
+
+	En el caso estacionario sabemos que de fuerza de Lorentz podemos escribir al campo eléctrica como
+
+	\begin{align*}
+		\E & = -\textbf{v} \times \B, \\
+		   & = v \; B,                \\
+		   & = \omega r B,            \\
+		   & = 2 \pi f r B.
+	\end{align*}
+
+	Donde se uso que $v = \omega r = 2 \pi f r$. Dado este campo eléctrico, entonces la fem inducida esta dada por
+
+	\begin{align}
+		\label{Eq:FemEnDisco}
+		\xi_{ind} & = \int 2 \pi f r B \; \dl r,\nonumber \\
+		          & = \pi \; f B r^2.
+	\end{align}
+
+	Por otro lado recordamos que el flujo magnético está dado por
+
+	\begin{align}
+		\phi & = \int_{S} \B \cdot \dl \textbf{s},\nonumber \\
+		     & = B \pi r^2.
+	\end{align}
+
+	Sustituyendo esta última expresión en \eqref{Eq:FemEnDisco} se obtiene finalmente que
+
+	\begin{equation}
+		\xi_{ind} = f \phi.
+	\end{equation}
+
+\end{example}
+
+
+
+
 % %*********************EJEMPLO********************
 % \begin{example}
 % Un cilindro dieléctrico de permitividad $\varepsilon$ gira entorno a su eje con una velocidad $\omega$. Si existe un campo magnético uniforme $\B$ paralelo al eje del cilindro, halle la carga de polarización inducida en el dieléctrico.\\
