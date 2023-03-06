@@ -3,10 +3,10 @@ Podemos resumir los resultados generales que se han obtenido en cuatro ecuacione
 
 \begin{align}
 	\label{Eq:EqElectrostatica}
-		 & \divergence{\E} = \frac{\rho}{\varepsilon_{0}}, \\
-		 & \divergence{\B} = 0,                            \\
-		 & \rotational{\E} = \textbf{0},                   \\
-		 & \rotational{\B} = \mu_{0}\; \textbf{J},
+	 & \divergence{\E} = \frac{\rho}{\varepsilon_{0}}, \\
+	 & \divergence{\B} = 0,                            \\
+	 & \rotational{\E} = \textbf{0},                   \\
+	 & \rotational{\B} = \mu_{0}\; \textbf{J},
 \end{align}
 
 Así como también tenemos las ecuaciones que expresa la ley de conservación de la carga y la fuerza que experimenta una carga en presencia de campos eléctricos y magnéticos:
@@ -41,7 +41,7 @@ lo cual muestra el carácter conservativo del campo eléctrico. Ahora bien, anal
 
 % %*********************SECTION********************
 \section{Ley de Faraday-Lenz-Henry}
-Supongamos tener un circuito cerrado $C$, formado por un alambre conductor como se muestra en la figura \ref{Phi-a-traves-C}. Además también existe un campo $\B$, de manera que genere un flujo $\Phi$ a través de la superficie $s$ encerrada por $C$, si se toma una dirección de recorrido arbitraria de $C$, entonces queda definido la dirección del elemento de superficie $\dl \textbf{s} $ por lo que se puede calcular el flujo del campo magnético $\B$ como:
+Supongamos tener un circuito cerrado $C$, formado por un alambre conductor como se muestra en la figura \ref{Fig:FlujoEnC}. Además también existe un campo $\B$, de manera que genere un flujo $\Phi$ a través de la superficie $s$ encerrada por $C$, si se toma una dirección de recorrido arbitraria de $C$, entonces queda definido la dirección del elemento de superficie $\dl \textbf{s} $ por lo que se puede calcular el flujo del campo magnético $\B$ como:
 
 \begin{equation}
 	\Phi = \int_{s} \B \cdot \dl \textbf{s}.
@@ -64,38 +64,38 @@ entonces no existe corriente en el circuito. Sin embargo Faraday encontró que s
 Este resultado que es conocido como \emph{ley de Faraday}. El signo negativo representa la dirección de la fem inducida en comparación con el sentido elegido para el recorrido de $C$ Esta dirección queda debe oponerse al cambio del flujo del campo inducido lo que describe \emph{la ley de Lenz}.\\
 
 \begin{figure}[H]
-	\label{Phi-a-traves-C}
 	\centering
 	\includegraphics[width=0.25\textwidth]{Phi-a-traves-C}
 	\caption{\emph{Flujo del campo $\B$ a través de un circuito cerrado $C$.}}
+	\label{Fig:FlujoEnC}
 \end{figure}
 
 La ley de Lenz es fundamental en el estudio de la energía electromagnética, es importante tener en cuenta que la ley de Lenz asegura que la transferencia de energía electromagnética se lleva a cabo de tal manera que se conserve la energía total del sistema, cumpliendo con el principio de conservación de la energía, ella establece que la dirección de la corriente inducida en un circuito cerrado $C$ es tal que se opone al cambio en el flujo magnético $\phi$ que la produce. Esto significa que la fem inducida $\xi_{ind}$ tendrá una polaridad que se opone al cambio en el flujo magnético.
 
-	\begin{example}
-		Una barra conductora de longitud $l$ que descansa sobre otro conductor doblado en forma de U de lados $l$ y $x$, si la barra se desplaza sobre el conductor a una velocidad constante $v$ y existe un campo magnético $B$ el cual es normal al conductor. Calcular la fuerza electromotriz inducida.\\
-		\emph{\textit{ Solución.}}\\
+\begin{example}
+	Una barra conductora de longitud $l$ que descansa sobre otro conductor doblado en forma de U de lados $l$ y $x$, si la barra se desplaza sobre el conductor a una velocidad constante $v$ y existe un campo magnético $B$ el cual es normal al conductor. Calcular la fuerza electromotriz inducida.\\
+	\emph{\textit{ Solución.}}\\
 
-		La fem inducida viene dada por la ecuación \eqref{Eq:FzaElectromotriz} de modo que,
+	La fem inducida viene dada por la ecuación \eqref{Eq:FzaElectromotriz} de modo que,
 
-		\begin{equation*}
-			\xi_{ind} = -\diff{\phi}{t},
-		\end{equation*}
+	\begin{equation*}
+		\xi_{ind} = -\diff{\phi}{t},
+	\end{equation*}
 
-		primero calculemos el flujo del campo magnético,
+	primero calculemos el flujo del campo magnético,
 
-		\begin{equation*}
-			\phi = \int_{S} \B \cdot \dl \textbf{s},
-		\end{equation*}
+	\begin{equation*}
+		\phi = \int_{S} \B \cdot \dl \textbf{s},
+	\end{equation*}
 
-		dado que el campo magnético $B$ es constante y normal a el area S, por lo que si consideramos que la barra se va desplazando, entonces el area S esta dado por, $S = lx$, de modo que,
+	dado que el campo magnético $B$ es constante y normal a el area S, por lo que si consideramos que la barra se va desplazando, entonces el area S esta dado por, $S = lx$, de modo que,
 
-		\begin{align*}
-			\xi_{ind} &= -\diff*{\left( Blx \right) }{t},\\
-								&= -Bl \diff{x}{t},\\
-								&= -Blv.
-		\end{align*}
-	\end{example}
+	\begin{align*}
+		\xi_{ind} & = -\diff*{\left( Blx \right) }{t}, \\
+		          & = -Bl \diff{x}{t},                 \\
+		          & = -Blv.
+	\end{align*}
+\end{example}
 
 De la ecuación \eqref{Eq:FzaElectromotriz} se puede observar que la fem inducida puede interpretarse como la presencia de un campo eléctrico inducido $\E_{ind}$ no conservativo a lo largo del alambre, de modo que podemos expresar \eqref{Eq:LeyFaraday} como:
 
@@ -124,14 +124,14 @@ La ecuación \eqref{Eq:FaradayVectoresCampo}, representa las leyes de Faraday y 
 Esta categoría aplica para todo sistema en el cual los medios conductores o circuitos de interés no se encuentran en movimiento, por lo que las trayectorias cerradas $C$ no cambian de forma o tamaño, de manera que el flujo $\phi$ solo puede variar por que el campo $\B$ depende del tiempo, es decir, $\B = \B(\textbf{r}, t)$. Usando el teorema de Stokes en el miembro izquierdo de la ecuación \eqref{Eq:FaradayVectoresCampo} obtenemos,
 
 \begin{align*}
-	\int_{S} \rotational{\E} \cdot \dl \textbf{s} &= -\diff*{ \int_{S} \B \cdot \dl \textbf{s} }{t},\\
-	&= - \int_{S} \diffp{\B}{t} \cdot \dl \textbf{s}.
+	\int_{S} \rotational{\E} \cdot \dl \textbf{s} & = -\diff*{ \int_{S} \B \cdot \dl \textbf{s} }{t}, \\
+	                                              & = - \int_{S} \diffp{\B}{t} \cdot \dl \textbf{s}.
 \end{align*}
 
 Dado que esta expresión es valida para cualquier superficie $S$,
 
 \begin{equation}
-\label{Eq:LeyFaradayDiferencial}
+	\label{Eq:LeyFaradayDiferencial}
 	\rotational{\E} = -\diffp{\B}{t},
 \end{equation}
 
@@ -147,9 +147,9 @@ esta expresión es conocida como la \emph{forma diferencial de la ley de Faraday
 	Por lo tanto podemos reescribir a la ecuación \eqref{Eq:LeyFaradayDiferencial} como,
 
 	\begin{align*}
-		\rotational{\E} &= -\diffp{\B}{t},\\
-										&= -\diffp*{\left( \rotational{A} \right) }{t},\\
-										&= \rotational{ \left(-\diffp{\textbf{A}}{t}\right) }.
+		\rotational{\E} & = -\diffp{\B}{t},                                     \\
+		                & = -\diffp*{\left( \rotational{A} \right) }{t},        \\
+		                & = \rotational{ \left(-\diffp{\textbf{A}}{t}\right) }.
 	\end{align*}
 
 	Si además se considera que para una función escalar $\phi$ siempre se satisface $\rotational{ \left( -\nabla \phi \right)} = \mathbf{0}$, entonces es posible escribir
@@ -170,31 +170,28 @@ esta expresión es conocida como la \emph{forma diferencial de la ley de Faraday
 
 \subsection{Condiciones de frontera}
 
-Dado que ahora el $\rotational{\E} \neq \textbf{0}$, es necesario estudiar las componentes tangenciales del campo eléctrico $\E$ en una superficie de discontinuidad, para ello consideramos un pequeño elemento de superficie en la capa de transición que sea perpendicular al flujo, tal como se ilustra en la figura \ref{fig:CondicionesFrontera}, donde $ \hat{\textbf{m}}$ es el vector unitario normal a la superficie encerrada por la trayectoria $C$ y paralelo a la superficie entre los medios $1$ y $2$, $\hat{\textbf{n}}$ es el vector unitario perpendicular a la  superficie, y el vector unitario $\hat{\textbf{t}}$ es paralelo al plano de $C$, de esta forma la integral de trayectoria $\E$ alrededor de $C$ esta dada por:
-
-
+Dado que ahora el $\rotational{\E} \neq \textbf{0}$, es necesario estudiar las componentes tangenciales del campo eléctrico $\E$ en una superficie de discontinuidad, para ello consideramos un pequeño elemento de superficie en la capa de transición que sea perpendicular al flujo, tal como se ilustra en la figura \ref{Fig:CondicionesFrontera}, donde $ \hat{\textbf{m}}$ es el vector unitario normal a la superficie encerrada por la trayectoria $C$ y paralelo a la superficie entre los medios $1$ y $2$. Además el vector unitario $\hat{\textbf{n}}$ es perpendicular a la  superficie, y el vector unitario $\hat{\textbf{t}}$ es paralelo al plano de $C$ de esta forma la integral de trayectoria $\E$ alrededor de $C$ esta dada por:
 
 \begin{figure}[H]
-    \centering
-    \incfig{Condiciones_Frontera}
-    \caption{Superficie usada para encontrar la condición de frontera a partir del teorema de Stokes.}
-    \label{fig:CondicionesFrontera}
+	\centering
+	\incfig{Condiciones_Frontera}
+	\caption{Superficie usada para encontrar la condición de frontera a partir del teorema de Stokes.}
+	\label{Fig:CondicionesFrontera}
 \end{figure}
-
 
 \begin{align}
 	\label{Eq:ComponenteTangencialE}
-		\oint_{C} \E \cdot \dl \textbf{l} &= \E_{2} \cdot \hat{\textbf{t}} \,\, \Delta L - \E_{1} \cdot \hat{\textbf{t}} \,\, \Delta L + \kappa,\\
-																		&= \hat{\textbf{t}} \cdot \left( \E_{2} - \E_{1} \right) \, \Delta L + \kappa, \nonumber
+	\oint_{C} \E \cdot \dl \textbf{l} & = \E_{1} \cdot \hat{\textbf{t}_{1}} \,\, \Delta L + \E_{2} \cdot \hat{\textbf{t}_{2}} \,\, \Delta L + \kappa, \\
+	                                  & = \hat{\textbf{t}} \cdot \left( \E_{1} - \E_{2} \right) \, \Delta L + \kappa, \nonumber
 \end{align}
 
-donde $\E_{2}$ y $\E_{1}$ son los valores de los campos eléctricos en sus respectivas regiones, y $\kappa$ es la contribución a la integral de línea que resulta de los extremos de la trayectoria. Por otro lado, de la ecuación \eqref{Eq:FaradayVectoresCampo} se tiene que:
+donde $\E_{2}$ y $\E_{1}$ son los valores de los campos eléctricos en sus respectivas regiones, y $\kappa$ es la contribución a la integral de línea que resulta de los extremos de la trayectoria. Por otro lado, de la ecuación \eqref{Eq:LeyFaradayDiferencial} y el teorema de Stokes obtenemos:
 
 \begin{equation*}
-	\oint_{C} \E \cdot \dl \textbf{l} = -\int_{S} \diffp{\B}{t} %\cdot  \dl \textfb{s},
+	\oint_{C} \E \cdot \dl \textbf{l} = -\int_{S} \diffp{\B}{t} \cdot \dl \textbf{s},
 \end{equation*}
 
-De modo que
+De modo que si suponemos una trayectoria $C$ de tal forma que el flujo de campo magnético $\B$ sea casi constante, por lo que podemos escribir,
 
 \begin{equation}
 	\label{Eq:ComponenteTangencialB}
@@ -204,26 +201,26 @@ De modo que
 Igualando \eqref{Eq:ComponenteTangencialE} y \eqref{Eq:ComponenteTangencialB} obtenemos
 
 \begin{equation}
-	\hat{\textbf{t}} \cdot \left( \E_{2} - \E_{1} \right) \, \Delta L + \kappa + \diffp{\B}{t} \cdot  \hat{\textbf{m}} \, h\, \Delta L = 0.
+	\hat{\textbf{t}} \cdot \left( \E_{1} - \E_{2} \right) \, \Delta L + \kappa + \diffp{\B}{t} \cdot  \hat{\textbf{m}} \, h\, \Delta L = 0.
 \end{equation}
 
-Podemos observar de la figura que $\hat{\textbf{t}} = \hat{\textbf{n}} \times  \hat{\textbf{m}}$, entonces de la última expresión se tiene
+Podemos observar de la figura \ref{fig:CondicionesFrontera} que $\hat{\textbf{t}} = \hat{\textbf{m}} \times  \hat{\textbf{n}}$, entonces de la última expresión se tiene
 
 \begin{equation}
-	\left( \hat{\textbf{n}} \times  \hat{\textbf{m}} \right) \cdot \left( \E_{2} - \E_{1} \right) \, \Delta L + \diffp{\B}{t} \cdot  \hat{\textbf{m}} \ ,h \, \Delta L = -\kappa.
+	\left( \hat{\textbf{m}} \times  \hat{\textbf{n}} \right) \cdot \left( \E_{1} - \E_{2} \right) \, \Delta L + \diffp{\B}{t} \cdot  \hat{\textbf{m}} \, h \, \Delta L = -\kappa.
 \end{equation}
 
 Para el primer término usamos la identidad
 
 \begin{equation}
-\left( \textbf{A} \times \B \right) \cdot \textbf{C} = \left( \textbf{C} \times \textbf{A} \right) \cdot \B,
+	\left( \textbf{A} \times \B \right) \cdot \textbf{C} = \left( \textbf{C} \times \textbf{A} \right) \cdot \B = \left( \textbf{B}  \times \textbf{C}  \right) \cdot \textbf{A},
 \end{equation}
 
-así
+así que,
 
 \begin{align*}
-	-\kappa &= \left[ \left( \E_{2} - \E_{1} \right) \times \hat{\textbf{n}} \right] \cdot  \hat{\textbf{m}} \, \Delta L + \diffp{\B}{t} \cdot  \hat{\textbf{m}} \, h \,\Delta L,\\
-					&= \left[ \left( \E_{2} - \E_{1} \right) \times \hat{\textbf{n}} + \diffp{\B}{t} \, h \right] \cdot  \hat{\textbf{m}} \Delta L.
+	-\kappa & = \left[ \hat{\textbf{n} } \times \left( \E_{1} - \E_{2} \right) \right] \cdot  \hat{\textbf{m}} \, \Delta L + \diffp{\B}{t} \cdot  \hat{\textbf{m}} \, h \,\Delta L, \\
+	        & = \left[ \left( \E_{2} - \E_{1} \right) \times \hat{\textbf{n}} + \diffp{\B}{t} \, h \right] \cdot  \hat{\textbf{m}} \Delta L.
 \end{align*}
 
 Si ahora hacemos que $h\rightarrow 0$ entonces $\kappa\rightarrow 0$, de esta forma
@@ -235,33 +232,46 @@ Si ahora hacemos que $h\rightarrow 0$ entonces $\kappa\rightarrow 0$, de esta fo
 Entonces
 
 \begin{equation}
-	\label{co f E tim}
+	\label{Eq:CondicionesFronteraTangencial}
 	\left( \E_{2} - \E_{1} \right) \times \hat{\textbf{n}} = -\lim_{h\rightarrow 0} \left( \diffp{\B}{t} \, h \right).
 \end{equation}
 
 Podemos expresar $\E$ como la suma de sus componentes normales y transversales a la superficie de separación, es decir
 
-\begin{align}
-	\label{part trans y nor de e}
-	\E &= \E_{n} + \E_{t},\\
-		 &= \E_{n} \, \hat{\textbf{n}} + \E_{t}.
-\end{align}
-
-Si realizamos el producto cruz con $\hat{\textbf{n}}$ en ambos miembros de (\ref{co f E tim})
-
 \begin{align*}
-\left[ \left( \E_{2} - \E_{1} \right) \times \hat{\textbf{n}} \right] \times \hat{\textbf{n}},\\
-&= -\lim_{h\rightarrow 0} \left( h \diffp{\B}{t} \times \hat{\textbf{n}} \right),\\
-\left( \E_{2} - \E_{1} \right) \left( \hat{\textbf{n}} \cdot \hat{\textbf{n}} \right) -\hat{\textbf{n}} \left[ \left( \E_{2} - \E_{1} \right) \cdot  \hat{\textbf{n}} \right]&= \textbf{0},\\
-\left( \E_{2} - \E_{1} \right) - \hat{\textbf{n}} \left( E_{2} - E_{1} \right) =& \textbf{0}.
+	\label{part trans y nor de e}
+	\E & = \E_{n} + \E_{t},                             \\
+	   & = \E_{n} \, \hat{\textbf{n}} + \textbf{E}_{t}.
 \end{align*}
 
-Usando la ec. (\ref{part trans y nor de e}) en esta última expresión
+por lo que si realizamos el producto $\E \times \hat{\textbf{n}}$ entonces,
 
-\begin{align}
-\E_{2t} - \E_{1t} &= \textbf{0},\\
-\Rightarrow\E_{2t} &= \E_{1t}.
-\end{align}
+\begin{align*}
+	\E \times \hat{\textbf{n}} & = \left( E_{n} \hat{\textbf{n}} + \textbf{E}_{t} \right) \times \hat{\textbf{n}},                         \\
+	                           & = E_{n} \left( \hat{\textbf{n}} \times \hat{\textbf{n}} \right) + \textbf{E}_{t} \times \hat{\textbf{n}}, \\
+	                           & = \textbf{E}_{t} \times \hat{\textbf{n}}.
+\end{align*}
+
+Por lo que si realizamos la sustitución en \eqref{Eq:CondicionesFronteraTangencial} obtenemos:
+
+\begin{equation}
+	\label{Eq:ComponetesTangenciales}
+	\left( \E_{2t} - \E_{1t} \right) \times \hat{\textbf{n}} = -\lim_{h\rightarrow 0} \left( h \diffp{\B}{t} \right),
+\end{equation}
+
+Este resultado se puede escribir de una forma más explicita si multiplicamos a la ecuación \eqref{Eq:ComponetesTangenciales} por $\hat{\textbf{n}}$, entonces,
+\begin{align*}
+	 & \left[ \left( \E_{2t} - \E_{1t} \right) \times \hat{\textbf{n}} \right] \times \hat{\textbf{n}} = -\lim_{h\rightarrow 0} \left( h \diffp{\B}{t} \times \hat{\textbf{n}} \right),                            \\
+	 & \hat{\textbf{n}} \left[ \left( \E_{2t} - \E_{1t} \right) \cdot \hat{\textbf{n}} \right] - \left( \E_{2t} - \E_{1t} \right) = -\lim_{h\rightarrow 0} \left( h \diffp{\B}{t} \times \hat{\textbf{n}} \right), \\
+	 & \E_{2t} - \E_{1t} = -\lim_{h\rightarrow 0} \left( h \diffp{\B}{t} \times \hat{\textbf{n}} \right).
+\end{align*}
+
+Dado que cuando se hace el limite cuando $h \rightarrow 0$, entonces $h \diffp{\B}/t \rightarrow 0$ por lo que
+
+\begin{equation}
+	\label{eq:CampoETangencial}
+	\E_{2t} = \E_{1t}.
+\end{equation}
 
 Lo que demuestra que las componentes tangenciales del campo eléctrico son continuas.
 
