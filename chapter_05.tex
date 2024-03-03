@@ -2,13 +2,13 @@
 Podemos resumir los resultados generales que se han obtenido en cuatro ecuaciones diferenciales para campos vectoriales dadas por
 
 \begin{equation}
-	\label{Eq:EqElectrostatica}
-	\begin{align}
+	\label{Eq:Eq Electrostatica}
+	\begin{aligned}
 		 & \divergence{\E} = \frac{\rho}{\varepsilon_{0}}, \\
 		 & \divergence{\B} = 0,                            \\
 		 & \rotational{\E} = \textbf{0},                   \\
 		 & \rotational{\B} = \mu_{0}\; \textbf{J},
-	\end{align}
+	\end{aligned}
 \end{equation}
 
 Así como también tenemos las ecuaciones que expresa la ley de conservación de la carga y la fuerza que experimenta una carga en presencia de campos eléctricos y magnéticos:
@@ -18,7 +18,7 @@ Así como también tenemos las ecuaciones que expresa la ley de conservación de
 	 & \textbf{F} = q \left( \E + \textbf{v} \times \B \right).
 \end{align}
 
-Podemos observar que las ecuaciones \eqref{Eq:EqElectrostatica} perteneces a el caso en que los campos $\E$ y $\B$ no cambian con el tiempo, además que forman dos conjuntos completamente independientes entre si, sin implicar alguna conexión entre los campos. Dodo que estas ecuaciones, se obtubieron del estudio de campos estáticos a excecpción de la derivación de la ley de conservación de la carga en donde se consideraron algunos casos que son dependientes del tiempo; por lo que para continuar es necesario suponer que estas ecuaciones son también validas para casos no estáticos a menos que los experiemntos indiquen lo contrario.
+Podemos observar que las ecuaciones,~\eqref{Eq:Eq Electrostatica} perteneces a el caso en que los campos $\E$ y $\B$ no cambian con el tiempo, además que forman dos conjuntos completamente independientes entre si, sin implicar alguna conexión entre los campos. Dodo que estas ecuaciones, se obtubieron del estudio de campos estáticos a excecpción de la derivación de la ley de conservación de la carga en donde se consideraron algunos casos que son dependientes del tiempo; por lo que para continuar es necesario suponer que estas ecuaciones son también validas para casos no estáticos a menos que los experiemntos indiquen lo contrario.
 
 % Faraday sospecho que debería haber alguna conexión entre ellos, por lo que diseñó muchos experiemntos para tratar de demostrarlo. Una de las ideas de Faraday era que dado que una corriente que circula por un conductor produce un campo magnético $\B$ al rededor de mismo, entonces podria un campo estacionario producir una corriente eléctrica.
 
@@ -35,21 +35,24 @@ al usar el teorema de Stokes se tiene
 
 \begin{equation}
 	\label{Eq:CampoEConservativo}
-	\oint \E \cdot \dl \textbf{l} = 0,
+	\oint \E \cdot \dl{\textbf{l}} = 0,
 \end{equation}
 
 lo cual muestra el carácter conservativo del campo eléctrico. Ahora bien, analizaremos que sucede para campos dependientes del tiempo, es decir campos no conservativos  $\E_{nc}$. Definimos a la \emph{fuerza electromotriz (fem)} alrededor de un circuito por cerrado $C$,
 \begin{equation}
-	\label{Eq:FzaElectromotriz}
-	\xi = \oint_{C} \E_{nc} \cdot \dl \textbf{l},
+	\label{Eq:Fza Electromotriz}
+	\xi = \oint_{C} \E_{nc} \cdot \dl{\textbf{l}},
 \end{equation}
 
 % %*********************SECCION********************
 \section{Ley de Faraday-Lenz-Henry}
-Supongamos tener un circuito cerrado $C$, formado por un alambre conductor como se muestra en la figura \ref{Phi-a-traves-C}. Supóngase también que existe un campo $\B$, de manera que genere un flujo $\Phi$ a través de la superficie $s$ encerrada por $C$, si se toma una dirección de recorrido arbitraria de $C$, ontonces queda definido la dirección del eleemnto de superficie $\dl \textbf{s} $ por lo que se puede calcular el flujo del campo magnético $\B$ como:
+
+Supongamos tener un circuito cerrado $C$,formado por un alambre conductor como se muestra en la figura~\ref{Phi-a-traves-C}.
+
+Supóngase también que existe un campo $\B$, de manera que genere un flujo $\Phi$ a través de la superficie $s$ encerrada por $C$, si se toma una dirección de recorrido arbitraria de $C$, entonces queda definido la dirección del elemento de superficie $\dl 0 \textbf{s}$ por lo que se puede calcular el flujo del campo magnético $\B$ como:
 
 \begin{equation}
-	\Phi = \int_{s} \B \cdot \dl \textbf{s}.
+	\Phi = \int_{s} \B \cdot \dl{\textbf{s}}.
 	\label{Eq:FlujoMagnetico}
 \end{equation}
 
@@ -74,13 +77,13 @@ Este resultado que es conocido como \emph{ley de Faraday}. El signo negativo rep
 	\caption{\emph{Flujo del campo $\B$ a través de un circuito cerrado $C$.}}\label{Phi-a-traves-C}
 \end{figure}
 
-La ley de Lenz es fundamental en el estudio de la energía electromagnética, es importante tener en cuenta que la ley de Lenz asegura que la transferencia de energía electromagnética se lleva a cabo de tal manera que se conserve la energía total del sistema, cumpliendo con el principio de conservación de la energía, ella establece que la dirección de la corriente inducida en un circuito cerrado $C$ es tal que se opone al cambio en el flujo magnético $\phi$ que la produce. Esto significa que la fem inducida $\xi_{ind$ tendrá una polaridad que se opone al cambio en el flujo magnético.
+La ley de Lenz es fundamental en el estudio de la energía electromagnética, es importante tener en cuenta que la ley de Lenz asegura que la transferencia de energía electromagnética se lleva a cabo de tal manera que se conserve la energía total del sistema, cumpliendo con el principio de conservación de la energía, ella establece que la dirección de la corriente inducida en un circuito cerrado $C$ es tal que se opone al cambio en el flujo magnético $\phi$ que la produce. Esto significa que la fem inducida $\xi_{ind}$ tendrá una polaridad que se opone al cambio en el flujo magnético.
 
 	\begin{example}
 		Una barra conductora de longitud $l$ que descansa sobre otro conductor doblado en forma de U de lados $l$ y $x$, si la barra se desplaza sobre el conductor a una velocidad constante $v$ y existe un campo magnetico $B$ el cual es normal al conductor. Calcular la fuerza electromotriz inducida.\\
 		\emph{\textit{ Solución.}}\\
 
-		La fem inducida viene dada por la ecuación \eqref{Eq:FzaElectromotriz} de modo que,
+		La fem inducida viene dada por la ecuación~\eqref{Eq:Fza Electromotriz} de modo que,
 
 		\begin{equation*}
 			\xi_{ind} = -\diff{\phi}{t},
@@ -89,7 +92,7 @@ La ley de Lenz es fundamental en el estudio de la energía electromagnética, es
 		primero calculemos el flujo del campo magnético,
 
 		\begin{equation*}
-			\phi = \int_{S} \B \cdot \dl \textbf{s},
+			\phi = \int_{S} \B \cdot \dl{\textbf{s}},
 		\end{equation*}
 
 		dado que el campo magnético $B$ es constante y normal a el area S, por lo que si consideramos que la barra se va desplazando, entonces el area S esta dado por, $S = lx$, de modo que,
@@ -101,35 +104,35 @@ La ley de Lenz es fundamental en el estudio de la energía electromagnética, es
 		\end{align*}
 	\end{example}
 
-De la ecuación \eqref{Eq:FzaElectromotriz} se puede observar que la fem inducida puede interpretarse como la presencia de un campo eléctrico inducido $\E_{ind}$ no conservativo a lo largo del alambre, de modo que podemos expresar \eqref{Eq:LeyFaraday} como:
+De la ecuación~\eqref{Eq:Fza Electromotriz} se puede observar que la fem inducida puede interpretarse como la presencia de un campo eléctrico inducido $\E_{ind}$ no conservativo a lo largo del alambre, de modo que podemos expresar~\eqref{Eq:LeyFaraday} como:
 
 \begin{equation}
 	\label{Eq:CampoETotal}
-	\oint \E_{ind} \cdot \dl \textbf{l} = -\diff{\Phi}{t}.
+	\oint \E_{ind} \cdot \dl{\textbf{l}} = -\diff{\Phi}{t}.
 \end{equation}
 
 Para cualquier punto del espacio, el campo eléctrico total se puede expresar como la suma de una parte conservativa $\E_c$, y una parte no conservativa $\E_{ind}$, es decir $\E=\E_c+\E_{ind}$, de esta forma
 
 \begin{equation*}
-	\oint \E \cdot \dl \textbf{l} = \oint \E_{c} \cdot \dl \textbf{l} + \oint \E_{ind} \cdot \dl \textbf{l}.
+	\oint \E \cdot \dl{\textbf{l}} = \oint \E_{c} \cdot \dl{\textbf{l}} + \oint \E_{ind} \cdot \dl{\textbf{l}}.
 \end{equation*}
 
-De acuerdo con la ecuación \eqref{Eq:CampoEConservativo} la primera integral del miembro derecho es cero debido a que se trata de un campo conservativo. Usando las ecuaciones  \eqref{Eq:FlujoMagnetico} y \eqref{Eq:CampoETotal} podemos escribir:
+De acuerdo con la ecuación~\eqref{Eq:CampoEConservativo} la primera integral del miembro derecho es cero debido a que se trata de un campo conservativo. Usando las ecuaciones~\eqref{Eq:FlujoMagnetico} y~\eqref{Eq:CampoETotal} podemos escribir:
 
 \begin{equation}
 	\label{Eq:FaradayVectoresCampo}
-	\oint_{C} \E \cdot \dl \textbf{l} = -\diff*{ \int_{S} \B \cdot \dl \textbf{s} }{t}.
+	\oint_{C} \E \cdot \dl{\textbf{l}} = -\diff*{ \int_{S} \B \cdot \dl{\textbf{s}} }{t}.
 \end{equation}
 
-La ecuación \eqref{Eq:FaradayVectoresCampo}, representa las leyes de Faraday y Lenz expresadas en función de los campos y es valoda para cualquier trayectoria cerrada $C$ y por cuyalquier motivo por el cual el flujo de campo $\phi$ pueda cambiar. Debido a todas las formas en que este puede cambar, se estudiaran dos grandes categorias, si el medio esta en moviemnto o en reposo.
+La ecuación~\eqref{Eq:FaradayVectoresCampo}, representa las leyes de Faraday y Lenz expresadas en función de los campos y es valoda para cualquier trayectoria cerrada $C$ y por cuyalquier motivo por el cual el flujo de campo $\phi$ pueda cambiar. Debido a todas las formas en que este puede cambar, se estudiaran dos grandes categorias, si el medio esta en moviemnto o en reposo.
 
 \subsection{Medios estacionarios}
 
-Esta categoria aplica para todo sistema en el cual los medios conductores o circuitos de interes no se encuentran en movimento, por lo que las trayectorias cerradas $C$ no cambian de forma o tamaño, de manera que el flujo $\phi$ solo puede variar por que el campo $\B$ depende del tiempo, es decir, $\B = \B(\textbf{r}, t)$. Usando el teorema de Stokes en el miembro izquierdo de la ecuación \eqref{Eq:FaradayVectoresCampo} obtenemos,
+Esta categoria aplica para todo sistema en el cual los medios conductores o circuitos de interes no se encuentran en movimento, por lo que las trayectorias cerradas $C$ no cambian de forma o tamaño, de manera que el flujo $\phi$ solo puede variar por que el campo $\B$ depende del tiempo, es decir, $\B = \B(\textbf{r}, t)$. Usando el teorema de Stokes en el miembro izquierdo de la ecuación~\eqref{Eq:FaradayVectoresCampo} obtenemos,
 
 \begin{align*}
-	\int_{S} \rotational{\E} \cdot \dl \textbf{s} &= -\diff*{ \int_{S} \B \cdot \dl \textbf{s} }{t},\\
-	&= - \int_{S} \diffp{\B}{t} \cdot \dl \textbf{s}.
+	\int_{S} \rotational{\E} \cdot \dl{\textbf{s}} &= -\diff*{ \int_{S} \B \cdot \dl{\textbf{s}} }{t},\\
+	&= - \int_{S} \diffp{\B}{t} \cdot \dl{\textbf{s}}.
 \end{align*}
 
 Dado que esta expresión es valida para cualquier superficie $S$,
@@ -142,13 +145,13 @@ Dado que esta expresión es valida para cualquier superficie $S$,
 esta expresión es conocida como la \emph{forma diferencial de la ley de Faraday}, y es la generalización de $\rotational{\E} = \textbf{0}$, que era valida para campos estáticos.
 
 \begin{obs}
-	Dado que de las ecuaciones \eqref{Eq:EqElectrostatica} la única que ha sido modificada es $\rotational{\E} = \textbf{0}$. Entonces sigue siendo valida la expresión $\divergence{\B} = \textbf{0}$, enonces podemos escribir,
+	Dado que de las ecuaciones~\eqref{Eq:Eq Electrostatica} la única que ha sido modificada es $\rotational{\E} = \textbf{0}$. Entonces sigue siendo valida la expresión $\divergence{\B} = \textbf{0}$, enonces podemos escribir,
 
 	\begin{equation*}
 		\B = \rotational{\textbf{A}}
 	\end{equation*}
 
-	Por lo tanto podemos reescribir a la ecuación \eqref{Eq:LeyFaradayDiferencial} como,
+	Por lo tanto podemos reescribir a la ecuación~\eqref{Eq:LeyFaradayDiferencial} como,
 
 	\begin{align*}
 		\rotational{\E} &= -\diffp{\B}{t},\\
