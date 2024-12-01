@@ -35,13 +35,13 @@ al usar el teorema de Stokes se tiene
 
 \begin{equation}
 	\label{Eq:CampoEConservativo}
-	\oint \E \cdot \dl{\textbf{l}} = 0,
+	\oint \E \cdot \dl{\textbf{r}} = 0,
 \end{equation}
 
 lo cual muestra el carácter conservativo del campo eléctrico. Ahora bien, analizaremos que sucede para campos dependientes del tiempo, es decir campos no conservativos  $\E_{nc}$. Definimos a la \emph{fuerza electromotriz (fem)} alrededor de un circuito por cerrado $C$,
 \begin{equation}
 	\label{Eq:Fza Electromotriz}
-	\xi = \oint_{C} \E_{nc} \cdot \dl{\textbf{l}},
+	\xi = \oint_{C} \E_{nc} \cdot \dl{\textbf{r}},
 \end{equation}
 
 % %*********************SECCION********************
@@ -77,13 +77,13 @@ Este resultado que es conocido como \emph{ley de Faraday}. El signo negativo rep
 	\caption{\emph{Flujo del campo $\B$ a través de un circuito cerrado $C$.}}\label{Phi-a-traves-C}
 \end{figure}
 
-La ley de Lenz es fundamental en el estudio de la energía electromagnética, es importante tener en cuenta que la ley de Lenz asegura que la transferencia de energía electromagnética se lleva a cabo de tal manera que se conserve la energía total del sistema, cumpliendo con el principio de conservación de la energía, ella establece que la dirección de la corriente inducida en un circuito cerrado $C$ es tal que se opone al cambio en el flujo magnético $\phi$ que la produce. Esto significa que la fem inducida $\xi_{ind}$ tendrá una polaridad que se opone al cambio en el flujo magnético.
+La ley de Lenz es fundamental en el estudio de la energía electromagnética, asegura que la transferencia de energía electromagnética se lleva a cabo de tal manera que se conserve la energía total del sistema, cumpliendo con el principio de conservación de la energía, ella establece que la dirección de la corriente inducida en un circuito cerrado $C$ es tal que se opone al cambio en el flujo magnético $\phi$ que la produce. Esto significa que la fem inducida $\xi_{ind}$ tendrá una polaridad que se opone al cambio en el flujo magnético.
 
 	\begin{example}
-		Una barra conductora de longitud $l$ que descansa sobre otro conductor doblado en forma de U de lados $l$ y $x$, si la barra se desplaza sobre el conductor a una velocidad constante $v$ y existe un campo magnetico $B$ el cual es normal al conductor. Calcular la fuerza electromotriz inducida.\\
+		Una barra conductora de longitud $l$ que descansa sobre otro conductor doblado en forma de U de lados $l$ y $x$, si la barra se desplaza sobre el conductor a una velocidad constante $v$ y existe un campo magnetico $B$ el cual es normal al conductor. Calcular la fuerza electromotriz inducida.
 		\emph{\textit{ Solución.}}\\
 
-		La fem inducida viene dada por la ecuación~\eqref{Eq:Fza Electromotriz} de modo que,
+		La fem inducida viene dada por la ecuación \eqref{Eq:Fza Electromotriz} de modo que,
 
 		\begin{equation*}
 			\xi_{ind} = -\diff{\phi}{t},
@@ -104,27 +104,27 @@ La ley de Lenz es fundamental en el estudio de la energía electromagnética, es
 		\end{align*}
 	\end{example}
 
-De la ecuación~\eqref{Eq:Fza Electromotriz} se puede observar que la fem inducida puede interpretarse como la presencia de un campo eléctrico inducido $\E_{ind}$ no conservativo a lo largo del alambre, de modo que podemos expresar~\eqref{Eq:LeyFaraday} como:
+De la ecuación \eqref{Eq:Fza Electromotriz} se puede observar que la fem inducida puede interpretarse como la presencia de un campo eléctrico inducido $\E_{ind}$ no conservativo a lo largo del alambre, de modo que podemos expresar~\eqref{Eq:LeyFaraday} como:
 
 \begin{equation}
 	\label{Eq:CampoETotal}
-	\oint \E_{ind} \cdot \dl{\textbf{l}} = -\diff{\Phi}{t}.
+	\oint \E_{ind} \cdot \dl{\textbf{r}} = -\diff{\Phi}{t}.
 \end{equation}
 
 Para cualquier punto del espacio, el campo eléctrico total se puede expresar como la suma de una parte conservativa $\E_c$, y una parte no conservativa $\E_{ind}$, es decir $\E=\E_c+\E_{ind}$, de esta forma
 
 \begin{equation*}
-	\oint \E \cdot \dl{\textbf{l}} = \oint \E_{c} \cdot \dl{\textbf{l}} + \oint \E_{ind} \cdot \dl{\textbf{l}}.
+	\oint \E \cdot \dl{\textbf{r}} = \oint \E_{c} \cdot \dl{\textbf{r}} + \oint \E_{ind} \cdot \dl{\textbf{r}}.
 \end{equation*}
 
-De acuerdo con la ecuación~\eqref{Eq:CampoEConservativo} la primera integral del miembro derecho es cero debido a que se trata de un campo conservativo. Usando las ecuaciones~\eqref{Eq:FlujoMagnetico} y~\eqref{Eq:CampoETotal} podemos escribir:
+De acuerdo con la ecuación \eqref{Eq:CampoEConservativo} la primera integral del miembro derecho es cero debido a que se trata de un campo conservativo. Usando las ecuaciones~\eqref{Eq:FlujoMagnetico} y~\eqref{Eq:CampoETotal} podemos escribir:
 
 \begin{equation}
 	\label{Eq:FaradayVectoresCampo}
 	\oint_{C} \E \cdot \dl{\textbf{l}} = -\diff*{ \int_{S} \B \cdot \dl{\textbf{s}} }{t}.
 \end{equation}
 
-La ecuación~\eqref{Eq:FaradayVectoresCampo}, representa las leyes de Faraday y Lenz expresadas en función de los campos y es valoda para cualquier trayectoria cerrada $C$ y por cuyalquier motivo por el cual el flujo de campo $\phi$ pueda cambiar. Debido a todas las formas en que este puede cambar, se estudiaran dos grandes categorias, si el medio esta en moviemnto o en reposo.
+La ecuación \eqref{Eq:FaradayVectoresCampo}, representa las leyes de Faraday y Lenz expresadas en función de los campos y es valida para cualquier trayectoria cerrada $C$, superficie $S$ y por cualquier motivo por el cual el campo $\B$ pueda cambiar. Debido a todas las formas en que est\'e puede cambiar, se estudiaran dos grandes categorias, si el medio esta en moviemnto o en reposo.
 
 \subsection{Medios estacionarios}
 
